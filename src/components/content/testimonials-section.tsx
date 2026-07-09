@@ -49,7 +49,8 @@ export function TestimonialsSection() {
           </h2>
           <p className="mt-3 max-w-2xl text-sm text-[var(--ink-soft)]">
             Poniższe cytaty mają charakter demonstracyjny (wzorowane na stylu opinii z platform
-            medycznych). Prawdziwe referencje dodamy po zgodzie pacjentów.
+            medycznych). Prawdziwe referencje dodamy po zgodzie pacjentów — lub wprowadzimy moduł
+            opinii (np. integracja z ZnanyLekarz / własny moduł ocen).
           </p>
         </FadeIn>
 
