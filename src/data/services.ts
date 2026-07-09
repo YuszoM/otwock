@@ -17,6 +17,8 @@ export type Service = {
   description: string;
   languages: ServiceLanguage[];
   category: "diagnoza" | "terapia" | "wsparcie" | "warsztaty" | "specjalistyczne";
+  /** Display price when relevant (e.g. cennik-aligned demo pricing). */
+  price?: string;
 };
 
 export const services: Service[] = [
@@ -99,6 +101,7 @@ export const services: Service[] = [
       "Opieka wytchnieniowa to wsparcie dla rodziców i opiekunów dzieci z niepełnosprawnością, stworzona po to, by mogli na chwilę odetchnąć, zadbać o siebie i swoje potrzeby, bez poczucia winy.",
     languages: ["PL"],
     category: "wsparcie",
+    price: "999 zł",
   },
 ];
 

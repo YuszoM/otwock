@@ -80,7 +80,7 @@ export default async function SpecialistDetailPage({ params }: Props) {
           <h1 className="mt-1 flex flex-wrap items-center gap-2 text-[var(--text-display)] font-semibold">
             {specialist.name}
             {specialist.isDemo ? (
-              <span className="rounded-full bg-[var(--lilac-300)]/50 px-2 py-0.5 text-xs font-semibold uppercase tracking-wide text-[var(--pine-900)]">
+              <span className="rounded-full border border-[var(--sand-200)] bg-[var(--sand-100)] px-2 py-0.5 text-xs font-semibold uppercase tracking-wide text-[var(--pine-900)]">
                 Demo dane
               </span>
             ) : null}

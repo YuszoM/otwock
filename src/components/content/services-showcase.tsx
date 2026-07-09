@@ -4,6 +4,7 @@ import Link from "next/link";
 import { services, categoryLabels } from "@/data/services";
 import { LanguageBadges } from "@/components/ui/language-badges";
 import { ServiceIcon } from "@/components/services/service-icon";
+import { SectionEyebrow } from "@/components/ui/section-eyebrow";
 import { FadeIn, StaggerChildren, StaggerItem, HoverLift } from "@/components/motion/fade-in";
 
 const featuredSlugs = [
@@ -25,7 +26,8 @@ export function ServicesShowcase() {
       <FadeIn>
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div className="max-w-2xl">
-            <h2 id="services-showcase-heading" className="text-[var(--text-heading)] font-semibold">
+            <SectionEyebrow>Usługi</SectionEyebrow>
+            <h2 id="services-showcase-heading" className="mt-2 text-[var(--text-heading)] font-semibold">
               Poznaj naszą ofertę
             </h2>
             <p className="mt-3 text-[var(--ink-soft)]">
@@ -55,14 +57,14 @@ export function ServicesShowcase() {
                     <ServiceIcon slug={service.slug} className="h-16 w-16 opacity-80" />
                   </div>
                   {service.slug === "terapia-vr" ? (
-                    <span className="absolute left-3 top-3 rounded-full bg-[var(--lilac-500)] px-2.5 py-0.5 text-[0.65rem] font-semibold uppercase tracking-wide text-white">
+                    <span className="absolute left-3 top-3 rounded-full bg-[var(--clay-400)] px-2.5 py-0.5 text-[0.65rem] font-semibold uppercase tracking-wide text-[var(--pine-900)]">
                       Nowość
                     </span>
                   ) : null}
                 </div>
 
                 <div className="flex flex-1 flex-col p-5">
-                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--lilac-500)]">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-[var(--wood-700)]">
                     {categoryLabels[service.category]}
                   </p>
                   <h3 className="mt-1 text-lg font-semibold text-[var(--pine-900)]">{service.name}</h3>

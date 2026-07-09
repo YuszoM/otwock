@@ -17,6 +17,9 @@ export function ServiceCard({ service }: ServiceCardProps) {
         {categoryLabels[service.category]}
       </p>
       <h2 className="mt-1 text-lg font-semibold text-on-beige">{service.name}</h2>
+      {service.price ? (
+        <p className="mt-1 text-sm font-semibold text-[var(--pine-700)]">{service.price}</p>
+      ) : null}
       <p className="mt-2 flex-1 text-sm leading-relaxed opacity-85">{service.shortDescription}</p>
       <p className="mt-2 text-sm leading-relaxed opacity-75">{service.description}</p>
       <div className="mt-4">

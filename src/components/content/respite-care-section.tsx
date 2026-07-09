@@ -18,7 +18,7 @@ export function RespiteCareSection() {
           zajęcie.
         </p>
         <p className="mt-4 max-w-prose opacity-85">
-          Koszt opieki wynosi 40 zł, a w jej ramach dzieci korzystają z aktywności rozwijających, w tym
+          Koszt opieki wynosi 999 zł, a w jej ramach dzieci korzystają z aktywności rozwijających, w tym
           systemu FunFloor oraz innych form kreatywnej zabawy. Nie chcemy bowiem, aby było to bierne
           czekanie. Organizujemy czas, który wspiera rozwój najmłodszych, a zarazem odciąża rodzica.
         </p>

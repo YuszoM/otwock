@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { buildPageMetadata } from "@/lib/seo/build-metadata";
+import { OtwockTownSection } from "@/components/content/otwock-town-section";
 import { PageHero } from "@/components/ui/page-hero";
 import { CareProcess } from "@/components/content/care-process";
 import { TrustSection } from "@/components/content/trust-section";
@@ -28,6 +29,7 @@ export default function AboutPage() {
         description="W Otwocku stworzyliśmy przestrzeń, która nie przypomina klasycznej poradni, lecz kompleksowe centrum wsparcia dla dzieci, młodzieży i dorosłych."
       />
       <StorySection />
+      <OtwockTownSection />
       <CareProcess />
       <TrustSection />
       <TestimonialsSection />

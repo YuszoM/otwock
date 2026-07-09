@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FadeIn } from "@/components/motion/fade-in";
+import { SectionEyebrow } from "@/components/ui/section-eyebrow";
 
 export function StorySection() {
   return (
@@ -8,9 +9,7 @@ export function StorySection() {
       className="mx-auto max-w-[var(--container-max)] px-4 py-16 lg:px-6 lg:py-20"
     >
       <FadeIn>
-        <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--wood-700)]">
-          Nasza historia
-        </p>
+        <SectionEyebrow>Nasza historia</SectionEyebrow>
         <h2 id="story-heading" className="mt-2 text-[var(--text-heading)] font-semibold">
           Dlaczego powstał ośrodek OOWiT?
         </h2>

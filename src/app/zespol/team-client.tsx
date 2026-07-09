@@ -14,7 +14,7 @@ export function TeamClient() {
         description="Nie musisz wybierać w ciemno. W tym miejscu możesz czytać o naszym zespole jeszcze przed zarezerwowaniem konsultacji."
       />
       <section className="mx-auto max-w-[var(--container-max)] px-4 py-16 lg:px-6">
-        <p className="mb-8 max-w-prose rounded-[var(--radius-md)] border border-[var(--lilac-300)] bg-[var(--lilac-300)]/20 px-4 py-3 text-sm text-[var(--ink-soft)]">
+        <p className="mb-8 max-w-prose rounded-[var(--radius-md)] border border-[var(--sand-200)] bg-[var(--sand-100)]/80 px-4 py-3 text-sm text-[var(--ink-soft)]">
           Profile oznaczone „Demo dane” to placeholdery — prawdziwe zdjęcia i dane specjalistów
           uzupełnimy po potwierdzeniu składu zespołu przez klienta.
         </p>

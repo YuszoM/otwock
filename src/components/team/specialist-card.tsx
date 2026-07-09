@@ -46,7 +46,7 @@ export function SpecialistCard({ specialist, selectable = false }: SpecialistCar
         <div className="mt-1.5 flex flex-wrap items-center gap-2">
           <h2 className="text-xl font-semibold tracking-tight text-on-beige">{specialist.name}</h2>
           {specialist.isDemo ? (
-            <span className="rounded-full bg-[var(--lilac-300)]/50 px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-wide text-[var(--pine-900)]">
+            <span className="rounded-full border border-[var(--sand-200)] bg-[var(--sand-100)] px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-wide text-[var(--pine-900)]">
               Demo dane
             </span>
           ) : null}

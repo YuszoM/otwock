@@ -6,11 +6,11 @@ export function SiteFooter() {
   const { footer } = siteConfig;
 
   return (
-    <footer className="on-forest relative bg-forest text-on-forest">
-      <div className="pointer-events-none absolute inset-x-0 top-0 -translate-y-px" aria-hidden>
-        <FooterLaceBorder className="opacity-60" />
+    <footer className="on-forest relative bg-[var(--pine-900)] text-on-forest">
+      <div className="pointer-events-none absolute inset-x-0 top-0" aria-hidden>
+        <FooterLaceBorder className="opacity-50" />
       </div>
-      <div className="mx-auto grid max-w-[var(--container-max)] gap-8 px-4 pb-16 pt-20 sm:grid-cols-2 lg:px-6">
+      <div className="mx-auto grid max-w-[var(--container-max)] gap-8 px-4 pb-16 pt-16 sm:grid-cols-2 lg:px-6">
         <div>
           <p className="text-2xl font-semibold leading-tight">{siteConfig.siteName}</p>
           <p className="mt-2 max-w-prose text-base opacity-90">{footer.tagline}</p>

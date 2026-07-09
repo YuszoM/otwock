@@ -17,7 +17,7 @@ const servicePricing = [
   { service: "Psycholog dziecięcy", price: "250.00 zł" },
   { service: "Integracja sensoryczna", price: "200.00 zł" },
   { service: "Wsparcie prawne", price: "300.00 zł" },
-  { service: "Opieka wytchnieniowa", price: "100.00 zł" },
+  { service: "Opieka wytchnieniowa", price: "999 zł" },
   { service: "Wsparcie terapeutyczne dla rodzin", price: "400.00 zł" },
   { service: "Wsparcie psychologiczne + dziecko", price: "290.00 zł" },
   { service: "Wsparcie coachingowe w żałobie, chorobie", price: "320.00 zł" },

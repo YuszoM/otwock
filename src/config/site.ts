@@ -41,9 +41,6 @@ export const siteConfig: SiteConfig = {
       { label: "RODO", href: "/rodo" },
       { label: "Polityka prywatności", href: "/polityka-prywatnosci" },
     ],
-    supportLinks: [
-      { label: "Wsparcie prawne (partnerzy)", href: "/kontakt?temat=wsparcie-prawne" },
-    ],
   },
 };
 
