@@ -45,59 +45,45 @@ export function ServicesShowcase() {
         </div>
       </FadeIn>
 
-      <StaggerChildren className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-12 lg:gap-5">
-        {featured.map((service, index) => {
-          const isHero = index === 0;
-
-          return (
-            <StaggerItem
-              key={service.slug}
-              className={isHero ? "sm:col-span-2 lg:col-span-7" : "lg:col-span-5"}
-            >
-              <HoverLift>
-                <article
-                  className={`group relative flex h-full flex-col overflow-hidden rounded-[var(--radius-md)] border border-[var(--sand-200)] bg-white shadow-[0_1px_3px_rgba(30,58,43,0.06)] transition-shadow hover:shadow-[0_8px_28px_rgba(30,58,43,0.1)] ${
-                    isHero ? "lg:flex-row" : ""
-                  }`}
-                >
-                  <div
-                    className={`relative shrink-0 overflow-hidden bg-gradient-to-br from-[var(--sand-50)] to-[var(--pine-700)]/5 ${
-                      isHero ? "aspect-[16/10] lg:aspect-auto lg:w-[42%]" : "aspect-[16/9]"
-                    }`}
-                  >
-                    <div className="flex h-full min-h-[8rem] items-center justify-center transition-transform duration-500 ease-out group-hover:scale-[1.03]">
-                      <ServiceIcon slug={service.slug} className={isHero ? "h-20 w-20 opacity-90" : "h-16 w-16 opacity-80"} />
-                    </div>
-                    {service.slug === "terapia-vr" ? (
-                      <span className="absolute left-3 top-3 rounded-full bg-[var(--lilac-500)] px-2.5 py-0.5 text-[0.65rem] font-semibold uppercase tracking-wide text-white">
-                        Nowość
-                      </span>
-                    ) : null}
+      <StaggerChildren className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
+        {featured.map((service) => (
+          <StaggerItem key={service.slug} className="h-full">
+            <HoverLift className="h-full">
+              <article className="group relative flex h-full min-h-[20rem] flex-col overflow-hidden rounded-[var(--radius-md)] border border-[var(--sand-200)] bg-white shadow-[0_1px_3px_rgba(30,58,43,0.06)] transition-shadow hover:shadow-[0_8px_28px_rgba(30,58,43,0.1)]">
+                <div className="relative flex aspect-[16/9] shrink-0 items-center justify-center overflow-hidden bg-gradient-to-br from-[var(--sand-50)] to-[var(--pine-700)]/5">
+                  <div className="flex h-full min-h-[8rem] w-full items-center justify-center transition-transform duration-500 ease-out group-hover:scale-[1.03]">
+                    <ServiceIcon slug={service.slug} className="h-16 w-16 opacity-80" />
                   </div>
+                  {service.slug === "terapia-vr" ? (
+                    <span className="absolute left-3 top-3 rounded-full bg-[var(--lilac-500)] px-2.5 py-0.5 text-[0.65rem] font-semibold uppercase tracking-wide text-white">
+                      Nowość
+                    </span>
+                  ) : null}
+                </div>
 
-                  <div className={`flex flex-1 flex-col p-5 ${isHero ? "lg:p-7" : ""}`}>
-                    <p className="text-xs font-semibold uppercase tracking-wide text-[var(--wood-700)]">
-                      {categoryLabels[service.category]}
-                    </p>
-                    <h3 className="mt-1 text-lg font-semibold text-[var(--pine-900)]">{service.name}</h3>
-                    <p className="mt-2 flex-1 text-sm leading-relaxed text-[var(--ink-soft)]">
-                      {service.shortDescription}
-                    </p>
-                    <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
-                      <LanguageBadges languages={service.languages} />
-                      <Link
-                        href="/uslugi"
-                        className="text-sm font-semibold text-[var(--pine-700)] underline-offset-4 hover:underline"
-                      >
-                        Czytaj dalej →
-                      </Link>
-                    </div>
+                <div className="flex flex-1 flex-col p-5">
+                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--lilac-500)]">
+                    {categoryLabels[service.category]}
+                  </p>
+                  <h3 className="mt-1 text-lg font-semibold text-[var(--pine-900)]">{service.name}</h3>
+                  <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-[var(--ink-soft)]">
+                    {service.shortDescription}
+                  </p>
+
+                  <div className="mt-auto flex flex-col gap-3 pt-4">
+                    <LanguageBadges languages={service.languages} />
+                    <Link
+                      href="/uslugi"
+                      className="text-sm font-semibold text-[var(--pine-700)] underline-offset-4 hover:underline"
+                    >
+                      Czytaj dalej →
+                    </Link>
                   </div>
-                </article>
-              </HoverLift>
-            </StaggerItem>
-          );
-        })}
+                </div>
+              </article>
+            </HoverLift>
+          </StaggerItem>
+        ))}
       </StaggerChildren>
 
       <FadeIn delay={0.12}>
