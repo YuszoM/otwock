@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 210" width="120" height="210"
+     role="img" aria-label="Sosna" style="color:#2C5240">
+  <!--
+    Sosna / jodła line-art w stylu ikon strony (stroke only).
+    "Miasto w lesie" — akcent do sekcji o Otwocku. Steruj: `color: ...`.
+  -->
+  <path fill="none" stroke="currentColor" stroke-width="3"
+        stroke-linecap="round" stroke-linejoin="round"
+        d="M60 10
+           L42 46 L50 46 L34 82 L44 82 L26 122 L38 122 L20 166 L54 166
+           L54 194 L66 194 L66 166 L100 166 L82 122 L94 122
+           L76 82 L86 82 L70 46 L78 46 Z"/>
+</svg>

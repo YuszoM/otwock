@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 52" width="320" height="52"
+     preserveAspectRatio="xMidYMin meet" role="img" aria-label="Lambrekin świdermajerski"
+     style="color:#E3D8C4">
+  <!--
+    Świdermajerski lambrekin (drewniana koronka pod okapem).
+    Kafel: 80px szerokości, powtarza się w poziomie (tu 4 powtórzenia).
+    Kolor sterowany przez CSS: `color: ...` (fill=currentColor).
+  -->
+  <defs>
+    <path id="ptooth" fill-rule="evenodd" d="
+      M0 0 H80 V9
+      C 70 12, 58 48, 40 48
+      C 22 48, 10 12, 0 9 Z
+      M35 17 a5 5 0 1 0 10 0 a5 5 0 1 0 -10 0 Z
+      M40 28 C 44 32, 44 37, 40 40 C 36 37, 36 32, 40 28 Z
+      M14 13 a2.4 2.4 0 1 0 4.8 0 a2.4 2.4 0 1 0 -4.8 0 Z
+      M61.2 13 a2.4 2.4 0 1 0 4.8 0 a2.4 2.4 0 1 0 -4.8 0 Z
+    "/>
+  </defs>
+  <g fill="currentColor">
+    <use href="#ptooth" x="0"/>
+    <use href="#ptooth" x="80"/>
+    <use href="#ptooth" x="160"/>
+    <use href="#ptooth" x="240"/>
+  </g>
+</svg>
