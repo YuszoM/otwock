@@ -128,8 +128,8 @@
 | PERF-01 | Phase 5 | Pending |
 | PERF-02 | Phase 5 | Pending |
 | PERF-03 | Phase 5 | Pending |
-| SEO-01 | Phase 1 | Pending |
-| SEO-02 | Phase 1 | Pending |
+| SEO-01 | Phase 2 | Pending |
+| SEO-02 | Phase 2 | Pending |
 | SEO-03 | Phase 5 | Pending |
 | CONT-01 | Phase 2 | Pending |
 | CONT-02 | Phase 5 | Pending |
@@ -142,4 +142,4 @@
 
 ---
 *Requirements defined: 2026-07-09*  
-*Last updated: 2026-07-09 after auto initialization*
+*Last updated: 2026-07-09 after roadmap initialization*
