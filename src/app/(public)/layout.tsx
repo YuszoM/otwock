@@ -4,7 +4,7 @@ import { buildPageMetadata } from "@/lib/seo/build-metadata";
 export const metadata: Metadata = buildPageMetadata({
   title: "OOWiT — Otwocki Ośrodek Wsparcia Rodziny, Diagnozy i Terapii",
   description:
-    "Psychologia, terapia i diagnoza w sosnowym mikroklimacie Otwocka. Świdermajerska tradycja, spójny proces opieki — umów wizytę online.",
+    "Miejsce, w którym psychologia, terapia i diagnoza działają jako jeden spójny proces — OOWiT Otwock.",
   path: "/",
   ogImage: "/images/og-home.webp",
 });

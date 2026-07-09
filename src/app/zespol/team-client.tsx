@@ -10,8 +10,8 @@ export function TeamClient() {
     <>
       <PageHero
         eyebrow="Zespół"
-        title="Specjaliści, którzy towarzyszą na każdym etapie opieki"
-        description="Każdy członek zespołu ma określone kompetencje — łatwo znajdziesz osobę dopasowaną do Twoich potrzeb."
+        title="Poznaj osoby tworzące ośrodek"
+        description="Nie musisz wybierać w ciemno. W tym miejscu możesz czytać o naszym zespole jeszcze przed zarezerwowaniem konsultacji."
       />
       <section className="mx-auto max-w-[var(--container-max)] px-4 py-16 lg:px-6">
         <p className="mb-8 max-w-prose rounded-[var(--radius-md)] border border-[var(--lilac-300)] bg-[var(--lilac-300)]/20 px-4 py-3 text-sm text-[var(--ink-soft)]">

@@ -8,8 +8,8 @@ test.describe("Phase 2 content pages", () => {
   test("team page shows specialist cards with booking CTA", async ({ page }) => {
     await page.goto("/zespol");
     await acceptCookies(page);
-    await expect(page.getByRole("heading", { level: 1 })).toContainText("Specjaliści");
-    await expect(page.getByRole("link", { name: /Umów wizytę/i }).first()).toBeVisible();
+    await expect(page.getByRole("heading", { level: 1 })).toContainText("Poznaj osoby");
+    await expect(page.getByRole("link", { name: /Umów konsultację/i }).first()).toBeVisible();
     await expect(page.getByRole("link", { name: /Profil specjalisty/i }).first()).toBeVisible();
   });
 
@@ -17,13 +17,13 @@ test.describe("Phase 2 content pages", () => {
     await page.goto("/zespol/specjalista-psycholog-demo-1");
     await acceptCookies(page);
     await expect(page.getByRole("heading", { level: 1 })).toContainText("Specjalista psycholog");
-    await expect(page.locator("main").getByRole("link", { name: /Umów wizytę/i })).toBeVisible();
+    await expect(page.locator("main").getByRole("link", { name: /Umów konsultację/i })).toBeVisible();
   });
 
   test("services page shows catalog with language badges", async ({ page }) => {
     await page.goto("/uslugi");
     await acceptCookies(page);
-    await expect(page.getByRole("heading", { level: 1 })).toContainText("oferta");
+    await expect(page.getByRole("heading", { level: 1 })).toContainText("Poznaj naszą ofertę");
     await expect(page.getByLabel("Dostępne języki").first()).toBeVisible();
   });
 
@@ -58,7 +58,7 @@ test.describe("Phase 2 content pages", () => {
       await page.goto("/");
       await acceptCookies(page);
     }
-    await page.getByRole("link", { name: "Umów wizytę" }).first().click();
+    await page.getByRole("link", { name: "Umów konsultację" }).first().click();
     await expect(page).toHaveURL("/rezerwacja");
   });
 });

@@ -14,13 +14,14 @@ export function CtaStrip() {
                 Zapisz się na konsultację
               </h2>
               <p className="mt-2 text-sm leading-relaxed text-[var(--sand-50)]/85">
-                Poradnia zdrowia psychicznego w naszym podejściu to złożony proces: diagnoza, terapia i
-                dalsze wsparcie w sposób spójny i uporządkowany. Zacznij od pierwszej rozmowy.
+                Poradnia zdrowia psychicznego w naszym podejściu nie ogranicza się wyłącznie do pojedynczej
+                wizyty. To złożony proces, który obejmuje diagnozę, terapię i dalsze wsparcie w sposób spójny,
+                a także uporządkowany.
               </p>
             </div>
             <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
               <Link href="/rezerwacja" className="btn-honey w-full justify-center sm:w-auto">
-                Umów wizytę
+                Umów konsultację
               </Link>
               <Link
                 href="/kontakt"

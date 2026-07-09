@@ -76,7 +76,7 @@ export function SpecialistCard({ specialist, selectable = false }: SpecialistCar
               href={`/rezerwacja?specjalista=${specialist.slug}`}
               className="btn-honey hidden text-sm sm:inline-flex"
             >
-              Umów wizytę
+              Umów konsultację
             </Link>
           </div>
         ) : (

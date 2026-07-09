@@ -12,7 +12,7 @@ export function StorySection() {
           Nasza historia
         </p>
         <h2 id="story-heading" className="mt-2 text-[var(--text-heading)] font-semibold">
-          Dlaczego powstał ośrodek OOWiT w Otwocku?
+          Dlaczego powstał ośrodek OOWiT?
         </h2>
         <p className="mt-4 max-w-prose text-[var(--ink-soft)]">
           Bo bardzo często wyglądało to podobnie. Pierwsza konsultacja w jednym miejscu, diagnoza w drugim,
@@ -21,8 +21,14 @@ export function StorySection() {
         </p>
         <p className="mt-4 max-w-prose text-[var(--ink-soft)]">
           Z tego powodu stworzyliśmy miejsce, w którym proces wsparcia jest prowadzony od początku do końca.
-          Nie rozdzielamy działań. Wykorzystujemy diagnozę, terapię i dalsze wsparcie w ramach jednego
-          systemu, co ma sens zarówno dla dziecka, jak i dorosłego.
+          Nie rozdzielamy działań. Zamiast tego wykorzystujemy diagnozę, terapię i dalsze wsparcie w ramach
+          jednego systemu, co ma sens zarówno dla dziecka, jak i dorosłego.
+        </p>
+        <p className="mt-4 max-w-prose text-[var(--ink-soft)]">
+          W tradycyjnym modelu placówki często funkcjonują w sposób rozproszony. W naszej poradni
+          psychologiczno–pedagogicznej w Otwocku działamy inaczej. Stawiamy na współpracę specjalistów,
+          ciągłość procesu i prowadzenie Pacjenta krok po kroku. Eliminuje to konieczność zaczynania od
+          nowa przy każdej wizycie.
         </p>
       </FadeIn>
       <FadeIn delay={0.1}>

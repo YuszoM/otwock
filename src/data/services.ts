@@ -24,9 +24,9 @@ export const services: Service[] = [
     slug: "terapia-indywidualna",
     name: "Terapia indywidualna",
     shortDescription:
-      "Regularne spotkania 1:1 — proces poznawania siebie i poprawa jakości życia (PL/EN).",
+      "to proces poznawania siebie, którego celem jest ogólna poprawa jakości życia przez regularne spotkania 1:1.",
     description:
-      "To proces poznawania siebie, którego celem jest ogólna poprawa jakości życia przez regularne spotkania indywidualne. Pracujemy z młodzieżą i dorosłymi — w bezpiecznej przestrzeni, w tempie dopasowanym do Twoich potrzeb. Sesje odbywają się w gabinecie w Otwocku, w języku polskim lub angielskim.",
+      "to proces poznawania siebie, którego celem jest ogólna poprawa jakości życia. To regularne spotkania jeden na jeden ze specjalistą, tworzące bezpieczną przestrzeń do otwartej rozmowy o tym, co trudne, bolesne, ale też o tym, co ważne i niosące nadzieję.",
     languages: ["PL", "EN"],
     category: "terapia",
   },
@@ -34,19 +34,19 @@ export const services: Service[] = [
     slug: "terapia-par",
     name: "Terapia par",
     shortDescription:
-      "Wsparcie dla partnerów w kryzysie, z trudnościami w komunikacji lub poczuciem oddalenia.",
+      "to forma pomocy, stworzona z myślą o partnerach przeżywających kryzys, trudności w komunikacji lub poczucie oddalenia się od siebie.",
     description:
-      "Forma pomocy stworzona z myślą o parach przeżywających kryzys, trudności w komunikacji lub poczucie oddalenia się od siebie. Wspólnie szukamy sposobów na odbudowę dialogu, zaufania i bliskości — bez oceniania i bez gotowych schematów.",
+      "to forma pomocy, stworzona z myślą o partnerach przeżywających kryzys, trudności w komunikacji lub poczucie oddalenia się od siebie.",
     languages: ["PL"],
     category: "terapia",
   },
   {
     slug: "diagnoza",
-    name: "Diagnoza psychologiczna",
+    name: "Diagnoza",
     shortDescription:
-      "Rzetelna ocena funkcjonowania — podstawa spójnego planu terapii, nie zgadywania.",
+      "to proces poszukiwania odpowiedzi na pytania dotyczące sposobu funkcjonowania ludzkiego umysłu i emocji.",
     description:
-      "Proces poszukiwania odpowiedzi na pytania dotyczące sposobu funkcjonowania umysłu i emocji. Diagnoza pozwala precyzyjnie określić źródło trudności i zaplanować kolejne kroki terapeutyczne — zarówno dla dzieci, jak i dorosłych.",
+      "to proces poszukiwania odpowiedzi na pytania dotyczące sposobu funkcjonowania ludzkiego umysłu i emocji.",
     languages: ["PL"],
     category: "diagnoza",
   },
@@ -54,29 +54,29 @@ export const services: Service[] = [
     slug: "integracja-sensoryczna",
     name: "Integracja sensoryczna",
     shortDescription:
-      "Terapia SI w profesjonalnie wyposażonej sali — wsparcie przetwarzania bodźców.",
+      "to proces, w którym nasz układ nerwowy odbiera informacje ze wszystkich zmysłów, porządkuje je i interpretuje tak, abyśmy mogli reagować na bodźce płynące z otoczenia.",
     description:
-      "Proces, w którym układ nerwowy odbiera informacje ze zmysłów, porządkuje je i interpretuje. Wspieramy dzieci z trudnościami przetwarzania bodźców sensorycznych w dedykowanej, profesjonalnie wyposażonej sali integracji sensorycznej.",
+      "to proces, w którym nasz układ nerwowy odbiera informacje ze wszystkich zmysłów, porządkuje je i interpretuje tak, abyśmy mogli reagować na bodźce płynące z otoczenia.",
     languages: ["PL"],
     category: "specjalistyczne",
   },
   {
     slug: "warsztaty-tus",
-    name: "Warsztaty TUS",
+    name: "Warsztaty – TUS",
     shortDescription:
-      "Trening umiejętności społecznych w małych grupach — lepsze relacje z innymi.",
+      "Trening Umiejętności Społecznych to forma pracy grupowej, skierowana do osób, które chcą poprawić jakość swoich relacji z innymi.",
     description:
-      "Trening Umiejętności Społecznych to forma pracy grupowej skierowana do osób, które chcą poprawić jakość relacji z innymi. Ćwiczymy komunikację, asertywność i współpracę w bezpiecznej, wspierającej atmosferze.",
+      "Trening Umiejętności Społecznych to forma pracy grupowej, skierowana do osób, które chcą poprawić jakość swoich relacji z innymi.",
     languages: ["PL"],
     category: "warsztaty",
   },
   {
     slug: "psycholog-dzieciecy",
-    name: "Psycholog dziecięcy (od 3 r.ż.)",
+    name: "Psycholog dziecięcy – od 3 r.ż.",
     shortDescription:
-      "Wsparcie emocjonalne i rozwojowe dla dzieci i młodzieży od 3. roku życia.",
+      "Pomoc psychologiczna dla dzieci i młodzieży to proces wspierania młodego człowieka w pokonywaniu trudności, które pojawiają się na różnych etapach jego dorastania.",
     description:
-      "Pomoc psychologiczna dla dzieci i młodzieży to proces wspierania młodego człowieka w pokonywaniu trudności pojawiających się na różnych etapach dorastania — od lęków i trudności społecznych po wyzwania szkolne i emocjonalne.",
+      "Pomoc psychologiczna dla dzieci i młodzieży to proces wspierania młodego człowieka w pokonywaniu trudności, które pojawiają się na różnych etapach jego dorastania.",
     languages: ["PL"],
     category: "terapia",
   },
@@ -84,9 +84,9 @@ export const services: Service[] = [
     slug: "terapia-vr",
     name: "Terapia VR",
     shortDescription:
-      "Nowoczesna terapia z wykorzystaniem wirtualnej rzeczywistości (PL/EN).",
+      "Terapia z wykorzystaniem Wirtualnej Rzeczywistości to przełomowe połączenie tradycyjnej wiedzy psychologicznej z najnowocześniejszą technologią cyfrową.",
     description:
-      "Przełomowe połączenie tradycyjnej wiedzy psychologicznej z najnowocześniejszą technologią cyfrową. Terapia VR pozwala bezpiecznie doświadczać emocji, reakcji i sytuacji, które później można przenosić do codziennego życia — szczególnie skuteczna w pracy z dziećmi i młodzieżą.",
+      "Terapia z wykorzystaniem Wirtualnej Rzeczywistości to przełomowe połączenie tradycyjnej wiedzy psychologicznej z najnowocześniejszą technologią cyfrową.",
     languages: ["PL", "EN"],
     category: "specjalistyczne",
   },
@@ -94,9 +94,9 @@ export const services: Service[] = [
     slug: "opieka-wytchnieniowa",
     name: "Opieka wytchnieniowa",
     shortDescription:
-      "Opieka nad dzieckiem (40 zł) podczas wizyty rodzica — FunFloor i kreatywne zajęcia.",
+      "Opieka wytchnieniowa to wsparcie dla rodziców i opiekunów dzieci z niepełnosprawnością, stworzona po to, by mogli na chwilę odetchnąć, zadbać o siebie i swoje potrzeby, bez poczucia winy.",
     description:
-      "Wsparcie dla rodziców i opiekunów dzieci z niepełnosprawnością — stworzone po to, by mogli na chwilę odetchnąć i zadbać o siebie bez poczucia winy. Dzieci korzystają z aktywności rozwijających, w tym systemu FunFloor.",
+      "Opieka wytchnieniowa to wsparcie dla rodziców i opiekunów dzieci z niepełnosprawnością, stworzona po to, by mogli na chwilę odetchnąć, zadbać o siebie i swoje potrzeby, bez poczucia winy.",
     languages: ["PL"],
     category: "wsparcie",
   },

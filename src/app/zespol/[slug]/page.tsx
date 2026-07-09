@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!specialist) return {};
   return buildPageMetadata({
     title: specialist.name,
-    description: `${specialist.title} — ${specialist.specialties.join(", ")}. Umów wizytę w OOWiT, Otwock.`,
+    description: `${specialist.title} — ${specialist.specialties.join(", ")}.`,
     path: `/zespol/${slug}`,
   });
 }

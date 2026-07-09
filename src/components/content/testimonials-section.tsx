@@ -45,7 +45,7 @@ export function TestimonialsSection() {
             Opinie
           </p>
           <h2 id="testimonials-heading" className="mt-2 text-[var(--text-heading)] font-semibold">
-            Co mówią pacjenci z Otwocka
+            Opinie
           </h2>
           <p className="mt-3 max-w-2xl text-sm text-[var(--ink-soft)]">
             Poniższe cytaty mają charakter demonstracyjny (wzorowane na stylu opinii z platform

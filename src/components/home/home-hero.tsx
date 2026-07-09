@@ -12,7 +12,7 @@ export function HomeHero() {
     <section className="relative min-h-[100svh] overflow-hidden text-on-forest">
       <Image
         src={HERO_IMAGE_ALT}
-        alt="Sosnowy las i willa w stylu świdermajerskim w Otwocku — mikroklimat uzdrowiska"
+        alt="Ośrodek OOWiT w Otwocku"
         fill
         priority
         fetchPriority="high"
@@ -21,7 +21,7 @@ export function HomeHero() {
       />
       <Image
         src={HERO_IMAGE}
-        alt="Sosnowy las i willa w stylu świdermajerskim w Otwocku — mikroklimat uzdrowiska"
+        alt="Ośrodek OOWiT w Otwocku"
         fill
         priority
         fetchPriority="high"
@@ -41,8 +41,9 @@ export function HomeHero() {
             Miejsce, w którym psychologia, terapia i diagnoza działają jako jeden spójny proces
           </h1>
           <p className="mt-4 max-w-xl text-base leading-relaxed text-on-forest/90 sm:mt-5">
-            W Otwocku stworzyliśmy przestrzeń, która nie przypomina klasycznej poradni — kompleksowe
-            centrum wsparcia dla dzieci, młodzieży i dorosłych, w sosnowym mikroklimacie uzdrowiska.
+            W Otwocku stworzyliśmy przestrzeń, która nie przypomina klasycznej poradni, lecz kompleksowe
+            centrum wsparcia dla dzieci, młodzieży i dorosłych. Proces pomocy jest tu uporządkowany od
+            pierwszego kontaktu aż po dalszą pracę terapeutyczną.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:mt-9 sm:flex-row sm:flex-wrap sm:gap-4">
             <Link href={siteConfig.bookingCta.href} className="btn-honey w-full justify-center sm:w-auto">

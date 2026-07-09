@@ -14,6 +14,10 @@ export function ContactForm() {
       <h2 id="contact-form-heading" className="text-lg font-semibold text-on-beige">
         Napisz do nas
       </h2>
+      <p className="mt-2 text-sm opacity-85">
+        Wypełnij poniższe pola w celu wysłania wiadomości. Odpowiedzi spodziewaj się w ciągu 24 godzin od
+        momentu wysłania.
+      </p>
 
       {state?.ok ? (
         <p className="mt-4 rounded-[var(--radius-sm)] border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-900">

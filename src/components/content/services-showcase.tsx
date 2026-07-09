@@ -30,8 +30,13 @@ export function ServicesShowcase() {
             </h2>
             <p className="mt-3 text-[var(--ink-soft)]">
               Każda z naszych usług powstała po to, by realnie odciążyć rodziców, wesprzeć dzieci i dać
-              rodzinom przestrzeń, w której można poczuć się spokojniej. Pomagamy rodzicom, dzieciom, parom
-              i osobom dorosłym — w jednym miejscu w Otwocku.
+              rodzinom przestrzeń, w której można poczuć się spokojniej:
+            </p>
+            <p className="mt-3 text-[var(--ink-soft)]">
+              Pomagamy rodzicom, którzy potrzebują wsparcia w codziennych wyzwaniach, dzieci, które mierzą
+              się z lękiem, trudnościami społecznymi lub wymagają większej uważności, pary, które chcą
+              odbudować dialog i bliskość, osoby dorosłe, które chcą żyć spokojniej, bardziej świadomie, z
+              większym zrozumieniem siebie.
             </p>
           </div>
           <Link href="/uslugi" className="text-sm font-semibold text-[var(--pine-700)] underline-offset-4 hover:underline">

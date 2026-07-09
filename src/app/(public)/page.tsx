@@ -38,8 +38,8 @@ export default function HomePage() {
             <div>
               <h2 className="text-[var(--text-heading)] font-semibold">Nasz zespół</h2>
               <p className="mt-2 max-w-prose text-[var(--ink-soft)]">
-                Wybierz osobę dopasowaną do Twoich potrzeb — specjalizacje, języki i jasna ścieżka do
-                rezerwacji. Profile oznaczone „Demo” czekają na dane od klienta.
+                Nie musisz wybierać w ciemno. W tym miejscu możesz czytać o naszym zespole jeszcze przed
+                zarezerwowaniem konsultacji.
               </p>
             </div>
             <Link

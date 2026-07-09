@@ -6,7 +6,7 @@ import { BookingWizard } from "@/components/booking/booking-wizard";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Rezerwacja wizyty",
-  description: "Umów wizytę u specjalisty OOWiT w Otwocku — wybierz usługę i wolny termin online.",
+  description: "Umów konsultację w OOWiT Otwock — wybierz usługę i wolny termin online.",
   path: "/rezerwacja",
 });
 

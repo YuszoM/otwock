@@ -21,7 +21,7 @@ export const specialists: Specialist[] = [
     photo: "/images/team-photo-style-reference.webp",
     specialties: ["Psychologia dziecięca", "Terapia rodzin", "Diagnoza"],
     languages: ["PL", "EN"],
-    bio: "Założycielka OOWiT. Tworzy przestrzeń, w której rodziny, pary i dzieci czują się bezpiecznie, widziani i rozumiani — bez presji i gotowych schematów.",
+    bio: "Założycielka OOWiT",
     serviceSlugs: ["diagnoza", "terapia-indywidualna", "psycholog-dzieciecy"],
   },
   {

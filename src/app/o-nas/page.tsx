@@ -15,7 +15,7 @@ import { FadeIn } from "@/components/motion/fade-in";
 export const metadata: Metadata = buildPageMetadata({
   title: "O nas",
   description:
-    "OOWiT — Otwocki Ośrodek Wsparcia Rodziny, Diagnozy i Terapii. Kompleksowe centrum opieki psychologicznej w sosnowym mikroklimacie uzdrowiska Otwock.",
+    "OOWiT — Otwocki Ośrodek Wsparcia Rodziny, Diagnozy i Terapii.",
   path: "/o-nas",
 });
 
@@ -24,8 +24,8 @@ export default function AboutPage() {
     <>
       <PageHero
         eyebrow="O ośrodku"
-        title="Nie klasyczna poradnia — kompleksowe centrum w sosnowym lesie"
-        description="W Otwocku — uzdrowisku otoczonym sosnami i willami świdermajerskimi — stworzyliśmy przestrzeń, w której diagnoza, terapia i wsparcie funkcjonują jako jeden spójny proces."
+        title="Miejsce, w którym psychologia, terapia i diagnoza działają jako jeden spójny proces"
+        description="W Otwocku stworzyliśmy przestrzeń, która nie przypomina klasycznej poradni, lecz kompleksowe centrum wsparcia dla dzieci, młodzieży i dorosłych."
       />
       <StorySection />
       <CareProcess />
@@ -39,7 +39,7 @@ export default function AboutPage() {
           <div className="relative aspect-[21/9] overflow-hidden rounded-[var(--radius-md)] border border-[var(--sand-200)]">
             <Image
               src="/images/hero-otwock-forest-16x9.webp"
-              alt="Sosnowy las i willa świdermajerska w otoczeniu OOWiT"
+              alt="Ośrodek OOWiT w Otwocku"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 72rem"

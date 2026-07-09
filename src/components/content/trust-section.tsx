@@ -1,28 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import { CardCorbelBorder } from "@/components/ornaments/card-corbel-border";
+import { Check } from "@phosphor-icons/react";
 import { FadeIn, StaggerChildren, StaggerItem } from "@/components/motion/fade-in";
 
-const values = [
-  {
-    title: "Mikroklimat sosnowego lasu",
-    text: "Otwock to uzdrowisko otoczone sosnami — lekkie, wilgotne powietrze i spokojne tempo miasta w lesie. Pracujemy w tym otoczeniu, bo naturalnie wspiera regenerację i koncentrację.",
-  },
-  {
-    title: "Świdermajerska tożsamość miejsca",
-    text: "Drewniane wille z ażurowymi gzymsami to nie tylko architektura — to lokalna tradycja ciepła, otwartych przestrzeni. OOWiT wpisuje się w ten charakter Otwocka.",
-  },
-  {
-    title: "Spójny proces opieki",
-    text: "Diagnoza, terapia i wsparcie w jednym miejscu — bez chaosu między placówkami. Od pierwszej rozmowy po długofalową opiekę prowadzimy pacjenta krok po kroku.",
-  },
-];
-
-const stats = [
-  { value: "15+", label: "lat doświadczenia zespołu" },
-  { value: "8", label: "ścieżek terapeutycznych" },
-  { value: "5", label: "specjalistów w OOWiT" },
+const offerings = [
+  "pomoc psychologa dziecięcego, wspierającego rozwój emocjonalny i społeczny dzieci",
+  "wsparcie doświadczonego psychologa, prowadzącego konsultacje dla młodzieży i dorosłych",
+  "usługi psychoterapeuty, realizującego procesy terapeutyczne długoterminowe",
+  "psychoterapię obejmującą wsparcie indywidualne oraz dla par",
+  "terapię dla par, skupioną na komunikacji, kryzysach i odbudowie relacji",
+  "integrację sensoryczną, wspierającą dzieci z trudnościami przetwarzania bodźców",
 ];
 
 export function TrustSection() {
@@ -33,56 +21,44 @@ export function TrustSection() {
     >
       <div className="mx-auto max-w-[var(--container-max)] px-4 py-10 lg:px-6 lg:py-14">
         <FadeIn immediate>
-          <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--wood-700)]">
-            O ośrodku
-          </p>
-          <h2 id="trust-heading" className="mt-2 max-w-2xl text-[var(--text-heading)] font-semibold">
-            Otwock — miasto w lesie, uzdrowisko z tradycją
+          <h2 id="trust-heading" className="max-w-2xl text-[var(--text-heading)] font-semibold">
+            Co oferujemy w naszym ośrodku?
           </h2>
           <p className="mt-4 max-w-2xl opacity-85">
-            OOWiT powstał w sercu Mazowsza, tam gdzie sosnowy mikroklimat spotyka się ze świdermajerską
-            architekturą willi. To miejsce, w którym terapia ma kontekst — spokojny, lokalny, autentyczny.
+            Nasze centrum zostało stworzone tak, aby zapewniać wsparcie w różnych obszarach w jednym
+            miejscu. Sprawia to, że Pacjenci z Otwocka, Józefowa oraz okolicznych miejscowości nie muszą
+            szukać kilku specjalistów osobno. W ramach pracy oferujemy:
           </p>
         </FadeIn>
 
-        <ul className="mt-6 grid gap-4 sm:grid-cols-3">
-          {stats.map((stat) => (
-            <li
-              key={stat.label}
-              className="rounded-[var(--radius-md)] border border-[var(--sand-200)] bg-white/80 px-4 py-3 text-center"
-            >
-              <p className="text-2xl font-semibold text-[var(--pine-700)]">{stat.value}</p>
-              <p className="mt-1 text-xs text-[var(--ink-soft)]">{stat.label}</p>
-            </li>
-          ))}
-        </ul>
-
-        <StaggerChildren className="mt-8 grid gap-6 md:grid-cols-3">
-          {values.map((v) => (
-            <StaggerItem key={v.title}>
-              <CardCorbelBorder>
-                <article className="h-full rounded-[var(--radius-md)] border border-[var(--sand-200)] bg-white/70 p-5 backdrop-blur-sm">
-                  <h3 className="font-semibold">{v.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed opacity-85">{v.text}</p>
-                </article>
-              </CardCorbelBorder>
+        <StaggerChildren className="mt-8 grid gap-3 sm:grid-cols-2">
+          {offerings.map((item) => (
+            <StaggerItem key={item}>
+              <div className="flex gap-3 rounded-[var(--radius-sm)] border border-[var(--sand-200)] bg-white/80 px-4 py-3 text-sm">
+                <Check
+                  size={18}
+                  weight="bold"
+                  className="mt-0.5 shrink-0 text-[var(--pine-700)]"
+                  aria-hidden
+                />
+                <span>{item}</span>
+              </div>
             </StaggerItem>
           ))}
         </StaggerChildren>
 
         <FadeIn delay={0.15}>
-          <div className="mt-8 flex flex-wrap items-center gap-4 border-t border-[var(--sand-200)] pt-6">
-            <p className="max-w-prose text-sm opacity-85">
-              Terapia indywidualna, par, diagnoza, SI, TUS i więcej — w jednym miejscu w Otwocku.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <Link href="/uslugi" className="btn-honey text-sm">
-                Zobacz usługi
-              </Link>
-              <Link href="/kontakt" className="btn-secondary text-sm">
-                Kontakt
-              </Link>
-            </div>
+          <p className="mt-8 max-w-prose text-sm opacity-85">
+            Każdy proces zaczyna się od rzetelnej diagnozy, która pozwala nie zgadywać, tylko precyzyjnie
+            określić źródło trudności i zaplanować dalsze kroki terapeutyczne.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link href="/uslugi" className="btn-honey text-sm">
+              Poznaj naszą ofertę
+            </Link>
+            <Link href="/rezerwacja" className="btn-secondary text-sm">
+              Zarezerwuj konsultację
+            </Link>
           </div>
         </FadeIn>
       </div>

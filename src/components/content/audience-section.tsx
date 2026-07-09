@@ -5,12 +5,12 @@ import { Check } from "@phosphor-icons/react";
 import { FadeIn } from "@/components/motion/fade-in";
 
 const audiences = [
-  "Rodzice dzieci w wieku przedszkolnym i szkolnym",
-  "Młodzież z trudnościami emocjonalnymi i szkolnymi",
-  "Osoby dorosłe szukające wsparcia specjalisty",
-  "Pary w kryzysie lub chcące poprawić relację",
-  "Mieszkańcy Otwocka i Józefowa szukający lokalnego wsparcia bez dojazdów do Warszawy",
-  "Osoby potrzebujące diagnozy i jasnego planu dalszego działania",
+  "rodzice dzieci w wieku przedszkolnym i szkolnym",
+  "młodzież z trudnościami emocjonalnymi i szkolnymi",
+  "osoby dorosłe szukające wsparcia specjalisty",
+  "pary w kryzysie lub chcące poprawić relację",
+  "mieszkańcy Otwocka i Józefowa, którzy szukają lokalnego wsparcia psychologa lub psychoterapeuty bez konieczności dojazdów do Warszawy",
+  "osoby potrzebujące diagnozy i jasnego planu dalszego działania",
 ];
 
 export function AudienceSection() {
@@ -20,15 +20,11 @@ export function AudienceSection() {
       className="mx-auto max-w-[var(--container-max)] px-4 py-16 lg:px-6 lg:py-20"
     >
       <FadeIn>
-        <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--color-honey)]">
-          Dla kogo
-        </p>
-        <h2 id="audience-heading" className="mt-2 max-w-2xl text-[var(--text-heading)] font-semibold">
+        <h2 id="audience-heading" className="max-w-2xl text-[var(--text-heading)] font-semibold">
           Dla kogo jest to miejsce?
         </h2>
         <p className="mt-4 max-w-2xl opacity-85">
-          Ze wsparcia OOWiT korzystają rodziny, pary i osoby dorosłe — każda z własną historią i
-          potrzebą bezpiecznej przestrzeni.
+          Ze wsparcia poradni zdrowia psychicznego OOWiT korzystają najczęściej:
         </p>
       </FadeIn>
       <FadeIn delay={0.1}>
