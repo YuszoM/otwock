@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { FadeIn } from "@/components/motion/fade-in";
+import { CareProcessIllustration } from "@/components/ornaments/care-process-illustration";
 import { LaceGableSeparator } from "@/components/ornaments/lace-gable-separator";
 import { ProcessStepIcon } from "@/components/ornaments/process-step-icon";
 
@@ -49,15 +49,7 @@ export function CareProcess() {
           </ol>
         </FadeIn>
         <FadeIn delay={0.1} className="order-2 lg:order-1">
-          <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--radius-md)] border border-[var(--sand-200)]">
-            <Image
-              src="/images/process-care-3steps.webp"
-              alt="Ilustracja procesu opieki: diagnoza, terapia, wsparcie — styl świdermajerski"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-          </div>
+          <CareProcessIllustration />
         </FadeIn>
       </div>
     </section>

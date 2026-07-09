@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { services, categoryLabels } from "@/data/services";
 import { LanguageBadges } from "@/components/ui/language-badges";
 import { ServiceIcon } from "@/components/services/service-icon";
@@ -19,13 +18,6 @@ const featuredSlugs = [
 const featured = featuredSlugs
   .map((slug) => services.find((s) => s.slug === slug))
   .filter((s): s is NonNullable<typeof s> => Boolean(s));
-
-const serviceImages: Partial<Record<string, string>> = {
-  "terapia-indywidualna": "/images/icon-therapy-individual.webp",
-  "integracja-sensoryczna": "/images/icon-sensory-integration.webp",
-  "warsztaty-tus": "/images/icon-tus-workshops.webp",
-  "psycholog-dzieciecy": "/images/icon-child-psychologist.webp",
-};
 
 export function ServicesShowcase() {
   return (
@@ -51,7 +43,6 @@ export function ServicesShowcase() {
       <StaggerChildren className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-12 lg:gap-5">
         {featured.map((service, index) => {
           const isHero = index === 0;
-          const imageSrc = serviceImages[service.slug];
 
           return (
             <StaggerItem
@@ -65,23 +56,13 @@ export function ServicesShowcase() {
                   }`}
                 >
                   <div
-                    className={`relative shrink-0 overflow-hidden bg-[var(--sand-200)]/40 ${
+                    className={`relative shrink-0 overflow-hidden bg-gradient-to-br from-[var(--sand-50)] to-[var(--pine-700)]/5 ${
                       isHero ? "aspect-[16/10] lg:aspect-auto lg:w-[42%]" : "aspect-[16/9]"
                     }`}
                   >
-                    {imageSrc ? (
-                      <Image
-                        src={imageSrc}
-                        alt=""
-                        fill
-                        className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
-                        sizes={isHero ? "(max-width: 1024px) 100vw, 28rem" : "(max-width: 1024px) 50vw, 20rem"}
-                      />
-                    ) : (
-                      <div className="flex h-full min-h-[8rem] items-center justify-center">
-                        <ServiceIcon slug={service.slug} className="h-16 w-16 opacity-80" />
-                      </div>
-                    )}
+                    <div className="flex h-full min-h-[8rem] items-center justify-center transition-transform duration-500 ease-out group-hover:scale-[1.03]">
+                      <ServiceIcon slug={service.slug} className={isHero ? "h-20 w-20 opacity-90" : "h-16 w-16 opacity-80"} />
+                    </div>
                     {service.slug === "terapia-vr" ? (
                       <span className="absolute left-3 top-3 rounded-full bg-[var(--lilac-500)] px-2.5 py-0.5 text-[0.65rem] font-semibold uppercase tracking-wide text-white">
                         Nowość
