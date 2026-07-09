@@ -1,86 +1,121 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
+import { CareProcess } from "@/components/content/care-process";
+import { TrustSection } from "@/components/content/trust-section";
+import { SpecialistCard } from "@/components/team/specialist-card";
+import { FadeIn, HoverLift, StaggerChildren, StaggerItem } from "@/components/motion/fade-in";
+import { specialists } from "@/data/specialists";
 
 export default function HomePage() {
+  const featured = specialists.slice(0, 3);
+
   return (
     <>
       <section className="relative overflow-hidden bg-forest text-on-forest">
-        <div className="mx-auto grid max-w-[var(--container-max)] gap-8 px-4 py-12 lg:grid-cols-2 lg:items-center lg:px-6 lg:py-16">
-          <div className="max-w-prose">
-            <p className="text-sm font-semibold uppercase tracking-wide text-[var(--color-honey)]">
-              Otwocki Ośrodek Wsparcia
-            </p>
-            <h1 className="mt-2 text-[var(--text-display)] font-semibold leading-tight">
-              {siteConfig.siteName}
-            </h1>
-            <p className="mt-4 text-base opacity-90">{siteConfig.footer.tagline}</p>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Link href={siteConfig.bookingCta.href} className="btn-honey">
-                {siteConfig.bookingCta.label}
-              </Link>
-              <Link
-                href="/zespol"
-                className="inline-flex min-h-11 items-center rounded-[var(--radius-sm)] border border-forest-border px-4 text-sm font-semibold text-on-forest underline-offset-4 hover:underline"
-              >
-                Poznaj zespół
-              </Link>
+        <div
+          className="pointer-events-none absolute inset-0 opacity-[0.07]"
+          style={{
+            backgroundImage: "url(/images/texture-pine-beige-tile.jpg)",
+            backgroundSize: "400px",
+          }}
+          aria-hidden
+        />
+        <div className="relative mx-auto grid max-w-[var(--container-max)] gap-10 px-4 py-14 lg:grid-cols-2 lg:items-center lg:px-6 lg:py-20">
+          <FadeIn y={20}>
+            <div className="max-w-prose">
+              <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--color-honey)]">
+                Słuchamy i wspieramy
+              </p>
+              <h1 className="mt-3 text-[clamp(2rem,4vw,2.75rem)] font-semibold leading-[1.15] tracking-tight">
+                Miejsce, w którym psychologia, terapia i diagnoza działają jako jeden spójny proces
+              </h1>
+              <p className="mt-5 text-base leading-relaxed opacity-90">
+                {siteConfig.footer.tagline}. W Otwocku tworzymy centrum wsparcia, w którym nikt nie musi
+                udawać, że daje radę sam.
+              </p>
+              <div className="mt-9 flex flex-wrap gap-4">
+                <Link href={siteConfig.bookingCta.href} className="btn-honey">
+                  {siteConfig.bookingCta.label}
+                </Link>
+                <Link
+                  href="/o-nas"
+                  className="inline-flex min-h-11 items-center rounded-[var(--radius-sm)] border border-forest-border px-5 text-sm font-semibold text-on-forest underline-offset-4 transition-colors hover:bg-white/5"
+                >
+                  Poznaj ośrodek
+                </Link>
+              </div>
             </div>
-          </div>
-          <div className="relative aspect-[16/9] overflow-hidden rounded-[var(--radius-md)]">
-            <Image
-              src="/images/hero-otwock-forest-16x9.jpg"
-              alt="Spokojny las w okolicach Otwocka — tło wizualne strony głównej OOWiT"
-              fill
-              priority
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
+          </FadeIn>
+          <FadeIn delay={0.12} y={24}>
+            <div className="relative aspect-[16/10] overflow-hidden rounded-[var(--radius-md)] shadow-[0_24px_48px_rgba(0,0,0,0.2)]">
+              <Image
+                src="/images/hero-otwock-forest-16x9.jpg"
+                alt="Spokojny las w okolicach Otwocka — wizualna tożsamość OOWiT"
+                fill
+                priority
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      <TrustSection />
+
+      <section className="border-y border-forest-border/10 bg-white/40">
+        <div className="mx-auto flex max-w-[var(--container-max)] flex-wrap items-center justify-between gap-6 px-4 py-10 lg:px-6">
+          <FadeIn>
+            <p className="max-w-prose text-sm opacity-85">
+              Terapia indywidualna, par, diagnoza, SI, TUS i więcej — w jednym miejscu w Otwocku.
+            </p>
+          </FadeIn>
+          <div className="flex flex-wrap gap-4">
+            <Link href="/uslugi" className="btn-honey text-sm">
+              Zobacz usługi
+            </Link>
+            <Link
+              href="/kontakt"
+              className="inline-flex min-h-11 items-center rounded-[var(--radius-sm)] border border-forest-border/30 px-4 text-sm font-semibold underline-offset-4 hover:underline"
+            >
+              Kontakt
+            </Link>
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-[var(--container-max)] px-4 py-16 lg:px-6">
-        <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
-          <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--radius-md)]">
-            <Image
-              src="/images/process-care-3steps.jpg"
-              alt="Ilustracja procesu opieki w trzech krokach"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
+      <CareProcess />
+
+      <section className="mx-auto max-w-[var(--container-max)] px-4 py-16 lg:px-6 lg:py-20">
+        <FadeIn>
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--color-honey)]">
+                Zespół
+              </p>
+              <h2 className="mt-2 text-[var(--text-heading)] font-semibold">Nasi specjaliści</h2>
+              <p className="mt-2 max-w-prose opacity-85">
+                Wybierz osobę dopasowaną do Twoich potrzeb — specjalizacje, języki i jasna ścieżka do
+                rezerwacji.
+              </p>
+            </div>
+            <Link href="/zespol" className="text-sm font-semibold underline-offset-4 hover:underline">
+              Cały zespół →
+            </Link>
           </div>
-          <div className="max-w-prose">
-            <h2 className="text-[var(--text-heading)] font-semibold">Jak możemy pomóc</h2>
-            <p className="mt-4 opacity-85">
-              Treść tej sekcji pojawi się w kolejnej fazie projektu. Tymczasem skorzystaj z menu
-              nawigacji, aby przejść do zespołu, usług lub rezerwacji wizyty.
-            </p>
-            <ul className="mt-6 flex flex-wrap gap-4 text-sm font-semibold">
-              <li>
-                <Link href="/zespol" className="underline-offset-4 hover:underline">
-                  Zespół
-                </Link>
-              </li>
-              <li>
-                <Link href="/uslugi" className="underline-offset-4 hover:underline">
-                  Usługi
-                </Link>
-              </li>
-              <li>
-                <Link href="/rezerwacja" className="underline-offset-4 hover:underline">
-                  Rezerwacja
-                </Link>
-              </li>
-              <li>
-                <Link href="/kontakt" className="underline-offset-4 hover:underline">
-                  Kontakt
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </div>
+        </FadeIn>
+        <StaggerChildren className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {featured.map((s) => (
+            <StaggerItem key={s.slug}>
+              <HoverLift>
+                <SpecialistCard specialist={s} />
+              </HoverLift>
+            </StaggerItem>
+          ))}
+        </StaggerChildren>
       </section>
     </>
   );

@@ -3,8 +3,9 @@ import { getAllNavPaths, siteConfig } from "../../src/config/site";
 
 async function acceptCookies(page: import("@playwright/test").Page) {
   const accept = page.getByRole("button", { name: "Akceptuję wszystkie" });
-  if (await accept.isVisible().catch(() => false)) {
+  if (await accept.isVisible({ timeout: 2000 }).catch(() => false)) {
     await accept.click();
+    await accept.waitFor({ state: "hidden", timeout: 5000 }).catch(() => undefined);
   }
 }
 

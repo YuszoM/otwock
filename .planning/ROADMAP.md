@@ -14,9 +14,9 @@ Roadmap prowadzi projekt od stabilnego fundamentu Next.js i modułów klocki, pr
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Foundation and UI Baseline** - Next.js scaffold, design tokens, layout shell, i bazowe moduły klocki. (completed 2026-07-09)
-- [ ] **Phase 2: Content, Services, and Team Pages** - Pelna IA tresciowa i strony zaufania z lokalnym SEO foundation.
-- [ ] **Phase 3: Specialist Booking Experience** - Rezerwacje per-specjalista z integralnoscia slotow i mobile UX.
-- [ ] **Phase 4: Admin Operations Panel** - Panel do zarzadzania specjalistami, uslugami, dostepnoscia i wizytami.
+- [x] **Phase 2: Content Demo Presentation** - Pelna IA tresciowa, mock rezerwacja, animacje premium dla prezentacji klienta. (completed 2026-07-09)
+- [ ] **Phase 3: Specialist Booking Experience** - Rezerwacje per-specjalista z integralnoscia slotow i mobile UX. *(deferred post-contract)*
+- [ ] **Phase 4: Admin Operations Panel** - Panel do zarzadzania specjalistami, uslugami, dostepnoscia i wizytami. *(deferred post-contract)*
 - [ ] **Phase 5: News, Polish, and Launch Hardening** - Blog/aktualnosci, dopracowanie UX, wydajnosc i migracja SEO.
 
 ## Phase Details
@@ -41,7 +41,7 @@ Plans:
 
 **UI hint**: yes
 
-### Phase 2: Content, Services, and Team Pages
+### Phase 2: Content Demo Presentation
 
 **Goal**: Uzytkownik szybko rozumie oferte osrodka, znajduje specjaliste i latwo dociera do stron konwersyjnych.
 **Depends on**: Phase 1
@@ -54,7 +54,7 @@ Plans:
   4. Uzytkownik moze przejsc do legal pages ze stopki, a strony indeksowalne maja poprawne metadane i canonicale pod lokalne zapytania Otwock.
   5. Uzytkownik wysyla poprawnie zwalidowane zapytanie przez formularz kontaktowy i ma czytelne kanaly kontaktu.
 
-**Plans**: TBD
+**Plans**: 1/1 demo complete (02-DEMO-SUMMARY.md)
 **UI hint**: yes
 
 ### Phase 3: Specialist Booking Experience
@@ -111,7 +111,7 @@ Phases execute in numeric order: 1 -> 1.1 -> 1.2 -> 2 -> 2.1 -> 3 -> 4 -> 5
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation and UI Baseline | 3/3 | Complete   | 2026-07-09 |
-| 2. Content, Services, and Team Pages | 0/0 | Not started | - |
-| 3. Specialist Booking Experience | 0/0 | Not started | - |
-| 4. Admin Operations Panel | 0/0 | Not started | - |
+| 2. Content Demo Presentation | 1/1 | Complete   | 2026-07-09 |
+| 3. Specialist Booking Experience | 0/0 | Deferred (post-contract) | - |
+| 4. Admin Operations Panel | 0/0 | Deferred (post-contract) | - |
 | 5. News, Polish, and Launch Hardening | 0/0 | Not started | - |

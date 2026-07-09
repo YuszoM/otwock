@@ -8,8 +8,8 @@
 ### Navigation and Information Architecture
 
 - [x] **NAV-01**: User can navigate a multipage IA matching current OOWiT structure (Home, About, Team, Services, Pricing, News, Contact, Booking, Careers, RODO)
-- [ ] **NAV-02**: User can reach any key conversion page (Team, Services, Booking, Contact) in at most two clicks from Home
-- [ ] **NAV-03**: User can access legal pages (RODO/privacy/terms) from global footer navigation
+- [x] **NAV-02**: User can reach any key conversion page (Team, Services, Booking, Contact) in at most two clicks from Home
+- [x] **NAV-03**: User can access legal pages (RODO/privacy/terms) from global footer navigation
 
 ### Booking
 
@@ -21,10 +21,10 @@
 
 ### Team and Services Presentation
 
-- [ ] **TEAM-01**: User can browse elegant specialist cards with photo, specialties, languages, and booking CTA
-- [ ] **TEAM-02**: User can open specialist detail view with competencies and available services
-- [ ] **SERV-01**: User can browse full service catalog including current OOWiT therapy/diagnosis offerings
-- [ ] **SERV-02**: User can identify whether service is available in PL, EN, or both (where applicable)
+- [x] **TEAM-01**: User can browse elegant specialist cards with photo, specialties, languages, and booking CTA
+- [x] **TEAM-02**: User can open specialist detail view with competencies and available services
+- [x] **SERV-01**: User can browse full service catalog including current OOWiT therapy/diagnosis offerings
+- [x] **SERV-02**: User can identify whether service is available in PL, EN, or both (where applicable)
 
 ### CMS and Admin
 
@@ -53,15 +53,15 @@
 
 ### SEO and Local Discovery
 
-- [ ] **SEO-01**: User can discover OOWiT pages through local SEO intent (Otwock psychology center and related service queries)
-- [ ] **SEO-02**: All indexable pages include structured metadata and valid canonicals
+- [x] **SEO-01**: User can discover OOWiT pages through local SEO intent (Otwock psychology center and related service queries)
+- [x] **SEO-02**: All indexable pages include structured metadata and valid canonicals
 - [ ] **SEO-03**: Legacy URL migration preserves discoverability via redirect mapping and sitemap updates
 
 ### Content and Trust
 
-- [ ] **CONT-01**: User can read clear center description emphasizing integrated care process (diagnosis -> therapy -> support)
+- [x] **CONT-01**: User can read clear center description emphasizing integrated care process (diagnosis -> therapy -> support)
 - [ ] **CONT-02**: User can access up-to-date News/Blog entries
-- [ ] **CONT-03**: User can contact center through validated contact channels and contact form
+- [x] **CONT-03**: User can contact center through validated contact channels and contact form
 
 ## User Stories
 
@@ -104,17 +104,17 @@
 | Requirement | Phase | Status |
 |-------------|-------|--------|
 | NAV-01 | Phase 1 | Complete |
-| NAV-02 | Phase 2 | Pending |
-| NAV-03 | Phase 2 | Pending |
+| NAV-02 | Phase 2 | Complete |
+| NAV-03 | Phase 2 | Complete |
 | BOOK-01 | Phase 3 | Pending |
 | BOOK-02 | Phase 3 | Pending |
 | BOOK-03 | Phase 3 | Pending |
 | BOOK-04 | Phase 3 | Pending |
 | BOOK-05 | Phase 3 | Pending |
-| TEAM-01 | Phase 2 | Pending |
-| TEAM-02 | Phase 2 | Pending |
-| SERV-01 | Phase 2 | Pending |
-| SERV-02 | Phase 2 | Pending |
+| TEAM-01 | Phase 2 | Complete |
+| TEAM-02 | Phase 2 | Complete |
+| SERV-01 | Phase 2 | Complete |
+| SERV-02 | Phase 2 | Complete |
 | CMS-01 | Phase 4 | Pending |
 | CMS-02 | Phase 4 | Pending |
 | CMS-03 | Phase 4 | Pending |
@@ -128,12 +128,12 @@
 | PERF-01 | Phase 5 | Pending |
 | PERF-02 | Phase 5 | Pending |
 | PERF-03 | Phase 5 | Pending |
-| SEO-01 | Phase 2 | Pending |
-| SEO-02 | Phase 2 | Pending |
+| SEO-01 | Phase 2 | Complete |
+| SEO-02 | Phase 2 | Complete |
 | SEO-03 | Phase 5 | Pending |
-| CONT-01 | Phase 2 | Pending |
+| CONT-01 | Phase 2 | Complete |
 | CONT-02 | Phase 5 | Pending |
-| CONT-03 | Phase 2 | Pending |
+| CONT-03 | Phase 2 | Complete |
 
 **Coverage:**
 

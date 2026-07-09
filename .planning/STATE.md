@@ -2,19 +2,19 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-current_phase: 1
-current_phase_name: Foundation and UI Baseline
-status: ready_to_execute
-stopped_at: Roadmap, state, and requirement traceability prepared for phase planning kickoff.
-last_updated: "2026-07-09T14:47:40.214Z"
+current_phase: 2
+current_phase_name: Content Demo Presentation
+status: phase_2_demo_complete
+stopped_at: Phase 2 presentation demo complete. Phases 3-4 deferred post-contract.
+last_updated: "2026-07-09T17:30:00.000Z"
 last_activity: 2026-07-09
-last_activity_desc: "Phase 1 planned (3 plans: klocki shell, IA routes, a11y/errors). Graphics audit done; 5 assets need regeneration."
+last_activity_desc: "Phase 2 demo executed — build/lint/e2e pass"
 progress:
   total_phases: 5
-  completed_phases: 1
-  total_plans: 3
-  completed_plans: 3
-  percent: 20
+  completed_phases: 2
+  total_plans: 4
+  completed_plans: 4
+  percent: 40
 ---
 
 # Project State
@@ -24,69 +24,40 @@ progress:
 See: .planning/PROJECT.md (updated 2026-07-09)
 
 **Core value:** People can quickly find the right specialist and book an available appointment in a trustworthy, high-quality digital experience.
-**Current focus:** Phase 1 - Foundation and UI Baseline
+**Current focus:** Phase 2 demo complete — client presentation ready. Real booking (Phase 3) and admin (Phase 4) deferred until post-contract.
 
 ## Current Position
 
-Phase: 1 of 5 (Foundation and UI Baseline)
-Plan: 3 of 3 in current phase
-Status: Ready to execute
-Last activity: 2026-07-09 - Phase 1 planned (3 plans: klocki shell, IA routes, a11y/errors). Graphics audit done; 5 assets need regeneration.
+Phase: 2 of 5 (Content Demo Presentation)
+Plan: DEMO complete
+Status: Phase 2 demo complete — ready for client review
+Last activity: 2026-07-09 — Phase 2 presentation demo executed
 
-Progress: [░░░░░░░░░░] 0%
+Progress: [████████░░] 40%
 
 ## Performance Metrics
 
 **Velocity:**
 
-- Total plans completed: 0
-- Average duration: - min
-- Total execution time: 0.0 hours
-
-**By Phase:**
-
-| Phase | Plans | Total | Avg/Plan |
-|-------|-------|-------|----------|
-| 1-5 | 0 | 0 min | - |
-
-**Recent Trend:**
-
-- Last 5 plans: none
-- Trend: Stable
-
-*Updated after each plan completion*
+- Total plans completed: 4
+- Phase 2 demo: ~120 min
 
 ## Accumulated Context
 
 ### Decisions
 
-Decisions are logged in PROJECT.md Key Decisions table.
-Recent decisions affecting current work:
-
 - [Phase 1] Reuse klocki base modules for SEO, navigation, accessibility, and contact foundations.
-- [Phase 3] Keep booking flow per-practitioner with conflict-safe slot integrity as a non-negotiable product constraint.
+- [Phase 2] Presentation demo scope: mock booking + validated contact form only; no Supabase persistence.
+- [Phase 2] Premium framer-motion animations with prefers-reduced-motion; healthcare spa aesthetic.
+- [Phase 3-4] Deferred post-contract — real booking DB and admin panel not in demo.
 - [Phase 5] Treat CWV and SEO migration checks as launch blockers, not optional polish.
-
-### Pending Todos
-
-From .planning/todos/pending/ - ideas captured during sessions.
-
-None yet.
 
 ### Blockers/Concerns
 
-None yet.
-
-## Deferred Items
-
-Items acknowledged and carried forward from previous milestone close:
-
-| Category | Item | Status | Deferred At |
-|----------|------|--------|-------------|
-| *(none)* | | | |
+None for demo. Real booking requires contract + Supabase setup.
 
 ## Session Continuity
 
-Last session: 2026-07-09T14:47:40.194Z
-Stopped at: Roadmap, state, and requirement traceability prepared for phase planning kickoff.
+Last session: 2026-07-09T17:30:00.000Z
+Stopped at: Phase 2 presentation demo complete. Phases 3-4 deferred post-contract.
 Resume file: None
