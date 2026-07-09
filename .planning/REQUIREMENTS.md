@@ -7,7 +7,7 @@
 
 ### Navigation and Information Architecture
 
-- [ ] **NAV-01**: User can navigate a multipage IA matching current OOWiT structure (Home, About, Team, Services, Pricing, News, Contact, Booking, Careers, RODO)
+- [x] **NAV-01**: User can navigate a multipage IA matching current OOWiT structure (Home, About, Team, Services, Pricing, News, Contact, Booking, Careers, RODO)
 - [ ] **NAV-02**: User can reach any key conversion page (Team, Services, Booking, Contact) in at most two clicks from Home
 - [ ] **NAV-03**: User can access legal pages (RODO/privacy/terms) from global footer navigation
 
@@ -35,13 +35,13 @@
 
 ### Design and UX Quality
 
-- [ ] **DESIGN-01**: UI uses dark green and beige earth-tone palette with subtle nature/Otwock references
+- [x] **DESIGN-01**: UI uses dark green and beige earth-tone palette with subtle nature/Otwock references
 - [ ] **DESIGN-02**: User sees tasteful, accessible animations that respect reduced-motion preferences
 - [ ] **UX-01**: User can complete core booking flow on mobile without layout breaks or hidden controls
 
 ### Accessibility
 
-- [ ] **A11Y-01**: Core pages and booking flow meet WCAG 2.1 AA baseline
+- [x] **A11Y-01**: Core pages and booking flow meet WCAG 2.1 AA baseline
 - [ ] **A11Y-02**: Keyboard-only user can complete booking flow and contact flow
 - [ ] **A11Y-03**: Reduced-motion preference disables non-essential motion effects
 
@@ -103,7 +103,7 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| NAV-01 | Phase 1 | Pending |
+| NAV-01 | Phase 1 | Complete |
 | NAV-02 | Phase 2 | Pending |
 | NAV-03 | Phase 2 | Pending |
 | BOOK-01 | Phase 3 | Pending |
@@ -119,10 +119,10 @@
 | CMS-02 | Phase 4 | Pending |
 | CMS-03 | Phase 4 | Pending |
 | CMS-04 | Phase 4 | Pending |
-| DESIGN-01 | Phase 1 | Pending |
+| DESIGN-01 | Phase 1 | Complete |
 | DESIGN-02 | Phase 5 | Pending |
 | UX-01 | Phase 3 | Pending |
-| A11Y-01 | Phase 1 | Pending |
+| A11Y-01 | Phase 1 | Complete |
 | A11Y-02 | Phase 3 | Pending |
 | A11Y-03 | Phase 5 | Pending |
 | PERF-01 | Phase 5 | Pending |
@@ -136,6 +136,7 @@
 | CONT-03 | Phase 2 | Pending |
 
 **Coverage:**
+
 - v1 requirements: 31 total
 - Mapped to phases: 31
 - Unmapped: 0
