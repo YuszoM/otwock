@@ -10,6 +10,15 @@ export function SiteFooter() {
         <div>
           <p className="text-2xl font-semibold leading-tight">{siteConfig.siteName}</p>
           <p className="mt-2 max-w-prose text-base opacity-90">{footer.tagline}</p>
+          {footer.supportLinks?.length ? (
+            <p className="mt-3 text-sm opacity-80">
+              {footer.supportLinks.map((link) => (
+                <Link key={link.href} href={link.href} className="underline-offset-4 hover:underline">
+                  {link.label}
+                </Link>
+              ))}
+            </p>
+          ) : null}
         </div>
         <div className="text-sm">
           {footer.email ? (
@@ -32,11 +41,9 @@ export function SiteFooter() {
             </p>
           ) : null}
           {footer.addressLines?.length ? (
-            <address className="mt-3 not-italic opacity-90">
+            <address className="mt-3 space-y-1 not-italic opacity-90">
               {footer.addressLines.map((line) => (
-                <span key={line} className="block">
-                  {line}
-                </span>
+                <p key={line}>{line}</p>
               ))}
             </address>
           ) : null}

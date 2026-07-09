@@ -22,8 +22,8 @@ export default function CareersPage() {
         <p className="opacity-85">
           Aktualnie nie prowadzimy otwartej rekrutacji. Jeśli chcesz przesłać swoje CV na przyszłość,
           napisz na{" "}
-          <a href="mailto:kontakt@oowit.pl" className="font-semibold underline-offset-4 hover:underline">
-            kontakt@oowit.pl
+          <a href="mailto:recepcja@oowit.pl" className="font-semibold underline-offset-4 hover:underline">
+            recepcja@oowit.pl
           </a>
           .
         </p>

@@ -2,11 +2,16 @@
 
 import Link from "next/link";
 import { HomeHero } from "@/components/home/home-hero";
+import { IntroSection } from "@/components/content/intro-section";
 import { CareProcess } from "@/components/content/care-process";
 import { TrustSection } from "@/components/content/trust-section";
+import { ServicesShowcase } from "@/components/content/services-showcase";
+import { StorySection } from "@/components/content/story-section";
+import { ValuesSection } from "@/components/content/values-section";
+import { TestimonialsSection } from "@/components/content/testimonials-section";
 import { ModernApproachSection } from "@/components/content/modern-approach-section";
 import { AudienceSection } from "@/components/content/audience-section";
-import { LegalSupportSection } from "@/components/content/legal-support-section";
+import { CtaStrip } from "@/components/content/cta-strip";
 import { SpecialistCard } from "@/components/team/specialist-card";
 import { FadeIn, HoverLift, StaggerChildren, StaggerItem } from "@/components/motion/fade-in";
 import { specialists } from "@/data/specialists";
@@ -17,27 +22,30 @@ export default function HomePage() {
   return (
     <>
       <HomeHero />
-
-      <TrustSection />
+      <IntroSection />
       <CareProcess />
+      <ServicesShowcase />
+      <StorySection />
+      <ValuesSection />
+      <TrustSection />
+      <TestimonialsSection />
       <ModernApproachSection />
       <AudienceSection />
-      <LegalSupportSection />
 
       <section className="mx-auto max-w-[var(--container-max)] px-4 py-12 lg:px-6 lg:py-16">
         <FadeIn>
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--color-honey)]">
-                Zespół
-              </p>
-              <h2 className="mt-2 text-[var(--text-heading)] font-semibold">Nasi specjaliści</h2>
-              <p className="mt-2 max-w-prose opacity-85">
+              <h2 className="text-[var(--text-heading)] font-semibold">Nasz zespół</h2>
+              <p className="mt-2 max-w-prose text-[var(--ink-soft)]">
                 Wybierz osobę dopasowaną do Twoich potrzeb — specjalizacje, języki i jasna ścieżka do
-                rezerwacji.
+                rezerwacji. Profile oznaczone „Demo” czekają na dane od klienta.
               </p>
             </div>
-            <Link href="/zespol" className="text-sm font-semibold underline-offset-4 hover:underline">
+            <Link
+              href="/zespol"
+              className="text-sm font-semibold text-[var(--pine-700)] underline-offset-4 hover:underline"
+            >
               Cały zespół →
             </Link>
           </div>
@@ -52,6 +60,8 @@ export default function HomePage() {
           ))}
         </StaggerChildren>
       </section>
+
+      <CtaStrip />
     </>
   );
 }

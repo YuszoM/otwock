@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import type { ServiceSlug } from "@/data/services";
 
-const ICON_COLOR = "#1a3a2f";
+const ICON_COLOR = "#2c5240";
 const ICON_PROPS = { color: ICON_COLOR, strokeWidth: 1.75, absoluteStrokeWidth: true } as const;
 
 const iconMap: Record<ServiceSlug, LucideIcon> = {

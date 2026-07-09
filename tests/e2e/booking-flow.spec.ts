@@ -13,7 +13,7 @@ test.describe("Booking flow (demo)", () => {
   });
 
   test("can complete demo booking from deep link", async ({ page }) => {
-    await page.goto("/rezerwacja?specjalista=anna-kowalska");
+    await page.goto("/rezerwacja?specjalista=specjalista-psycholog-demo-1");
     await expect(page.getByRole("heading", { name: /Usługa u/ })).toBeVisible();
     await page.getByRole("button").filter({ hasText: "Terapia" }).first().click();
     await page.getByRole("button", { name: /\d+/ }).first().click();

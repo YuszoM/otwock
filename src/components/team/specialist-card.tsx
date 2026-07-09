@@ -40,12 +40,17 @@ export function SpecialistCard({ specialist, selectable = false }: SpecialistCar
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[rgba(21,46,38,0.35)] via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
       </div>
       <div className="flex flex-1 flex-col p-5 lg:p-6">
-        <p className="text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-[var(--color-honey)]">
+        <p className="text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-[var(--wood-700)]">
           {specialist.title}
         </p>
-        <h2 className="mt-1.5 text-xl font-semibold tracking-tight text-on-beige">
-          {specialist.name}
-        </h2>
+        <div className="mt-1.5 flex flex-wrap items-center gap-2">
+          <h2 className="text-xl font-semibold tracking-tight text-on-beige">{specialist.name}</h2>
+          {specialist.isDemo ? (
+            <span className="rounded-full bg-[var(--lilac-300)]/50 px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-wide text-[var(--pine-900)]">
+              Demo dane
+            </span>
+          ) : null}
+        </div>
         <ul className="mt-3 flex flex-wrap gap-1.5">
           {specialist.specialties.slice(0, 3).map((s) => (
             <li

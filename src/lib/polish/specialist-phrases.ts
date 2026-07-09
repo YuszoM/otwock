@@ -1,10 +1,10 @@
 /** Locative phrases after „u” for specialist booking CTAs (Polish grammar). */
 const specialistLocative: Record<string, { short: string; full: string }> = {
   "patrycja-kacprzyk": { short: "Patrycji Kacprzyk", full: "Patrycji Kacprzyk" },
-  "anna-kowalska": { short: "dr Kowalskiej", full: "Anny Kowalskiej" },
-  "piotr-nowak": { short: "mgr Nowaka", full: "Piotra Nowaka" },
-  "magdalena-wisniewska": { short: "mgr Wiśniewskiej", full: "Magdaleny Wiśniewskiej" },
-  "tomasz-lewandowski": { short: "mgr Lewandowskiego", full: "Tomasza Lewandowskiego" },
+  "specjalista-psycholog-demo-1": { short: "specjalisty (demo)", full: "specjalisty (demo)" },
+  "specjalista-psychoterapeuta-demo-2": { short: "specjalisty (demo)", full: "specjalisty (demo)" },
+  "specjalista-si-demo-3": { short: "specjalisty (demo)", full: "specjalisty (demo)" },
+  "specjalista-tus-demo-4": { short: "specjalisty (demo)", full: "specjalisty (demo)" },
 };
 
 export function specialistBookingCta(slug: string, fallbackName: string): string {

@@ -1,22 +1,36 @@
 @theme {
-  --color-forest: #1a3a2f;
-  --color-beige: #e8dcc8;
-  --color-honey: #c4a574;
-  --color-forest-deep: #152e26;
-  --color-beige-muted: #d4c8b4;
-  --color-forest-border: rgba(232, 220, 200, 0.18);
-  --color-honey-hover: #b8945f;
+  /* Core palette — Otwock pine spa + świdermajer */
+  --color-pine-900: #1e3a2b;
+  --color-pine-700: #2c5240;
+  --color-pine-500: #4a6b54;
+  --color-sand-50: #f5f0e6;
+  --color-sand-200: #e3d8c4;
+  --color-clay-400: #c4a98a;
+  --color-wood-700: #6b4a2e;
+  --color-lilac-300: #c3b2de;
+  --color-lilac-500: #9078b8;
+  --color-ink: #262420;
+  --color-ink-soft: #55504a;
+
+  /* Semantic aliases (legacy class names → new palette) */
+  --color-forest: var(--color-pine-700);
+  --color-forest-deep: var(--color-pine-900);
+  --color-beige: var(--color-sand-50);
+  --color-beige-muted: var(--color-sand-200);
+  --color-honey: var(--color-clay-400);
+  --color-honey-hover: var(--color-wood-700);
+  --color-forest-border: rgba(245, 240, 230, 0.2);
   --color-destructive: #9b3b3b;
-  --color-on-forest: #e8dcc8;
-  --color-on-beige: #152e26;
-  --color-on-honey: #152e26;
+  --color-on-forest: var(--color-sand-50);
+  --color-on-beige: var(--color-ink);
+  --color-on-honey: var(--color-ink);
 
   --font-sans: var(--font-source-sans), ui-sans-serif, system-ui, sans-serif;
 
   --text-body: 1rem;
   --text-label: 0.875rem;
-  --text-heading: 1.5rem;
-  --text-display: 2rem;
+  --text-heading: clamp(1.375rem, 2.5vw, 1.875rem);
+  --text-display: clamp(1.75rem, 3.5vw, 2.25rem);
 
   --space-xs: 4px;
   --space-sm: 8px;
@@ -39,14 +53,38 @@
 }
 
 :root {
-  --color-forest: #1a3a2f;
-  --color-beige: #e8dcc8;
-  --color-honey: #c4a574;
-  --color-forest-deep: #152e26;
-  --color-beige-muted: #d4c8b4;
-  --color-forest-border: rgba(232, 220, 200, 0.18);
-  --color-honey-hover: #b8945f;
-  --color-on-forest: #e8dcc8;
-  --color-on-beige: #152e26;
-  --color-on-honey: #152e26;
+  --pine-900: #1e3a2b;
+  --pine-700: #2c5240;
+  --pine-500: #4a6b54;
+  --sand-50: #f5f0e6;
+  --sand-200: #e3d8c4;
+  --clay-400: #c4a98a;
+  --wood-700: #6b4a2e;
+  --lilac-300: #c3b2de;
+  --lilac-500: #9078b8;
+  --ink: #262420;
+  --ink-soft: #55504a;
+
+  --color-pine-900: var(--pine-900);
+  --color-pine-700: var(--pine-700);
+  --color-pine-500: var(--pine-500);
+  --color-sand-50: var(--sand-50);
+  --color-sand-200: var(--sand-200);
+  --color-clay-400: var(--clay-400);
+  --color-wood-700: var(--wood-700);
+  --color-lilac-300: var(--lilac-300);
+  --color-lilac-500: var(--lilac-500);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+
+  --color-forest: var(--pine-700);
+  --color-forest-deep: var(--pine-900);
+  --color-beige: var(--sand-50);
+  --color-beige-muted: var(--sand-200);
+  --color-honey: var(--clay-400);
+  --color-honey-hover: var(--wood-700);
+  --color-forest-border: rgba(245, 240, 230, 0.2);
+  --color-on-forest: var(--sand-50);
+  --color-on-beige: var(--ink);
+  --color-on-honey: var(--ink);
 }

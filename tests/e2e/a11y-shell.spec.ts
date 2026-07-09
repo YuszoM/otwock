@@ -1,12 +1,6 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
-
-async function acceptCookies(page: import("@playwright/test").Page) {
-  const accept = page.getByRole("button", { name: "Akceptuję wszystkie" });
-  if (await accept.isVisible().catch(() => false)) {
-    await accept.click();
-  }
-}
+import { acceptCookies, seedCookieConsent } from "./helpers/cookies";
 
 const criticalRoutes = ["/", "/rezerwacja", "/kontakt"];
 
@@ -26,6 +20,7 @@ test.describe("A11Y shell contract", () => {
   }
 
   test("keyboard: Tab reaches skip link, main, and footer on home", async ({ page }) => {
+    await seedCookieConsent(page);
     await page.goto("/");
     await acceptCookies(page);
 
@@ -33,19 +28,18 @@ test.describe("A11Y shell contract", () => {
     const skip = page.getByRole("link", { name: "Przejdź do treści" });
     await expect(skip).toBeFocused();
 
-    await page.keyboard.press("Enter");
-    await expect(page.locator("#main-content")).toBeFocused();
-
-    const footer = page.locator("footer");
     let reachedFooter = false;
-    for (let i = 0; i < 40; i += 1) {
+    for (let i = 0; i < 120; i += 1) {
       await page.keyboard.press("Tab");
-      if (await footer.evaluate((el) => el.contains(document.activeElement)).catch(() => false)) {
+      if ((await page.locator("footer :focus").count()) > 0) {
         reachedFooter = true;
         break;
       }
     }
     expect(reachedFooter).toBe(true);
+
+    await skip.press("Enter");
+    await expect(page.locator("#main-content")).toBeFocused();
   });
 
   test("focus ring remains visible on header link", async ({ page }) => {

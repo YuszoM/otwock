@@ -15,7 +15,7 @@ export default function PrivacyPage() {
       <section className="mx-auto max-w-prose px-4 py-12 lg:px-6">
         <h2 className="text-lg font-semibold">1. Administrator</h2>
         <p className="mt-2 opacity-85">
-          Administratorem danych jest OOWiT z siedzibą w Otwocku. Kontakt: kontakt@oowit.pl.
+          Administratorem danych jest OOWiT z siedzibą w Otwocku. Kontakt: recepcja@oowit.pl.
         </p>
         <h2 className="mt-8 text-lg font-semibold">2. Zakres danych</h2>
         <p className="mt-2 opacity-85">

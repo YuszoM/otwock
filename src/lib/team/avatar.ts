@@ -1,11 +1,11 @@
 export const TEAM_PLACEHOLDER_PHOTO = "/images/team-photo-style-reference.webp";
 
 const AVATAR_COLORS = [
-  "#2d5a47",
-  "#4a6741",
-  "#3d5a80",
-  "#5c4033",
-  "#6b4c6e",
+  "#2c5240",
+  "#4a6b54",
+  "#6b4a2e",
+  "#9078b8",
+  "#1e3a2b",
 ] as const;
 
 export function shouldShowInitialsAvatar(_slug: string, photo: string): boolean {

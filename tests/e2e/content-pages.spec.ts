@@ -14,10 +14,10 @@ test.describe("Phase 2 content pages", () => {
   });
 
   test("specialist detail page loads", async ({ page }) => {
-    await page.goto("/zespol/anna-kowalska");
+    await page.goto("/zespol/specjalista-psycholog-demo-1");
     await acceptCookies(page);
-    await expect(page.getByRole("heading", { level: 1 })).toContainText("Anna Kowalska");
-    await expect(page.locator("main").getByRole("link", { name: /Umów wizytę u dr Kowalskiej/i })).toBeVisible();
+    await expect(page.getByRole("heading", { level: 1 })).toContainText("Specjalista psycholog");
+    await expect(page.locator("main").getByRole("link", { name: /Umów wizytę/i })).toBeVisible();
   });
 
   test("services page shows catalog with language badges", async ({ page }) => {

@@ -18,7 +18,13 @@ export function PageHero({ eyebrow, title, description, variant = "forest" }: Pa
     >
       <div className="mx-auto max-w-[var(--container-max)] px-4 py-12 lg:px-6 lg:py-16">
         {eyebrow ? (
-          <p className="text-sm font-semibold uppercase tracking-wide text-[var(--color-honey)]">
+          <p
+            className={
+              isForest
+                ? "text-sm font-semibold uppercase tracking-[0.14em] text-[var(--clay-400)]"
+                : "text-sm font-semibold uppercase tracking-[0.14em] text-[var(--wood-700)]"
+            }
+          >
             {eyebrow}
           </p>
         ) : null}

@@ -74,10 +74,17 @@ export default async function SpecialistDetailPage({ params }: Props) {
           )}
         </div>
         <div>
-          <p className="text-sm font-semibold uppercase tracking-wide text-[var(--color-forest)]">
+          <p className="text-sm font-semibold uppercase tracking-wide text-[var(--color-pine-700)]">
             {specialist.title}
           </p>
-          <h1 className="mt-1 text-[var(--text-display)] font-semibold">{specialist.name}</h1>
+          <h1 className="mt-1 flex flex-wrap items-center gap-2 text-[var(--text-display)] font-semibold">
+            {specialist.name}
+            {specialist.isDemo ? (
+              <span className="rounded-full bg-[var(--lilac-300)]/50 px-2 py-0.5 text-xs font-semibold uppercase tracking-wide text-[var(--pine-900)]">
+                Demo dane
+              </span>
+            ) : null}
+          </h1>
           <div className="mt-4">
             <LanguageBadges languages={specialist.languages} />
           </div>

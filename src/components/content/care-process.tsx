@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import { FadeIn } from "@/components/motion/fade-in";
+import { LaceGableSeparator } from "@/components/ornaments/lace-gable-separator";
+import { ProcessStepIcon } from "@/components/ornaments/process-step-icon";
 
 const steps = [
   {
@@ -19,11 +21,12 @@ const steps = [
     description:
       "Towarzyszymy w codziennym funkcjonowaniu — konsultacje dla rodziców, współpraca ze szkołą i monitorowanie postępów.",
   },
-];
+] as const;
 
 export function CareProcess() {
   return (
     <section aria-labelledby="care-process-heading" className="mx-auto max-w-[var(--container-max)] px-4 py-12 lg:px-6 lg:py-16">
+      <LaceGableSeparator className="mb-10 opacity-70" />
       <div className="grid gap-8 lg:grid-cols-2 lg:items-center lg:gap-10">
         <FadeIn className="order-1 lg:order-2">
           <h2 id="care-process-heading" className="text-[var(--text-heading)] font-semibold">
@@ -31,17 +34,12 @@ export function CareProcess() {
           </h2>
           <p className="mt-4 opacity-85">
             W OOWiT łączymy diagnozę, terapię i długofalowe wsparcie — tak, aby pacjent i rodzina
-            mieli jasny plan działania w jednym miejscu w Otwocku.
+            mieli jasny plan działania w jednym miejscu w Otwocku, w otoczeniu sosnowego lasu.
           </p>
           <ol className="mt-8 space-y-6">
             {steps.map((step, i) => (
               <li key={step.title} className="flex gap-4">
-                <span
-                  className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-forest text-sm font-semibold text-on-forest"
-                  aria-hidden
-                >
-                  {i + 1}
-                </span>
+                <ProcessStepIcon step={(i + 1) as 1 | 2 | 3} />
                 <div>
                   <h3 className="font-semibold">{step.title}</h3>
                   <p className="mt-1 text-sm opacity-85">{step.description}</p>
@@ -51,10 +49,10 @@ export function CareProcess() {
           </ol>
         </FadeIn>
         <FadeIn delay={0.1} className="order-2 lg:order-1">
-          <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--radius-md)] border border-forest-border/10">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--radius-md)] border border-[var(--sand-200)]">
             <Image
               src="/images/process-care-3steps.webp"
-              alt="Ilustracja procesu opieki: diagnoza, terapia, wsparcie"
+              alt="Ilustracja procesu opieki: diagnoza, terapia, wsparcie — styl świdermajerski"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
