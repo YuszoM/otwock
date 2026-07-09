@@ -6,6 +6,12 @@ import { buildPageMetadata } from "@/lib/seo/build-metadata";
 import { getSpecialistBySlug, specialists } from "@/data/specialists";
 import { getServiceBySlug } from "@/data/services";
 import { LanguageBadges } from "@/components/ui/language-badges";
+import { specialistBookingCta } from "@/lib/polish/specialist-phrases";
+import {
+  avatarColorForSlug,
+  shouldShowInitialsAvatar,
+  specialistInitials,
+} from "@/lib/team/avatar";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -32,19 +38,31 @@ export default async function SpecialistDetailPage({ params }: Props) {
   const specialistServices = specialist.serviceSlugs
     .map((s) => getServiceBySlug(s))
     .filter((s) => s !== undefined);
+  const showInitials = shouldShowInitialsAvatar(specialist.slug, specialist.photo);
 
   return (
     <article className="mx-auto max-w-[var(--container-max)] px-4 py-12 lg:px-6">
       <div className="grid gap-10 lg:grid-cols-[minmax(0,320px)_1fr]">
-        <div className="relative aspect-[4/5] overflow-hidden rounded-[var(--radius-md)]">
-          <Image
-            src={specialist.photo}
-            alt={`Zdjęcie — ${specialist.name}`}
-            fill
-            className="object-cover"
-            priority
-            sizes="320px"
-          />
+        <div className="relative aspect-[4/5] overflow-hidden rounded-[var(--radius-md)] bg-beige">
+          {showInitials ? (
+            <div
+              className="flex h-full w-full items-center justify-center text-5xl font-semibold text-white"
+              style={{ backgroundColor: avatarColorForSlug(specialist.slug) }}
+              role="img"
+              aria-label={`Inicjały — ${specialist.name}`}
+            >
+              {specialistInitials(specialist.name)}
+            </div>
+          ) : (
+            <Image
+              src={specialist.photo}
+              alt={`Zdjęcie — ${specialist.name}`}
+              fill
+              className="object-cover"
+              priority
+              sizes="320px"
+            />
+          )}
         </div>
         <div>
           <p className="text-sm font-semibold uppercase tracking-wide text-[var(--color-forest-light)]">
@@ -85,7 +103,7 @@ export default async function SpecialistDetailPage({ params }: Props) {
               href={`/rezerwacja?specjalista=${specialist.slug}`}
               className="btn-honey"
             >
-              Umów wizytę u {specialist.name.split(" ").pop()}
+              {specialistBookingCta(specialist.slug, specialist.name)}
             </Link>
           </div>
         </div>

@@ -98,7 +98,7 @@ export function AccessibilityToolbar() {
       />
 
       <div
-        className="on-forest fixed bottom-4 right-4 z-40 flex max-w-[min(100vw-2rem,22rem)] flex-col gap-2"
+        className="on-forest fixed bottom-4 left-4 z-40 flex max-w-[min(100vw-2rem,22rem)] flex-col gap-2 max-sm:bottom-auto max-sm:left-3 max-sm:top-20"
         role="region"
         aria-label={A11Y_COPY.toolbarRegion}
       >

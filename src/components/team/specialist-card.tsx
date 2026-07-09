@@ -2,6 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Specialist } from "@/data/specialists";
 import { LanguageBadges } from "@/components/ui/language-badges";
+import {
+  avatarColorForSlug,
+  shouldShowInitialsAvatar,
+  specialistInitials,
+} from "@/lib/team/avatar";
 
 type SpecialistCardProps = {
   specialist: Specialist;
@@ -10,16 +15,28 @@ type SpecialistCardProps = {
 };
 
 export function SpecialistCard({ specialist, selectable = false }: SpecialistCardProps) {
+  const showInitials = shouldShowInitialsAvatar(specialist.slug, specialist.photo);
+
   return (
     <article className="group flex h-full flex-col overflow-hidden rounded-[var(--radius-md)] border border-forest-border/12 bg-white shadow-[0_1px_2px_rgba(21,46,38,0.04)] transition-shadow duration-300 hover:shadow-[0_12px_32px_rgba(21,46,38,0.08)]">
       <div className="relative aspect-[4/5] overflow-hidden bg-beige">
-        <Image
-          src={specialist.photo}
-          alt={`Zdjęcie — ${specialist.name}`}
-          fill
-          className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        />
+        {showInitials ? (
+          <div
+            className="flex h-full w-full items-center justify-center text-4xl font-semibold text-white"
+            style={{ backgroundColor: avatarColorForSlug(specialist.slug) }}
+            aria-hidden
+          >
+            {specialistInitials(specialist.name)}
+          </div>
+        ) : (
+          <Image
+            src={specialist.photo}
+            alt={`Zdjęcie — ${specialist.name}`}
+            fill
+            className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
+        )}
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[rgba(21,46,38,0.35)] via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
       </div>
       <div className="flex flex-1 flex-col p-5 lg:p-6">

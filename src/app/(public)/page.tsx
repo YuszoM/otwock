@@ -66,27 +66,6 @@ export default function HomePage() {
 
       <TrustSection />
 
-      <section className="border-y border-forest-border/10 bg-white/40">
-        <div className="mx-auto flex max-w-[var(--container-max)] flex-wrap items-center justify-between gap-6 px-4 py-10 lg:px-6">
-          <FadeIn>
-            <p className="max-w-prose text-sm opacity-85">
-              Terapia indywidualna, par, diagnoza, SI, TUS i więcej — w jednym miejscu w Otwocku.
-            </p>
-          </FadeIn>
-          <div className="flex flex-wrap gap-4">
-            <Link href="/uslugi" className="btn-honey text-sm">
-              Zobacz usługi
-            </Link>
-            <Link
-              href="/kontakt"
-              className="inline-flex min-h-11 items-center rounded-[var(--radius-sm)] border border-forest-border/30 px-4 text-sm font-semibold underline-offset-4 hover:underline"
-            >
-              Kontakt
-            </Link>
-          </div>
-        </div>
-      </section>
-
       <CareProcess />
 
       <section className="mx-auto max-w-[var(--container-max)] px-4 py-16 lg:px-6 lg:py-20">

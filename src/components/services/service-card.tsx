@@ -11,13 +11,13 @@ export function ServiceCard({ service }: ServiceCardProps) {
   return (
     <article className="flex flex-col rounded-[var(--radius-md)] border border-forest-border/15 bg-white p-5 shadow-sm">
       {service.icon ? (
-        <div className="relative mb-4 aspect-[16/9] overflow-hidden rounded-[var(--radius-sm)]">
+        <div className="relative mb-4 flex aspect-[16/9] items-center justify-center overflow-hidden rounded-[var(--radius-sm)] bg-[var(--color-beige-muted)] p-4">
           <Image
             src={service.icon}
             alt=""
-            fill
-            className="object-cover"
-            sizes="(max-width: 768px) 100vw, 400px"
+            width={160}
+            height={160}
+            className="h-auto max-h-full w-auto max-w-full object-contain"
           />
         </div>
       ) : null}

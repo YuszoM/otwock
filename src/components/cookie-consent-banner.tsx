@@ -67,13 +67,13 @@ export function CookieConsentBanner() {
   return createPortal(
     <div
       style={{ position: "fixed", inset: 0, zIndex: 2147483647 }}
-      className="on-forest flex items-center justify-center bg-[rgba(21,46,38,0.65)] p-4"
+      className="on-forest flex items-end justify-center bg-[rgba(21,46,38,0.45)] p-0 sm:items-center sm:bg-[rgba(21,46,38,0.65)] sm:p-4"
     >
-      <div className="on-forest w-full max-w-lg rounded-[var(--radius-md)] border border-forest-border bg-forest p-6 text-on-forest shadow-2xl">
-        <h3 className="text-xl font-semibold">{COOKIE_BANNER_TITLE}</h3>
-        <p className="mt-3 text-sm leading-6 opacity-90">{COOKIE_BANNER_BODY}</p>
-        <p className="mt-2 text-xs opacity-80">{COOKIE_BANNER_NOTE}</p>
-        <div className="mt-6 flex flex-col gap-2 sm:flex-row">
+      <div className="on-forest w-full max-w-lg rounded-t-[var(--radius-md)] border border-forest-border bg-forest p-4 text-on-forest shadow-2xl sm:rounded-[var(--radius-md)] sm:p-6">
+        <h3 className="text-lg font-semibold sm:text-xl">{COOKIE_BANNER_TITLE}</h3>
+        <p className="mt-2 text-sm leading-6 opacity-90 sm:mt-3">{COOKIE_BANNER_BODY}</p>
+        <p className="mt-1 text-xs opacity-80 sm:mt-2">{COOKIE_BANNER_NOTE}</p>
+        <div className="mt-4 flex flex-col gap-2 sm:mt-6 sm:flex-row">
           <button type="button" onClick={() => { setConsentStorage("all"); setVisible(false); }} className="btn-honey flex-1">
             {COOKIE_BTN_ACCEPT_ALL}
           </button>

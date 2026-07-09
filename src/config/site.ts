@@ -2,6 +2,7 @@ export type NavLink = { label: string; href: string };
 
 export type SiteConfig = {
   siteName: string;
+  copyrightYear: number;
   logoSrc?: string;
   nav: NavLink[];
   bookingCta: NavLink;
@@ -18,6 +19,7 @@ export type SiteConfig = {
 /** NAV-01 — single source of truth for header, footer, and route integrity tests. */
 export const siteConfig: SiteConfig = {
   siteName: "OOWiT",
+  copyrightYear: 2026,
   nav: [
     { label: "Strona główna", href: "/" },
     { label: "O nas", href: "/o-nas" },
@@ -31,9 +33,13 @@ export const siteConfig: SiteConfig = {
   bookingCta: { label: "Umów wizytę", href: "/rezerwacja" },
   footer: {
     tagline: "Otwocki Ośrodek Wsparcia Rodziny, Diagnozy i Terapii",
-    email: "kontakt@oowit.pl",
-    phone: "+48 22 123 45 67",
-    addressLines: ["05-400 Otwock", "ul. Przykładowa 1"],
+    email: "recepcja@oowit.pl",
+    phone: "+48 600 008 775",
+    addressLines: [
+      "ul. Hugona Kołłątaja 1",
+      "05-400 Otwock",
+      "wjazd i wejście od ul. Świderskiej",
+    ],
     legalLinks: [
       { label: "RODO", href: "/rodo" },
       { label: "Polityka prywatności", href: "/polityka-prywatnosci" },

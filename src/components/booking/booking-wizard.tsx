@@ -15,6 +15,7 @@ import { PageHero } from "@/components/ui/page-hero";
 import { SpecialistCard } from "@/components/team/specialist-card";
 import { ServiceCard } from "@/components/services/service-card";
 import { FadeIn } from "@/components/motion/fade-in";
+import { specialistServiceHeading } from "@/lib/polish/specialist-phrases";
 
 const STEPS = ["Specjalista", "Usługa", "Termin", "Dane"] as const;
 
@@ -120,7 +121,10 @@ export function BookingWizard() {
 
       <section className="mx-auto max-w-3xl px-4 py-8 lg:px-6">
         <nav aria-label="Kroki rezerwacji" className="mb-8">
-          <ol className="flex flex-wrap gap-2">
+          <p className="mb-3 text-sm font-semibold sm:hidden" aria-live="polite">
+            Krok {step + 1} z {STEPS.length}: {STEPS[step]}
+          </p>
+          <ol className="hidden flex-wrap gap-2 sm:flex">
             {STEPS.map((label, i) => (
               <li
                 key={label}
@@ -173,7 +177,9 @@ export function BookingWizard() {
               >
                 ← Zmień specjalistę
               </button>
-              <h2 className="text-lg font-semibold">Usługa u {specialist.name.split(" ").pop()}</h2>
+              <h2 className="text-lg font-semibold">
+                {specialistServiceHeading(specialist.slug, specialist.name)}
+              </h2>
               <ul className="mt-6 grid gap-4">
                 {availableServices.map((svc) => (
                   <li key={svc.slug}>
