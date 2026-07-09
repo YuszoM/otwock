@@ -203,8 +203,11 @@ export function BookingWizard() {
                 ← Zmień usługę
               </button>
               <h2 className="text-lg font-semibold">Wybierz dzień i godzinę</h2>
+              <p className="mt-2 text-xs text-on-beige/70 md:hidden">
+                Przesuń palcem w poziomie, aby zobaczyć więcej dni →
+              </p>
 
-              <div className="mt-6 flex gap-2 overflow-x-auto pb-2">
+              <div className="mt-4 flex gap-2 overflow-x-auto pb-2 [-webkit-overflow-scrolling:touch]">
                 {dates.slice(0, 14).map((d) => {
                   const day = new Date(d + "T12:00:00");
                   const isSelected = selectedDate === d;

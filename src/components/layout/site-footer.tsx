@@ -58,7 +58,7 @@ export function SiteFooter() {
       ) : null}
 
       <div className="border-t border-forest-border py-4 text-center text-xs opacity-75">
-        © {siteConfig.copyrightYear} {siteConfig.siteName}
+        © {new Date().getFullYear()} {siteConfig.siteName}
       </div>
     </footer>
   );

@@ -10,13 +10,34 @@ type FadeInProps = {
   className?: string;
   delay?: number;
   y?: number;
+  /** Use mount animation instead of scroll-reveal — for above-the-fold content. */
+  immediate?: boolean;
 };
 
-export function FadeIn({ children, className, delay = 0, y = 14 }: FadeInProps) {
+export function FadeIn({
+  children,
+  className,
+  delay = 0,
+  y = 14,
+  immediate = false,
+}: FadeInProps) {
   const reduceMotion = useReducedMotion();
 
   if (reduceMotion) {
     return <div className={className}>{children}</div>;
+  }
+
+  if (immediate) {
+    return (
+      <motion.div
+        className={className}
+        initial={{ opacity: 0, y }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease, delay }}
+      >
+        {children}
+      </motion.div>
+    );
   }
 
   return (
@@ -36,9 +57,15 @@ type StaggerProps = {
   children: ReactNode;
   className?: string;
   stagger?: number;
+  immediate?: boolean;
 };
 
-export function StaggerChildren({ children, className, stagger = 0.08 }: StaggerProps) {
+export function StaggerChildren({
+  children,
+  className,
+  stagger = 0.08,
+  immediate = false,
+}: StaggerProps) {
   const reduceMotion = useReducedMotion();
 
   if (reduceMotion) {
@@ -49,8 +76,8 @@ export function StaggerChildren({ children, className, stagger = 0.08 }: Stagger
     <motion.div
       className={className}
       initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, margin: "-40px" }}
+      {...(immediate ? { animate: "show" } : { whileInView: "show" })}
+      viewport={immediate ? undefined : { once: true, margin: "-40px" }}
       variants={{
         hidden: {},
         show: { transition: { staggerChildren: stagger } },

@@ -21,7 +21,7 @@ export default function ContactPage() {
         title="Jesteśmy do Twojej dyspozycji"
         description="Napisz, zadzwoń lub umów wizytę online — odpowiadamy w dni robocze."
       />
-      <section className="mx-auto max-w-[var(--container-max)] px-4 py-16 lg:px-6">
+      <section className="mx-auto max-w-[var(--container-max)] px-4 py-16 pb-24 sm:pb-16 lg:px-6">
         <div className="grid gap-10 lg:grid-cols-2">
           <div>
             <h2 className="text-lg font-semibold">Dane kontaktowe</h2>

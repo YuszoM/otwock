@@ -42,6 +42,15 @@ export default async function SpecialistDetailPage({ params }: Props) {
 
   return (
     <article className="mx-auto max-w-[var(--container-max)] px-4 py-12 lg:px-6">
+      <nav aria-label="Breadcrumb" className="mb-6 text-sm">
+        <Link href="/zespol" className="font-semibold text-[var(--color-forest)] underline-offset-4 hover:underline">
+          ← Zespół
+        </Link>
+        <span className="mx-2 opacity-40" aria-hidden>
+          /
+        </span>
+        <span className="opacity-85">{specialist.name}</span>
+      </nav>
       <div className="grid gap-10 lg:grid-cols-[minmax(0,320px)_1fr]">
         <div className="relative aspect-[4/5] overflow-hidden rounded-[var(--radius-md)] bg-beige">
           {showInitials ? (
@@ -65,7 +74,7 @@ export default async function SpecialistDetailPage({ params }: Props) {
           )}
         </div>
         <div>
-          <p className="text-sm font-semibold uppercase tracking-wide text-[var(--color-forest-light)]">
+          <p className="text-sm font-semibold uppercase tracking-wide text-[var(--color-forest)]">
             {specialist.title}
           </p>
           <h1 className="mt-1 text-[var(--text-display)] font-semibold">{specialist.name}</h1>

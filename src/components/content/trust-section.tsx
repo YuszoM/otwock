@@ -1,5 +1,7 @@
+"use client";
+
 import Link from "next/link";
-import { FadeIn } from "@/components/motion/fade-in";
+import { FadeIn, StaggerChildren, StaggerItem } from "@/components/motion/fade-in";
 
 const values = [
   {
@@ -28,8 +30,8 @@ export function TrustSection() {
       aria-labelledby="trust-heading"
       className="border-y border-forest-border/10 bg-[var(--color-beige-muted)]/40"
     >
-      <div className="mx-auto max-w-[var(--container-max)] px-4 py-12 lg:px-6 lg:py-16">
-        <FadeIn>
+      <div className="mx-auto max-w-[var(--container-max)] px-4 py-10 lg:px-6 lg:py-14">
+        <FadeIn immediate>
           <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--color-honey)]">
             O ośrodku
           </p>
@@ -42,30 +44,30 @@ export function TrustSection() {
           </p>
         </FadeIn>
 
-        <ul className="mt-8 grid gap-4 sm:grid-cols-3">
+        <ul className="mt-6 grid gap-4 sm:grid-cols-3">
           {stats.map((stat) => (
             <li
               key={stat.label}
               className="rounded-[var(--radius-md)] border border-forest-border/10 bg-white/80 px-4 py-3 text-center"
             >
               <p className="text-2xl font-semibold text-[var(--color-forest)]">{stat.value}</p>
-              <p className="mt-1 text-xs opacity-80">{stat.label}</p>
+              <p className="mt-1 text-xs text-on-beige/80">{stat.label}</p>
             </li>
           ))}
         </ul>
 
-        <ul className="mt-10 grid gap-6 md:grid-cols-3">
-          {values.map((v, i) => (
-            <FadeIn key={v.title} delay={0.08 + i * 0.06}>
-              <li className="rounded-[var(--radius-md)] border border-forest-border/10 bg-white/70 p-5 backdrop-blur-sm">
+        <StaggerChildren className="mt-8 grid gap-6 md:grid-cols-3">
+          {values.map((v) => (
+            <StaggerItem key={v.title}>
+              <article className="h-full rounded-[var(--radius-md)] border border-forest-border/10 bg-white/70 p-5 backdrop-blur-sm">
                 <h3 className="font-semibold">{v.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed opacity-85">{v.text}</p>
-              </li>
-            </FadeIn>
+              </article>
+            </StaggerItem>
           ))}
-        </ul>
+        </StaggerChildren>
 
-        <FadeIn delay={0.2}>
+        <FadeIn delay={0.15}>
           <div className="mt-8 flex flex-wrap items-center gap-4 border-t border-forest-border/10 pt-6">
             <p className="max-w-prose text-sm opacity-85">
               Terapia indywidualna, par, diagnoza, SI, TUS i więcej — w jednym miejscu w Otwocku.

@@ -48,9 +48,10 @@ export function SiteHeader() {
 
         <Link
           href={siteConfig.bookingCta.href}
-          className="btn-honey hidden xl:inline-flex"
+          className="btn-honey hidden px-3 text-sm sm:inline-flex xl:px-4 xl:text-base"
         >
-          {siteConfig.bookingCta.label}
+          <span className="xl:hidden">Umów</span>
+          <span className="hidden xl:inline">{siteConfig.bookingCta.label}</span>
         </Link>
 
         <button

@@ -27,7 +27,7 @@ export default function HomePage() {
           aria-hidden
         />
         <div className="relative mx-auto grid max-w-[var(--container-max)] gap-10 px-4 py-14 lg:grid-cols-2 lg:items-center lg:px-6 lg:py-20">
-          <FadeIn y={20}>
+          <FadeIn immediate y={20}>
             <div className="max-w-prose">
               <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--color-honey)]">
                 Słuchamy i wspieramy
@@ -39,6 +39,13 @@ export default function HomePage() {
                 {siteConfig.footer.tagline}. W Otwocku tworzymy centrum wsparcia, w którym nikt nie musi
                 udawać, że daje radę sam.
               </p>
+              <Link
+                href="/rezerwacja"
+                className="mt-4 inline-flex items-center gap-2 rounded-full border border-[var(--color-honey)]/50 bg-[var(--color-honey)]/10 px-3 py-1.5 text-xs font-semibold text-[var(--color-honey)] transition-colors hover:bg-[var(--color-honey)]/20"
+              >
+                <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-honey)]" aria-hidden />
+                Zostały ostatnie wolne terminy — sprawdź dostępność
+              </Link>
               <div className="mt-9 flex flex-wrap gap-4">
                 <Link href={siteConfig.bookingCta.href} className="btn-honey">
                   {siteConfig.bookingCta.label}
@@ -52,7 +59,7 @@ export default function HomePage() {
               </div>
             </div>
           </FadeIn>
-          <FadeIn delay={0.12} y={24}>
+          <FadeIn immediate delay={0.12} y={24}>
             <div className="relative aspect-[16/10] overflow-hidden rounded-[var(--radius-md)] shadow-[0_24px_48px_rgba(0,0,0,0.2)]">
               <Image
                 src="/images/hero-otwock-forest-16x9.webp"
@@ -73,7 +80,7 @@ export default function HomePage() {
       <AudienceSection />
       <LegalSupportSection />
 
-      <section className="mx-auto max-w-[var(--container-max)] px-4 py-16 lg:px-6 lg:py-20">
+      <section className="mx-auto max-w-[var(--container-max)] px-4 py-12 lg:px-6 lg:py-16">
         <FadeIn>
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div>

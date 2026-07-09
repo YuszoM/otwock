@@ -8,11 +8,8 @@ const AVATAR_COLORS = [
   "#6b4c6e",
 ] as const;
 
-/** Male specialists sharing the female placeholder photo — show initials instead. */
-const INITIALS_SLUGS = new Set(["piotr-nowak", "tomasz-lewandowski"]);
-
-export function shouldShowInitialsAvatar(slug: string, photo: string): boolean {
-  return photo === TEAM_PLACEHOLDER_PHOTO && INITIALS_SLUGS.has(slug);
+export function shouldShowInitialsAvatar(_slug: string, photo: string): boolean {
+  return photo === TEAM_PLACEHOLDER_PHOTO;
 }
 
 export function specialistInitials(name: string): string {

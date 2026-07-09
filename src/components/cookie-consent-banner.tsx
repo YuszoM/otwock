@@ -96,7 +96,7 @@ export function CookieConsentBanner() {
               setConsentStorage("necessary");
               setVisible(false);
             }}
-            className="flex-1 rounded-[var(--radius-sm)] border border-forest-border px-4 py-2 text-sm font-semibold text-on-forest transition hover:bg-[rgba(232,220,200,0.08)]"
+            className="flex-1 rounded-[var(--radius-sm)] border-2 border-[var(--color-on-forest)] bg-transparent px-4 py-2 text-sm font-semibold text-on-forest transition hover:bg-[rgba(232,220,200,0.12)]"
             style={{ minHeight: "44px" }}
           >
             {COOKIE_BTN_NECESSARY_ONLY}
