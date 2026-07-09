@@ -33,6 +33,7 @@ test.describe("Phase 2 content pages", () => {
     await expect(page.getByRole("heading", { name: "Napisz do nas" })).toBeVisible();
     await expect(page.getByLabel("Imię i nazwisko")).toBeVisible();
     await expect(page.locator("main").getByRole("link", { name: /recepcja@oowit\.pl/i })).toBeVisible();
+    await expect(page.getByTitle("Mapa dojazdu OOWiT Otwock")).toBeVisible();
   });
 
   test("footer legal links work (NAV-03)", async ({ page }) => {

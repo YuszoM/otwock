@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { buildPageMetadata } from "@/lib/seo/build-metadata";
 import { PageHero } from "@/components/ui/page-hero";
 import { ContactForm } from "@/components/contact/contact-form";
+import { LocationMap } from "@/components/contact/location-map";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = buildPageMetadata({
@@ -52,6 +53,7 @@ export default function ContactPage() {
           </div>
           <ContactForm />
         </div>
+        <LocationMap />
       </section>
     </>
   );
