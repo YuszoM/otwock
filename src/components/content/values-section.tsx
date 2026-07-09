@@ -16,7 +16,7 @@ export function ValuesSection() {
   return (
     <section
       aria-labelledby="values-heading"
-      className="border-y border-[var(--sand-200)] bg-white"
+      className="border-y border-[var(--sand-200)] bg-[var(--sand-50)]"
     >
       <div className="mx-auto max-w-[var(--container-max)] px-4 py-12 lg:px-6 lg:py-16">
         <FadeIn>
@@ -25,16 +25,16 @@ export function ValuesSection() {
           </h2>
         </FadeIn>
 
-        <StaggerChildren className="mt-10 grid gap-6 lg:grid-cols-2">
+        <StaggerChildren className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
           {values.map((item, index) => (
-            <StaggerItem key={index}>
-              <CardCorbelBorder>
-                <article className="h-full rounded-[var(--radius-md)] border border-[var(--sand-200)] bg-[var(--sand-50)]/60 p-6 lg:p-8">
-                  <span className="text-xs font-semibold tabular-nums text-[var(--lilac-500)]">
+            <StaggerItem key={index} className="h-full">
+              <CardCorbelBorder className="h-full">
+                <article className="flex h-full min-h-[16rem] flex-col rounded-[var(--radius-md)] border border-[var(--sand-200)] bg-[var(--sand-200)]/70 p-6 lg:p-8">
+                  <span className="text-sm font-bold tabular-nums tracking-wide text-[var(--wood-700)]">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                   <h3 className="mt-2 text-lg font-semibold text-[var(--pine-900)]">Nasze wartości</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-[var(--ink-soft)]">{item.text}</p>
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-[var(--ink-soft)]">{item.text}</p>
                 </article>
               </CardCorbelBorder>
             </StaggerItem>
