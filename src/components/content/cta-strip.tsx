@@ -13,7 +13,7 @@ export function CtaStrip() {
       </div>
       <div className="relative z-[1] mx-auto max-w-[var(--container-max)] px-4 py-12 lg:px-6 lg:py-14">
         <StaggerChildren className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
-          <StaggerItem className="max-w-xl">
+          <StaggerItem variant="left" className="max-w-xl">
             <h2 id="cta-strip-heading" className="text-[clamp(1.25rem,3vw,1.75rem)] font-semibold leading-tight">
               Zapisz się na konsultację
             </h2>
@@ -23,7 +23,7 @@ export function CtaStrip() {
               a także uporządkowany.
             </p>
           </StaggerItem>
-          <StaggerItem className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
+          <StaggerItem variant="right" className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
             <Link href="/rezerwacja" className="btn-honey w-full justify-center sm:w-auto">
               Umów konsultację
             </Link>

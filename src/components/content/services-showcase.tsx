@@ -30,7 +30,7 @@ export function ServicesShowcase() {
     >
       <SectionPineAccent position="top-right" />
       <StaggerChildren className="relative z-[1]">
-        <StaggerItem>
+        <StaggerItem variant="drop">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div className="max-w-2xl">
               <SectionEyebrow>Usługi</SectionEyebrow>
@@ -57,13 +57,17 @@ export function ServicesShowcase() {
         </StaggerItem>
       </StaggerChildren>
 
-      <StaggerChildren className="relative z-[1] mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
-        {featured.map((service) => (
-          <StaggerItem key={service.slug} className="h-full">
+      <StaggerChildren className="relative z-[1] mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3" stagger={0.1}>
+        {featured.map((service, index) => {
+          const cardVariant =
+            index % 3 === 0 ? "scale" : index % 3 === 1 ? "tilt-left" : "tilt-right";
+
+          return (
+          <StaggerItem key={service.slug} variant={cardVariant} className="h-full">
             <HoverLift className="h-full">
               <article className="group relative flex h-full min-h-[20rem] flex-col overflow-hidden rounded-[var(--radius-md)] border border-[var(--sand-200)] bg-white shadow-[0_1px_3px_rgba(30,58,43,0.06)] transition-shadow hover:shadow-[0_8px_28px_rgba(30,58,43,0.1)]">
                 <div className="relative flex aspect-[16/9] shrink-0 items-center justify-center overflow-hidden bg-gradient-to-br from-[var(--sand-50)] to-[var(--pine-700)]/5">
-                  <div className="flex h-full min-h-[8rem] w-full items-center justify-center transition-transform duration-700 ease-out group-hover:scale-[1.05]">
+                  <div className="flex h-full min-h-[8rem] w-full items-center justify-center transition-transform duration-500 ease-out group-hover:scale-[1.08]">
                     <ServiceIcon slug={service.slug} className="h-16 w-16 opacity-80" />
                   </div>
                   {service.slug === "terapia-vr" ? (
@@ -103,10 +107,11 @@ export function ServicesShowcase() {
               </article>
             </HoverLift>
           </StaggerItem>
-        ))}
+          );
+        })}
       </StaggerChildren>
 
-      <FadeIn delay={0.2}>
+      <FadeIn variant="drop" delay={0.15}>
         <div className="mt-10 rounded-[var(--radius-md)] border border-[var(--sand-200)] bg-[var(--pine-700)]/5 px-6 py-5 text-center sm:text-left">
           <p className="text-sm text-[var(--ink-soft)]">
             Każdy proces zaczyna się od rzetelnej diagnozy, która pozwala nie zgadywać, tylko precyzyjnie

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { SpecialistCard } from "@/components/team/specialist-card";
-import { FadeIn, HoverLift, StaggerChildren, StaggerItem } from "@/components/motion/fade-in";
+import { FadeIn, HoverTilt, StaggerChildren, StaggerItem } from "@/components/motion/fade-in";
 import type { Specialist } from "@/data/specialists";
 
 type HomeTeamSectionProps = {
@@ -12,7 +12,7 @@ type HomeTeamSectionProps = {
 export function HomeTeamSection({ featured }: HomeTeamSectionProps) {
   return (
     <section className="mx-auto max-w-[var(--container-max)] px-4 py-12 lg:px-6 lg:py-16">
-      <FadeIn>
+      <FadeIn variant="left">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
             <h2 className="text-[var(--text-heading)] font-semibold">Nasz zespół</h2>
@@ -30,11 +30,11 @@ export function HomeTeamSection({ featured }: HomeTeamSectionProps) {
         </div>
       </FadeIn>
       <StaggerChildren className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        {featured.map((s) => (
-          <StaggerItem key={s.slug}>
-            <HoverLift>
+        {featured.map((s, index) => (
+          <StaggerItem key={s.slug} variant={index % 3 === 0 ? "scale" : index % 3 === 1 ? "tilt-left" : "tilt-right"}>
+            <HoverTilt>
               <SpecialistCard specialist={s} />
-            </HoverLift>
+            </HoverTilt>
           </StaggerItem>
         ))}
       </StaggerChildren>

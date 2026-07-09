@@ -21,7 +21,7 @@ export function ValuesSection() {
     >
       <SectionPineAccent position="top-right" className="opacity-[0.08]" />
       <div className="relative z-[1] mx-auto max-w-[var(--container-max)] px-4 py-12 lg:px-6 lg:py-16">
-        <FadeIn>
+        <FadeIn variant="tilt-left">
           <h2 id="values-heading" className="max-w-2xl text-[var(--text-heading)] font-semibold">
             Nasze wartości
           </h2>
@@ -29,7 +29,11 @@ export function ValuesSection() {
 
         <StaggerChildren className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
           {values.map((item, index) => (
-            <StaggerItem key={index} className="h-full">
+            <StaggerItem
+              key={index}
+              variant={index % 2 === 0 ? "scale" : "tilt-right"}
+              className="h-full"
+            >
               <CardCorbelBorder className="h-full">
                 <article className="flex h-full min-h-[16rem] flex-col rounded-[var(--radius-md)] border border-[var(--sand-200)] bg-[var(--sand-200)]/70 p-6 lg:p-8">
                   <span className="text-sm font-bold tabular-nums tracking-wide text-[var(--wood-700)]">

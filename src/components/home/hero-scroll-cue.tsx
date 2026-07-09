@@ -1,20 +1,8 @@
 "use client";
 
 import { CaretDown } from "@phosphor-icons/react";
-import { useEffect, useState } from "react";
 
 export function HeroScrollCue() {
-  const [visible, setVisible] = useState(true);
-
-  useEffect(() => {
-    const onScroll = () => setVisible(window.scrollY < 120);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  if (!visible) return null;
-
   function scrollDown() {
     const target = document.getElementById("intro-heading");
     const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;

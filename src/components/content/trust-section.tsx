@@ -20,7 +20,7 @@ export function TrustSection() {
       className="border-y border-[var(--sand-200)] bg-[var(--sand-200)]/35"
     >
       <div className="mx-auto max-w-[var(--container-max)] px-4 py-10 lg:px-6 lg:py-14">
-        <FadeIn>
+        <FadeIn variant="drop">
           <h2 id="trust-heading" className="max-w-2xl text-[var(--text-heading)] font-semibold">
             Co oferujemy w naszym ośrodku?
           </h2>
@@ -31,9 +31,9 @@ export function TrustSection() {
           </p>
         </FadeIn>
 
-        <StaggerChildren className="mt-8 grid gap-3 sm:grid-cols-2">
-          {offerings.map((item) => (
-            <StaggerItem key={item}>
+        <StaggerChildren className="mt-8 grid gap-3 sm:grid-cols-2" stagger={0.08}>
+          {offerings.map((item, index) => (
+            <StaggerItem key={item} variant={index % 2 === 0 ? "left" : "right"}>
               <div className="flex gap-3 rounded-[var(--radius-sm)] border border-[var(--sand-200)] bg-white/80 px-4 py-3 text-sm">
                 <Check
                   size={18}
@@ -47,7 +47,7 @@ export function TrustSection() {
           ))}
         </StaggerChildren>
 
-        <FadeIn delay={0.15}>
+        <FadeIn variant="rise" delay={0.15}>
           <p className="mt-8 max-w-prose text-sm opacity-85">
             Każdy proces zaczyna się od rzetelnej diagnozy, która pozwala nie zgadywać, tylko precyzyjnie
             określić źródło trudności i zaplanować dalsze kroki terapeutyczne.

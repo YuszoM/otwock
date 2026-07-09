@@ -19,7 +19,7 @@ export function SectionPineAccent({
 }: SectionPineAccentProps) {
   return (
     <div
-      className={`pointer-events-none absolute z-0 select-none opacity-[0.16] ${positionClasses[position]} ${className}`}
+      className={`pointer-events-none absolute z-0 select-none opacity-[0.22] ${positionClasses[position]} ${className}`}
       aria-hidden
     >
       <div className="flex items-end gap-1 sm:gap-2">

@@ -22,7 +22,7 @@ export function AudienceSection() {
     >
       <SectionPineAccent position="bottom-right" />
       <StaggerChildren>
-        <StaggerItem>
+        <StaggerItem variant="drop">
           <h2 id="audience-heading" className="max-w-2xl text-[var(--text-heading)] font-semibold">
             Dla kogo jest to miejsce?
           </h2>
@@ -31,9 +31,9 @@ export function AudienceSection() {
           </p>
         </StaggerItem>
       </StaggerChildren>
-      <StaggerChildren className="mt-8 grid gap-3 sm:grid-cols-2" stagger={0.1}>
-        {audiences.map((item) => (
-          <StaggerItem key={item}>
+      <StaggerChildren className="mt-8 grid gap-3 sm:grid-cols-2" stagger={0.09}>
+        {audiences.map((item, index) => (
+          <StaggerItem key={item} variant={index % 2 === 0 ? "left" : "right"}>
             <div className="flex h-full gap-3 rounded-[var(--radius-sm)] border border-forest-border/15 bg-white/80 px-4 py-3 text-sm leading-relaxed text-[var(--ink)]">
               <Check
                 size={18}
@@ -47,7 +47,7 @@ export function AudienceSection() {
         ))}
       </StaggerChildren>
       <StaggerChildren className="mt-8">
-        <StaggerItem>
+        <StaggerItem variant="scale">
           <Link href="/rezerwacja" className="btn-honey">
             Umów konsultację
           </Link>

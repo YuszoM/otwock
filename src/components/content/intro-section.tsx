@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { FadeIn, StaggerChildren, StaggerItem } from "@/components/motion/fade-in";
+import { StaggerChildren, StaggerItem } from "@/components/motion/fade-in";
 import { ReadMoreText } from "@/components/ui/read-more-text";
 import { SectionPineAccent } from "@/components/ornaments/section-pine-accent";
 import { AnimatedSectionSeparator } from "@/components/ornaments/animated-section-separator";
@@ -9,16 +9,16 @@ import { AnimatedSectionSeparator } from "@/components/ornaments/animated-sectio
 export function IntroSection() {
   return (
     <section aria-labelledby="intro-heading" className="relative overflow-hidden bg-[var(--sand-50)]">
-      <AnimatedSectionSeparator />
+      <AnimatedSectionSeparator motion="rise" />
       <SectionPineAccent position="bottom-left" className="opacity-[0.1]" />
       <div className="relative z-[1] mx-auto max-w-[var(--container-max)] px-4 py-12 lg:px-6 lg:py-16">
         <StaggerChildren className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-start lg:gap-14">
-          <StaggerItem>
+          <StaggerItem variant="left">
             <h2 id="intro-heading" className="text-[clamp(1.5rem,4vw,2rem)] font-semibold leading-tight tracking-tight text-[var(--pine-900)]">
               To Twoja bezpieczna przestrzeń.
             </h2>
           </StaggerItem>
-          <StaggerItem>
+          <StaggerItem variant="right">
             <div className="space-y-4 text-base leading-relaxed text-[var(--ink-soft)]">
               <p>
                 Ośrodek powstał z bardzo głębokiej potrzeby: aby rodziny, pary i dzieci miały w Otwocku

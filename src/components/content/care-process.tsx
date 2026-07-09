@@ -9,14 +9,14 @@ export function CareProcess() {
       aria-labelledby="care-process-heading"
       className="mx-auto max-w-[var(--container-max)] px-4 py-12 lg:px-6 lg:py-16"
     >
-      <AnimatedSectionSeparator className="mb-4" />
+      <AnimatedSectionSeparator className="mb-4" motion="fade" />
       <StaggerChildren className="space-y-4">
-        <StaggerItem>
+        <StaggerItem variant="drop">
           <h2 id="care-process-heading" className="text-[var(--text-heading)] font-semibold">
             Jak rozumiemy poradnię zdrowia psychicznego?
           </h2>
         </StaggerItem>
-        <StaggerItem>
+        <StaggerItem variant="left">
           <p className="max-w-prose opacity-85">
             Poradnia zdrowia psychicznego w naszym podejściu nie ogranicza się wyłącznie do pojedynczej
             wizyty. To złożony proces, który obejmuje diagnozę, terapię i dalsze wsparcie w sposób spójny,
@@ -24,7 +24,7 @@ export function CareProcess() {
             sytuacji oraz dobranie działań, które mają sens w codziennym funkcjonowaniu.
           </p>
         </StaggerItem>
-        <StaggerItem>
+        <StaggerItem variant="right">
           <p className="max-w-prose opacity-85">
             W codziennej pracy dużą wagę przykładamy też do komfortu osób korzystających ze wsparcia.
             Ważne jest nie tylko to, co dzieje się w gabinecie, ale również całe otoczenie procesu

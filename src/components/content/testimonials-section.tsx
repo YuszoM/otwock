@@ -42,9 +42,9 @@ export function TestimonialsSection() {
       aria-labelledby="testimonials-heading"
       className="relative bg-[color-mix(in_srgb,var(--lilac-300)_15%,var(--sand-50))]"
     >
-      <AnimatedSectionSeparator />
+      <AnimatedSectionSeparator motion="expand" />
       <div className="mx-auto max-w-[var(--container-max)] px-4 py-12 lg:px-6 lg:py-16">
-        <FadeIn>
+        <FadeIn variant="scale">
           <SectionEyebrow>Opinie</SectionEyebrow>
           <h2 id="testimonials-heading" className="mt-2 text-[var(--text-heading)] font-semibold">
             Opinie
@@ -56,9 +56,12 @@ export function TestimonialsSection() {
           </p>
         </FadeIn>
 
-        <StaggerChildren className="mt-10 grid gap-6 sm:grid-cols-2">
-          {testimonials.map((item) => (
-            <StaggerItem key={item.author + item.context}>
+        <StaggerChildren className="mt-10 grid gap-6 sm:grid-cols-2" stagger={0.12}>
+          {testimonials.map((item, index) => (
+            <StaggerItem
+              key={item.author + item.context}
+              variant={index % 2 === 0 ? "tilt-left" : "tilt-right"}
+            >
               <CardCorbelBorder>
                 <blockquote className="h-full rounded-[var(--radius-md)] border border-[var(--sand-200)] bg-white/90 p-6">
                   <p className="text-sm leading-relaxed opacity-90">&ldquo;{item.quote}&rdquo;</p>
