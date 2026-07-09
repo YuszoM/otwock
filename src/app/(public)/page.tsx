@@ -1,8 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
-import { siteConfig } from "@/config/site";
+import { HomeHero } from "@/components/home/home-hero";
 import { CareProcess } from "@/components/content/care-process";
 import { TrustSection } from "@/components/content/trust-section";
 import { ModernApproachSection } from "@/components/content/modern-approach-section";
@@ -17,62 +16,7 @@ export default function HomePage() {
 
   return (
     <>
-      <section className="relative overflow-hidden bg-forest text-on-forest">
-        <div
-          className="pointer-events-none absolute inset-0 opacity-[0.07]"
-          style={{
-            backgroundImage: "url(/images/texture-pine-beige-tile.webp)",
-            backgroundSize: "400px",
-          }}
-          aria-hidden
-        />
-        <div className="relative mx-auto grid max-w-[var(--container-max)] gap-10 px-4 py-14 lg:grid-cols-2 lg:items-center lg:px-6 lg:py-20">
-          <FadeIn immediate y={20}>
-            <div className="max-w-prose">
-              <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--color-honey)]">
-                Słuchamy i wspieramy
-              </p>
-              <h1 className="mt-3 text-[clamp(2rem,4vw,2.75rem)] font-semibold leading-[1.15] tracking-tight">
-                Miejsce, w którym psychologia, terapia i diagnoza działają jako jeden spójny proces
-              </h1>
-              <p className="mt-5 text-base leading-relaxed opacity-90">
-                {siteConfig.footer.tagline}. W Otwocku tworzymy centrum wsparcia, w którym nikt nie musi
-                udawać, że daje radę sam.
-              </p>
-              <Link
-                href="/rezerwacja"
-                className="mt-4 inline-flex items-center gap-2 rounded-full border border-[var(--color-honey)]/50 bg-[var(--color-honey)]/10 px-3 py-1.5 text-xs font-semibold text-[var(--color-honey)] transition-colors hover:bg-[var(--color-honey)]/20"
-              >
-                <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-honey)]" aria-hidden />
-                Zostały ostatnie wolne terminy — sprawdź dostępność
-              </Link>
-              <div className="mt-9 flex flex-wrap gap-4">
-                <Link href={siteConfig.bookingCta.href} className="btn-honey">
-                  {siteConfig.bookingCta.label}
-                </Link>
-                <Link
-                  href="/o-nas"
-                  className="inline-flex min-h-11 items-center rounded-[var(--radius-sm)] border border-forest-border px-5 text-sm font-semibold text-on-forest underline-offset-4 transition-colors hover:bg-white/5"
-                >
-                  Poznaj ośrodek
-                </Link>
-              </div>
-            </div>
-          </FadeIn>
-          <FadeIn immediate delay={0.12} y={24}>
-            <div className="relative aspect-[16/10] overflow-hidden rounded-[var(--radius-md)] shadow-[0_24px_48px_rgba(0,0,0,0.2)]">
-              <Image
-                src="/images/hero-otwock-forest-16x9.webp"
-                alt="Spokojny las w okolicach Otwocka — wizualna tożsamość OOWiT"
-                fill
-                priority
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-            </div>
-          </FadeIn>
-        </div>
-      </section>
+      <HomeHero />
 
       <TrustSection />
       <CareProcess />

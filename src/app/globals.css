@@ -186,6 +186,36 @@
     border-color: var(--color-forest);
     background-color: rgba(26, 58, 47, 0.05);
   }
+
+  .hero-overlay {
+    background:
+      linear-gradient(
+        105deg,
+        rgba(21, 46, 38, 0.88) 0%,
+        rgba(21, 46, 38, 0.62) 42%,
+        rgba(21, 46, 38, 0.28) 72%,
+        rgba(21, 46, 38, 0.45) 100%
+      ),
+      linear-gradient(to top, rgba(21, 46, 38, 0.82) 0%, transparent 48%);
+  }
+
+  @media (max-width: 639px) {
+    .hero-overlay {
+      background:
+        linear-gradient(
+          180deg,
+          rgba(21, 46, 38, 0.55) 0%,
+          rgba(21, 46, 38, 0.35) 28%,
+          rgba(21, 46, 38, 0.2) 50%,
+          rgba(21, 46, 38, 0.75) 78%,
+          rgba(21, 46, 38, 0.92) 100%
+        );
+    }
+  }
+
+  .hero-safe-zone {
+    text-shadow: 0 1px 18px rgba(21, 46, 38, 0.35);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
