@@ -66,21 +66,37 @@ export function CookieConsentBanner() {
 
   return createPortal(
     <div
-      style={{ position: "fixed", inset: 0, zIndex: 2147483647 }}
-      className="on-forest flex items-end justify-center bg-[rgba(21,46,38,0.45)] p-0 sm:items-center sm:bg-[rgba(21,46,38,0.65)] sm:p-4"
+      className="on-forest pointer-events-none fixed inset-x-0 bottom-0 z-[60] flex justify-center p-3 sm:p-4"
+      role="presentation"
     >
-      <div className="on-forest w-full max-w-lg rounded-t-[var(--radius-md)] border border-forest-border bg-forest p-4 text-on-forest shadow-2xl sm:rounded-[var(--radius-md)] sm:p-6">
-        <h3 className="text-lg font-semibold sm:text-xl">{COOKIE_BANNER_TITLE}</h3>
-        <p className="mt-2 text-sm leading-6 opacity-90 sm:mt-3">{COOKIE_BANNER_BODY}</p>
-        <p className="mt-1 text-xs opacity-80 sm:mt-2">{COOKIE_BANNER_NOTE}</p>
-        <div className="mt-4 flex flex-col gap-2 sm:mt-6 sm:flex-row">
-          <button type="button" onClick={() => { setConsentStorage("all"); setVisible(false); }} className="btn-honey flex-1">
+      <div
+        role="dialog"
+        aria-labelledby="cookie-banner-title"
+        className="on-forest pointer-events-auto w-full max-w-lg rounded-[var(--radius-md)] border border-forest-border bg-forest p-4 text-on-forest shadow-2xl sm:p-5"
+      >
+        <h3 id="cookie-banner-title" className="text-base font-semibold sm:text-lg">
+          {COOKIE_BANNER_TITLE}
+        </h3>
+        <p className="mt-2 text-sm leading-relaxed opacity-90">{COOKIE_BANNER_BODY}</p>
+        <p className="mt-1 text-xs opacity-75">{COOKIE_BANNER_NOTE}</p>
+        <div className="mt-4 flex flex-col gap-2 sm:flex-row">
+          <button
+            type="button"
+            onClick={() => {
+              setConsentStorage("all");
+              setVisible(false);
+            }}
+            className="btn-honey flex-1 text-sm"
+          >
             {COOKIE_BTN_ACCEPT_ALL}
           </button>
           <button
             type="button"
-            onClick={() => { setConsentStorage("necessary"); setVisible(false); }}
-            className="flex-1 rounded-[var(--radius-sm)] border border-forest-border px-4 py-2.5 text-sm font-semibold text-on-forest transition hover:bg-[rgba(232,220,200,0.08)]"
+            onClick={() => {
+              setConsentStorage("necessary");
+              setVisible(false);
+            }}
+            className="flex-1 rounded-[var(--radius-sm)] border border-forest-border px-4 py-2 text-sm font-semibold text-on-forest transition hover:bg-[rgba(232,220,200,0.08)]"
             style={{ minHeight: "44px" }}
           >
             {COOKIE_BTN_NECESSARY_ONLY}

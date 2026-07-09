@@ -5,6 +5,9 @@ import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { CareProcess } from "@/components/content/care-process";
 import { TrustSection } from "@/components/content/trust-section";
+import { ModernApproachSection } from "@/components/content/modern-approach-section";
+import { AudienceSection } from "@/components/content/audience-section";
+import { LegalSupportSection } from "@/components/content/legal-support-section";
 import { SpecialistCard } from "@/components/team/specialist-card";
 import { FadeIn, HoverLift, StaggerChildren, StaggerItem } from "@/components/motion/fade-in";
 import { specialists } from "@/data/specialists";
@@ -18,7 +21,7 @@ export default function HomePage() {
         <div
           className="pointer-events-none absolute inset-0 opacity-[0.07]"
           style={{
-            backgroundImage: "url(/images/texture-pine-beige-tile.jpg)",
+            backgroundImage: "url(/images/texture-pine-beige-tile.webp)",
             backgroundSize: "400px",
           }}
           aria-hidden
@@ -52,7 +55,7 @@ export default function HomePage() {
           <FadeIn delay={0.12} y={24}>
             <div className="relative aspect-[16/10] overflow-hidden rounded-[var(--radius-md)] shadow-[0_24px_48px_rgba(0,0,0,0.2)]">
               <Image
-                src="/images/hero-otwock-forest-16x9.jpg"
+                src="/images/hero-otwock-forest-16x9.webp"
                 alt="Spokojny las w okolicach Otwocka — wizualna tożsamość OOWiT"
                 fill
                 priority
@@ -65,8 +68,10 @@ export default function HomePage() {
       </section>
 
       <TrustSection />
-
       <CareProcess />
+      <ModernApproachSection />
+      <AudienceSection />
+      <LegalSupportSection />
 
       <section className="mx-auto max-w-[var(--container-max)] px-4 py-16 lg:px-6 lg:py-20">
         <FadeIn>
@@ -86,7 +91,7 @@ export default function HomePage() {
             </Link>
           </div>
         </FadeIn>
-        <StaggerChildren className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <StaggerChildren className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {featured.map((s) => (
             <StaggerItem key={s.slug}>
               <HoverLift>

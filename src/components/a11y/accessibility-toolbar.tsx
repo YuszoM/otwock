@@ -98,7 +98,7 @@ export function AccessibilityToolbar() {
       />
 
       <div
-        className="on-forest fixed bottom-4 left-4 z-40 flex max-w-[min(100vw-2rem,22rem)] flex-col gap-2 max-sm:bottom-auto max-sm:left-3 max-sm:top-20"
+        className="on-forest fixed bottom-4 right-4 z-40 flex max-w-[min(100vw-2rem,20rem)] flex-col items-end gap-2 max-sm:bottom-20 max-sm:right-3"
         role="region"
         aria-label={A11Y_COPY.toolbarRegion}
       >
@@ -107,9 +107,9 @@ export function AccessibilityToolbar() {
           aria-expanded={open}
           aria-controls={panelId}
           onClick={() => setOpen((v) => !v)}
-          className="min-h-11 min-w-11 rounded-lg border border-forest-border bg-forest px-4 py-2.5 text-left text-sm font-semibold text-on-forest shadow-lg outline-none hover:opacity-95 focus-visible:ring-2 focus-visible:ring-[var(--color-honey)]"
+          className="min-h-11 rounded-lg border border-forest-border bg-forest px-3 py-2 text-sm font-semibold text-on-forest shadow-md outline-none hover:opacity-95 focus-visible:ring-2 focus-visible:ring-[var(--color-honey)]"
         >
-          {open ? A11Y_COPY.toggleClose : A11Y_COPY.toggleOpen}
+          {open ? A11Y_COPY.toggleClose : "A11Y"}
         </button>
 
         {open ? (

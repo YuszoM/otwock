@@ -1,4 +1,4 @@
-export const TEAM_PLACEHOLDER_PHOTO = "/images/team-photo-style-reference.jpg";
+export const TEAM_PLACEHOLDER_PHOTO = "/images/team-photo-style-reference.webp";
 
 const AVATAR_COLORS = [
   "#2d5a47",

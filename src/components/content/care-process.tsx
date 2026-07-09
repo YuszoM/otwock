@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { FadeIn } from "@/components/motion/fade-in";
 
 const steps = [
   {
@@ -22,7 +25,7 @@ export function CareProcess() {
   return (
     <section aria-labelledby="care-process-heading" className="mx-auto max-w-[var(--container-max)] px-4 py-12 lg:px-6 lg:py-16">
       <div className="grid gap-8 lg:grid-cols-2 lg:items-center lg:gap-10">
-        <div className="order-1 lg:order-2">
+        <FadeIn className="order-1 lg:order-2">
           <h2 id="care-process-heading" className="text-[var(--text-heading)] font-semibold">
             Zintegrowana opieka w trzech krokach
           </h2>
@@ -46,16 +49,18 @@ export function CareProcess() {
               </li>
             ))}
           </ol>
-        </div>
-        <div className="relative order-2 aspect-[4/3] overflow-hidden rounded-[var(--radius-md)] border border-forest-border/10 lg:order-1">
-          <Image
-            src="/images/process-care-3steps.jpg"
-            alt="Ilustracja procesu opieki: diagnoza, terapia, wsparcie"
-            fill
-            className="object-cover"
-            sizes="(max-width: 1024px) 100vw, 50vw"
-          />
-        </div>
+        </FadeIn>
+        <FadeIn delay={0.1} className="order-2 lg:order-1">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--radius-md)] border border-forest-border/10">
+            <Image
+              src="/images/process-care-3steps.webp"
+              alt="Ilustracja procesu opieki: diagnoza, terapia, wsparcie"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+          </div>
+        </FadeIn>
       </div>
     </section>
   );

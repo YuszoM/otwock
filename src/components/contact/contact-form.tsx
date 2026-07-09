@@ -27,7 +27,7 @@ export function ContactForm() {
           </div>
 
           <div>
-            <label htmlFor="contact-name" className="mb-1 block text-sm font-medium">
+            <label htmlFor="contact-name" className="form-label">
               Imię i nazwisko
             </label>
             <input
@@ -37,12 +37,12 @@ export function ContactForm() {
               required
               autoComplete="name"
               maxLength={120}
-              className="w-full rounded-[var(--radius-sm)] border border-forest-border/25 px-3 py-2 text-sm"
+              className="form-input"
             />
           </div>
 
           <div>
-            <label htmlFor="contact-email" className="mb-1 block text-sm font-medium">
+            <label htmlFor="contact-email" className="form-label">
               Email
             </label>
             <input
@@ -51,12 +51,12 @@ export function ContactForm() {
               type="email"
               required
               autoComplete="email"
-              className="w-full rounded-[var(--radius-sm)] border border-forest-border/25 px-3 py-2 text-sm"
+              className="form-input"
             />
           </div>
 
           <div>
-            <label htmlFor="contact-phone" className="mb-1 block text-sm font-medium">
+            <label htmlFor="contact-phone" className="form-label">
               Telefon <span className="font-normal opacity-70">(opcjonalnie)</span>
             </label>
             <input
@@ -65,12 +65,12 @@ export function ContactForm() {
               type="tel"
               autoComplete="tel"
               maxLength={40}
-              className="w-full rounded-[var(--radius-sm)] border border-forest-border/25 px-3 py-2 text-sm"
+              className="form-input"
             />
           </div>
 
           <div>
-            <label htmlFor="contact-message" className="mb-1 block text-sm font-medium">
+            <label htmlFor="contact-message" className="form-label">
               Wiadomość
             </label>
             <textarea
@@ -80,7 +80,7 @@ export function ContactForm() {
               minLength={10}
               maxLength={8000}
               rows={6}
-              className="w-full rounded-[var(--radius-sm)] border border-forest-border/25 px-3 py-2 text-sm"
+              className="form-input resize-y"
             />
           </div>
 

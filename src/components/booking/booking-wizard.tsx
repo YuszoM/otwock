@@ -119,24 +119,25 @@ export function BookingWizard() {
         description="Wybierz specjalistę, usługę i dogodny termin. To wersja demonstracyjna — bez zapisu w systemie."
       />
 
-      <section className="mx-auto max-w-3xl px-4 py-8 lg:px-6">
+      <section className="mx-auto max-w-3xl px-4 py-8 sm:max-w-3xl lg:px-6">
         <nav aria-label="Kroki rezerwacji" className="mb-8">
           <p className="mb-3 text-sm font-semibold sm:hidden" aria-live="polite">
             Krok {step + 1} z {STEPS.length}: {STEPS[step]}
           </p>
-          <ol className="hidden flex-wrap gap-2 sm:flex">
+          <ol className="flex flex-wrap gap-2">
             {STEPS.map((label, i) => (
               <li
                 key={label}
-                className={`rounded-full px-3 py-1 text-xs font-semibold ${
+                className={`rounded-full px-3 py-1.5 text-xs font-semibold ${
                   i === step
                     ? "bg-forest text-on-forest"
                     : i < step
                       ? "bg-[var(--color-forest)]/15 text-[var(--color-forest)]"
-                      : "bg-beige text-on-beige/60"
+                      : "border border-forest-border/25 bg-white text-on-beige/70"
                 }`}
               >
-                {i + 1}. {label}
+                <span className="hidden sm:inline">{i + 1}. </span>
+                {label}
               </li>
             ))}
           </ol>
@@ -215,11 +216,7 @@ export function BookingWizard() {
                         setSelectedDate(d);
                         setSelectedSlot(null);
                       }}
-                      className={`flex min-w-[4.5rem] flex-col items-center rounded-[var(--radius-sm)] border px-3 py-2 text-sm transition-colors ${
-                        isSelected
-                          ? "border-[var(--color-forest)] bg-[var(--color-forest)]/10 font-semibold"
-                          : "border-forest-border/25 hover:border-[var(--color-forest)]/40"
-                      }`}
+                      className={`slot-picker-day ${isSelected ? "" : ""}`}
                       aria-pressed={isSelected}
                     >
                       <span className="text-xs uppercase opacity-70">
@@ -243,7 +240,7 @@ export function BookingWizard() {
                         <button
                           type="button"
                           onClick={() => pickSlot(slot)}
-                          className="w-full rounded-[var(--radius-sm)] border border-forest-border/25 px-2 py-2.5 text-sm font-medium transition-colors hover:border-[var(--color-forest)] hover:bg-[var(--color-forest)]/5"
+                          className="slot-picker-time"
                         >
                           {slot.timeLabel}
                         </button>
@@ -274,7 +271,7 @@ export function BookingWizard() {
               </div>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <label htmlFor="patient-name" className="mb-1 block text-sm font-medium">
+                  <label htmlFor="patient-name" className="form-label">
                     Imię i nazwisko
                   </label>
                   <input
@@ -282,11 +279,12 @@ export function BookingWizard() {
                     required
                     value={patientName}
                     onChange={(e) => setPatientName(e.target.value)}
-                    className="w-full rounded-[var(--radius-sm)] border border-forest-border/25 px-3 py-2 text-sm"
+                    className="form-input"
+                    autoComplete="name"
                   />
                 </div>
                 <div>
-                  <label htmlFor="patient-email" className="mb-1 block text-sm font-medium">
+                  <label htmlFor="patient-email" className="form-label">
                     Email
                   </label>
                   <input
@@ -295,19 +293,21 @@ export function BookingWizard() {
                     required
                     value={patientEmail}
                     onChange={(e) => setPatientEmail(e.target.value)}
-                    className="w-full rounded-[var(--radius-sm)] border border-forest-border/25 px-3 py-2 text-sm"
+                    className="form-input"
+                    autoComplete="email"
                   />
                 </div>
                 <div>
-                  <label htmlFor="patient-phone" className="mb-1 block text-sm font-medium">
-                    Telefon <span className="opacity-70">(opcjonalnie)</span>
+                  <label htmlFor="patient-phone" className="form-label">
+                    Telefon <span className="font-normal opacity-70">(opcjonalnie)</span>
                   </label>
                   <input
                     id="patient-phone"
                     type="tel"
                     value={patientPhone}
                     onChange={(e) => setPatientPhone(e.target.value)}
-                    className="w-full rounded-[var(--radius-sm)] border border-forest-border/25 px-3 py-2 text-sm"
+                    className="form-input"
+                    autoComplete="tel"
                   />
                 </div>
                 {error ? (

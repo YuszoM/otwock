@@ -3,16 +3,16 @@ import { FadeIn } from "@/components/motion/fade-in";
 
 const values = [
   {
+    title: "Bezpieczna przestrzeń",
+    text: "Założenie jest proste: tworzymy bezpieczną przestrzeń, w której rodziny, pary i dzieci odzyskują spokój, lepiej rozumieją siebie i budują zdrowsze relacje. Pomagamy ludziom żyć lżej.",
+  },
+  {
     title: "Słuchamy, nie oceniamy",
-    text: "Zaczynamy od wysłuchania — bez presji czasu i gotowych schematów. Tworzymy przestrzeń, w której możesz być sobą.",
+    text: "W świecie, w którym każdy mówi Ci, jak masz żyć, my zaczynamy od słuchania. Nie oceniamy, nie przyspieszamy, nie dopasowujemy Cię do gotowych schematów.",
   },
   {
     title: "Spójny proces opieki",
-    text: "Diagnoza, terapia i wsparcie w jednym miejscu — bez chaosu między placówkami i bez zaczynania od nowa przy każdej wizycie.",
-  },
-  {
-    title: "Nowoczesne podejście",
-    text: "Sala integracji sensorycznej, terapia VR i sprawdzone metody — z troską o komfort i bezpieczeństwo pacjenta.",
+    text: "Diagnoza, terapia i wsparcie w jednym miejscu — bez chaosu między placówkami. Tworzymy przestrzeń, w której możesz wreszcie być sobą ze wszystkimi pytaniami, których nikt wcześniej nie potrafił wysłuchać.",
   },
 ];
 

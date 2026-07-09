@@ -103,6 +103,89 @@
     text-decoration-thickness: 2px;
     text-underline-offset: 6px;
   }
+
+  .form-input {
+    display: block;
+    width: 100%;
+    border-radius: var(--radius-sm);
+    border: 1.5px solid rgba(21, 46, 38, 0.28);
+    background-color: #fff;
+    color: var(--color-on-beige);
+    padding: 0.625rem 0.75rem;
+    font-size: var(--text-label);
+    line-height: 1.5;
+    transition:
+      border-color var(--duration-fast) var(--ease-out),
+      box-shadow var(--duration-fast) var(--ease-out);
+  }
+
+  .form-input::placeholder {
+    color: rgba(21, 46, 38, 0.45);
+  }
+
+  .form-input:hover {
+    border-color: rgba(21, 46, 38, 0.42);
+  }
+
+  .form-input:focus {
+    outline: none;
+    border-color: var(--color-forest);
+    box-shadow: 0 0 0 3px rgba(26, 58, 47, 0.12);
+  }
+
+  .form-label {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-size: var(--text-label);
+    font-weight: 600;
+    color: var(--color-on-beige);
+  }
+
+  .slot-picker-day {
+    display: flex;
+    min-width: 4.5rem;
+    flex-direction: column;
+    align-items: center;
+    border-radius: var(--radius-sm);
+    border: 1.5px solid rgba(21, 46, 38, 0.22);
+    background-color: #fff;
+    color: var(--color-on-beige);
+    padding: 0.5rem 0.75rem;
+    font-size: var(--text-label);
+    transition:
+      border-color var(--duration-fast) var(--ease-out),
+      background-color var(--duration-fast) var(--ease-out);
+  }
+
+  .slot-picker-day:hover {
+    border-color: rgba(26, 58, 47, 0.45);
+    background-color: rgba(26, 58, 47, 0.04);
+  }
+
+  .slot-picker-day[aria-pressed="true"] {
+    border-color: var(--color-forest);
+    background-color: rgba(26, 58, 47, 0.1);
+    font-weight: 600;
+  }
+
+  .slot-picker-time {
+    width: 100%;
+    border-radius: var(--radius-sm);
+    border: 1.5px solid rgba(21, 46, 38, 0.22);
+    background-color: #fff;
+    color: var(--color-on-beige);
+    padding: 0.625rem 0.5rem;
+    font-size: var(--text-label);
+    font-weight: 500;
+    transition:
+      border-color var(--duration-fast) var(--ease-out),
+      background-color var(--duration-fast) var(--ease-out);
+  }
+
+  .slot-picker-time:hover {
+    border-color: var(--color-forest);
+    background-color: rgba(26, 58, 47, 0.05);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
