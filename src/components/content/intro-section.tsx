@@ -2,12 +2,12 @@
 
 import Link from "next/link";
 import { FadeIn } from "@/components/motion/fade-in";
-import { LaceGableSeparator } from "@/components/ornaments/lace-gable-separator";
+import { SectionSeparator } from "@/components/ornaments/section-separator";
 
 export function IntroSection() {
   return (
     <section aria-labelledby="intro-heading" className="relative bg-[var(--sand-50)]">
-      <LaceGableSeparator className="opacity-70" />
+      <SectionSeparator />
       <div className="mx-auto max-w-[var(--container-max)] px-4 py-12 lg:px-6 lg:py-16">
         <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-start lg:gap-14">
           <FadeIn immediate>

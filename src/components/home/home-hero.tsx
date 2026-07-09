@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { HeroOrnament } from "@/components/ornaments/hero-ornament";
-import { LaceGableSeparator } from "@/components/ornaments/lace-gable-separator";
+import { SectionSeparator } from "@/components/ornaments/section-separator";
 
 const HERO_IMAGE = "/images/hero-otwock-forest-16x9.webp";
 const HERO_IMAGE_ALT = "/images/hero-otwock-forest-alt.webp";
@@ -34,7 +34,7 @@ export function HomeHero() {
 
       <div className="hero-safe-zone relative z-10 mx-auto flex min-h-[100svh] max-w-[var(--container-max)] flex-col justify-center px-4 py-[max(4.5rem,11svh)] sm:py-20 lg:px-6">
         <div className="max-w-2xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--clay-400)]">
+          <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--lilac-500)]">
             Słuchamy i wspieramy.
           </p>
           <h1 className="mt-3 text-[clamp(1.65rem,4.8vw,2.65rem)] font-semibold leading-[1.14] tracking-tight text-balance">
@@ -60,7 +60,7 @@ export function HomeHero() {
       </div>
 
       <div className="pointer-events-none absolute bottom-0 left-0 right-0 z-[2]" aria-hidden>
-        <LaceGableSeparator className="opacity-90" />
+        <SectionSeparator variant="on-forest" className="py-2 opacity-90" />
         <div className="h-8 bg-gradient-to-t from-[var(--sand-50)] to-transparent sm:h-12" />
       </div>
     </section>

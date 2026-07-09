@@ -1,7 +1,7 @@
 "use client";
 
 import { FadeIn } from "@/components/motion/fade-in";
-import { LaceGableSeparator } from "@/components/ornaments/lace-gable-separator";
+import { SectionSeparator } from "@/components/ornaments/section-separator";
 
 export function CareProcess() {
   return (
@@ -9,7 +9,7 @@ export function CareProcess() {
       aria-labelledby="care-process-heading"
       className="mx-auto max-w-[var(--container-max)] px-4 py-12 lg:px-6 lg:py-16"
     >
-      <LaceGableSeparator className="mb-10 opacity-70" />
+      <SectionSeparator className="mb-4" />
       <FadeIn>
         <h2 id="care-process-heading" className="text-[var(--text-heading)] font-semibold">
           Jak rozumiemy poradnię zdrowia psychicznego?

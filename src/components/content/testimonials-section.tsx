@@ -1,7 +1,8 @@
 "use client";
 
 import { CardCorbelBorder } from "@/components/ornaments/card-corbel-border";
-import { LaceGableSeparator } from "@/components/ornaments/lace-gable-separator";
+import { SectionSeparator } from "@/components/ornaments/section-separator";
+import { SectionEyebrow } from "@/components/ui/section-eyebrow";
 import { FadeIn, StaggerChildren, StaggerItem } from "@/components/motion/fade-in";
 
 const testimonials = [
@@ -37,13 +38,14 @@ const testimonials = [
 
 export function TestimonialsSection() {
   return (
-    <section aria-labelledby="testimonials-heading" className="relative bg-[var(--sand-50)]">
-      <LaceGableSeparator className="opacity-80" />
+    <section
+      aria-labelledby="testimonials-heading"
+      className="relative bg-[color-mix(in_srgb,var(--lilac-300)_15%,var(--sand-50))]"
+    >
+      <SectionSeparator />
       <div className="mx-auto max-w-[var(--container-max)] px-4 py-12 lg:px-6 lg:py-16">
         <FadeIn immediate>
-          <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--wood-700)]">
-            Opinie
-          </p>
+          <SectionEyebrow>Opinie</SectionEyebrow>
           <h2 id="testimonials-heading" className="mt-2 text-[var(--text-heading)] font-semibold">
             Opinie
           </h2>
@@ -66,7 +68,7 @@ export function TestimonialsSection() {
                     </cite>
                     <span className="text-[var(--ink-soft)]">· {item.context}</span>
                     {item.demo ? (
-                      <span className="rounded-full bg-[var(--lilac-300)]/40 px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-wide text-[var(--pine-900)]">
+                      <span className="rounded-full border border-[var(--sand-200)] bg-[var(--sand-100)] px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-wide text-[var(--pine-900)]">
                         Demo
                       </span>
                     ) : null}
