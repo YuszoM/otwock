@@ -1,14 +1,8 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import dynamic from "next/dynamic";
 import { buildPageMetadata } from "@/lib/seo/build-metadata";
-
-const BookingWizard = dynamic(
-  () => import("@/components/booking/booking-wizard").then((m) => m.BookingWizard),
-  {
-    loading: () => <p className="p-8 text-center">Ładowanie formularza…</p>,
-  },
-);
+import { PageHero } from "@/components/ui/page-hero";
+import { BookingWizard } from "@/components/booking/booking-wizard";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Rezerwacja wizyty",
@@ -18,8 +12,15 @@ export const metadata: Metadata = buildPageMetadata({
 
 export default function BookingPage() {
   return (
-    <Suspense fallback={<p className="p-8 text-center">Ładowanie…</p>}>
-      <BookingWizard />
-    </Suspense>
+    <>
+      <PageHero
+        eyebrow="Rezerwacja"
+        title="Umów konsultację online"
+        description="Wybierz specjalistę, usługę i dogodny termin. To wersja demonstracyjna — bez zapisu w systemie."
+      />
+      <Suspense fallback={<p className="p-8 text-center">Ładowanie formularza…</p>}>
+        <BookingWizard />
+      </Suspense>
+    </>
   );
 }

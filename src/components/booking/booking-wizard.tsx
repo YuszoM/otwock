@@ -11,7 +11,6 @@ import {
   getUniqueDates,
   type TimeSlot,
 } from "@/lib/booking/mock";
-import { PageHero } from "@/components/ui/page-hero";
 import { SpecialistCard } from "@/components/team/specialist-card";
 import { ServiceCard } from "@/components/services/service-card";
 import { FadeIn } from "@/components/motion/fade-in";
@@ -113,13 +112,23 @@ export function BookingWizard() {
 
   return (
     <>
-      <PageHero
-        eyebrow="Rezerwacja"
-        title="Umów konsultację online"
-        description="Wybierz specjalistę, usługę i dogodny termin. To wersja demonstracyjna — bez zapisu w systemie."
-      />
-
       <section className="mx-auto max-w-3xl px-4 py-8 sm:max-w-3xl lg:px-6">
+        <div
+          className="mb-6 h-1.5 overflow-hidden rounded-full bg-[var(--sand-200)]"
+          role="progressbar"
+          aria-valuenow={step + 1}
+          aria-valuemin={1}
+          aria-valuemax={STEPS.length}
+          aria-label="Postęp rezerwacji"
+        >
+          <motion.div
+            className="h-full rounded-full bg-[var(--pine-700)]"
+            initial={false}
+            animate={{ width: `${((step + 1) / STEPS.length) * 100}%` }}
+            transition={{ duration: reduceMotion ? 0 : 0.35, ease: [0.22, 1, 0.36, 1] }}
+          />
+        </div>
+
         <nav aria-label="Kroki rezerwacji" className="mb-8">
           <p className="mb-3 text-sm font-semibold sm:hidden" aria-live="polite">
             Krok {step + 1} z {STEPS.length}: {STEPS[step]}

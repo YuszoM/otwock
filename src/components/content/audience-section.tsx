@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { Check } from "@phosphor-icons/react";
 import { FadeIn } from "@/components/motion/fade-in";
 
 const audiences = [
@@ -35,9 +38,12 @@ export function AudienceSection() {
               key={item}
               className="flex gap-3 rounded-[var(--radius-sm)] border border-forest-border/15 bg-white/80 px-4 py-3 text-sm"
             >
-              <span className="mt-0.5 shrink-0 text-[var(--color-forest)]" aria-hidden>
-                ✓
-              </span>
+              <Check
+                size={18}
+                weight="bold"
+                className="mt-0.5 shrink-0 text-[var(--pine-700)]"
+                aria-hidden
+              />
               <span>{item}</span>
             </li>
           ))}

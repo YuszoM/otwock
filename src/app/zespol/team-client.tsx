@@ -18,7 +18,7 @@ export function TeamClient() {
           Profile oznaczone „Demo dane” to placeholdery — prawdziwe zdjęcia i dane specjalistów
           uzupełnimy po potwierdzeniu składu zespołu przez klienta.
         </p>
-        <StaggerChildren className="grid grid-cols-1 gap-8 sm:grid-cols-2 xl:grid-cols-3">
+        <StaggerChildren immediate className="grid grid-cols-1 gap-8 sm:grid-cols-2 xl:grid-cols-3">
           {specialists.map((s) => (
             <StaggerItem key={s.slug}>
               <SpecialistCard specialist={s} />

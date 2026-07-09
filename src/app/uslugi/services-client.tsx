@@ -14,7 +14,7 @@ export function ServicesClient() {
         description="Od pierwszej konsultacji po długofalowe wsparcie — każda usługa jest dopasowana do wieku i potrzeb pacjenta."
       />
       <section className="mx-auto max-w-[var(--container-max)] px-4 py-16 lg:px-6">
-        <StaggerChildren className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <StaggerChildren immediate className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
             <StaggerItem key={service.slug}>
               <ServiceCard service={service} />

@@ -17,7 +17,7 @@ export function HomeHero() {
         priority
         fetchPriority="high"
         sizes="100vw"
-        className="absolute inset-0 object-cover object-[65%_28%] md:hidden"
+        className="pointer-events-none absolute inset-0 object-cover object-[65%_28%] md:hidden"
       />
       <Image
         src={HERO_IMAGE}
@@ -26,10 +26,10 @@ export function HomeHero() {
         priority
         fetchPriority="high"
         sizes="100vw"
-        className="absolute inset-0 hidden object-cover object-[center_35%] md:block"
+        className="pointer-events-none absolute inset-0 hidden object-cover object-[center_35%] md:block"
       />
 
-      <div className="hero-overlay absolute inset-0 z-[1]" aria-hidden />
+      <div className="hero-overlay pointer-events-none absolute inset-0 z-[1]" aria-hidden />
       <HeroOrnament />
 
       <div className="hero-safe-zone relative z-10 mx-auto flex min-h-[100svh] max-w-[var(--container-max)] flex-col justify-center px-4 py-[max(4.5rem,11svh)] sm:py-20 lg:px-6">
