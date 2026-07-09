@@ -2,8 +2,8 @@
 
 export const A11Y_COPY = {
   toolbarRegion: "Narzędzia dostępności",
-  toggleOpen: "Otwórz ustawienia dostępności",
-  toggleClose: "Zamknij ustawienia dostępności",
+  toggleOpen: "Dostępność",
+  toggleClose: "Zamknij",
   contrast: "Kontrast",
   contrastNormal: "Standardowy",
   contrastHigh: "Wysoki kontrast",

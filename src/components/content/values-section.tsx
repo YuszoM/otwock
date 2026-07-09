@@ -1,6 +1,7 @@
 "use client";
 
 import { CardCorbelBorder } from "@/components/ornaments/card-corbel-border";
+import { SectionPineAccent } from "@/components/ornaments/section-pine-accent";
 import { FadeIn, StaggerChildren, StaggerItem } from "@/components/motion/fade-in";
 
 const values = [
@@ -16,9 +17,10 @@ export function ValuesSection() {
   return (
     <section
       aria-labelledby="values-heading"
-      className="border-y border-[var(--sand-200)] bg-[var(--sand-50)]"
+      className="relative overflow-hidden border-y border-[var(--sand-200)] bg-[var(--sand-50)]"
     >
-      <div className="mx-auto max-w-[var(--container-max)] px-4 py-12 lg:px-6 lg:py-16">
+      <SectionPineAccent position="top-right" className="opacity-[0.08]" />
+      <div className="relative z-[1] mx-auto max-w-[var(--container-max)] px-4 py-12 lg:px-6 lg:py-16">
         <FadeIn>
           <h2 id="values-heading" className="max-w-2xl text-[var(--text-heading)] font-semibold">
             Nasze wartości

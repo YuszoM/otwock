@@ -1,5 +1,4 @@
 @import "../styles/tokens.css";
-@import "../styles/accessibility.css";
 @import "tailwindcss";
 
 @layer base {
@@ -83,6 +82,7 @@
   .btn-honey:hover {
     background-color: var(--pine-900);
     box-shadow: 0 0 0 1px var(--lilac-500);
+    transform: translateY(-1px);
   }
 
   .btn-primary:active,
@@ -246,6 +246,58 @@
 
   .hero-safe-zone {
     text-shadow: 0 1px 18px rgba(30, 58, 43, 0.35);
+  }
+
+  .motion-hero-drift {
+    animation: hero-drift 28s ease-in-out infinite alternate;
+    transform-origin: center center;
+    will-change: transform;
+  }
+
+  .motion-calm-float {
+    animation: calm-float 7s ease-in-out infinite;
+    will-change: transform;
+  }
+
+  .motion-calm-float-delayed {
+    animation: calm-float 8.5s ease-in-out infinite;
+    animation-delay: 1.2s;
+    will-change: transform;
+  }
+
+  .motion-calm-sway {
+    animation: calm-sway 9s ease-in-out infinite;
+    animation-delay: 2s;
+    will-change: transform;
+  }
+}
+
+@keyframes hero-drift {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.04);
+  }
+}
+
+@keyframes calm-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes calm-sway {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(1.2deg);
   }
 }
 

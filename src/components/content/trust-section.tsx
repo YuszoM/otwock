@@ -24,7 +24,7 @@ export function TrustSection() {
           <h2 id="trust-heading" className="max-w-2xl text-[var(--text-heading)] font-semibold">
             Co oferujemy w naszym ośrodku?
           </h2>
-          <p className="mt-4 max-w-2xl opacity-85">
+          <p className="mt-4 max-w-2xl text-[var(--ink-soft)]">
             Nasze centrum zostało stworzone tak, aby zapewniać wsparcie w różnych obszarach w jednym
             miejscu. Sprawia to, że Pacjenci z Otwocka, Józefowa oraz okolicznych miejscowości nie muszą
             szukać kilku specjalistów osobno. W ramach pracy oferujemy:

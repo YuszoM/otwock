@@ -1,3 +1,5 @@
+import { SOSNA_PATH } from "@/components/ornaments/pine-path";
+
 type SosnaPineProps = {
   className?: string;
 };
@@ -17,7 +19,7 @@ export function SosnaPine({ className = "" }: SosnaPineProps) {
         strokeWidth="3"
         strokeLinecap="round"
         strokeLinejoin="round"
-        d="M60 10 L42 46 L50 46 L34 82 L44 82 L26 122 L38 122 L20 166 L54 166 L54 194 L66 194 L66 166 L100 166 L82 122 L94 122 L76 82 L86 82 L70 46 L78 46 Z"
+        d={SOSNA_PATH}
       />
     </svg>
   );

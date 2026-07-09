@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Source_Sans_3 } from "next/font/google";
-import { AccessibilityToolbar } from "@/components/a11y/accessibility-toolbar";
 import { SkipToMain } from "@/components/a11y/skip-to-main";
 import { CookieConsentBanner } from "@/components/cookie-consent-banner";
 import { SiteFooter } from "@/components/layout/site-footer";
@@ -32,7 +31,6 @@ export default function RootLayout({
           {children}
         </main>
         <SiteFooter />
-        <AccessibilityToolbar />
         <CookieConsentBanner />
         <JsonLdOrganization />
         <JsonLdWebSite />

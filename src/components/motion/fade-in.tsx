@@ -18,7 +18,7 @@ export function FadeIn({
   children,
   className,
   delay = 0,
-  y = 14,
+  y = 10,
   immediate = false,
 }: FadeInProps) {
   const reduceMotion = useReducedMotion();
@@ -27,14 +27,15 @@ export function FadeIn({
     return <div className={className}>{children}</div>;
   }
 
+  const motionProps = {
+    className,
+    initial: { opacity: 0, y, filter: "blur(3px)" },
+    transition: { duration: 0.55, ease, delay },
+  };
+
   if (immediate) {
     return (
-      <motion.div
-        className={className}
-        initial={{ opacity: 0, y }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, ease, delay }}
-      >
+      <motion.div {...motionProps} animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}>
         {children}
       </motion.div>
     );
@@ -42,11 +43,9 @@ export function FadeIn({
 
   return (
     <motion.div
-      className={className}
-      initial={{ opacity: 0, y }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-48px" }}
-      transition={{ duration: 0.5, ease, delay }}
+      {...motionProps}
+      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      viewport={{ once: true, margin: "-56px" }}
     >
       {children}
     </motion.div>
@@ -63,7 +62,7 @@ type StaggerProps = {
 export function StaggerChildren({
   children,
   className,
-  stagger = 0.08,
+  stagger = 0.07,
   immediate = false,
 }: StaggerProps) {
   const reduceMotion = useReducedMotion();
@@ -77,7 +76,7 @@ export function StaggerChildren({
       className={className}
       initial="hidden"
       {...(immediate ? { animate: "show" } : { whileInView: "show" })}
-      viewport={immediate ? undefined : { once: true, margin: "-40px" }}
+      viewport={immediate ? undefined : { once: true, margin: "-48px" }}
       variants={{
         hidden: {},
         show: { transition: { staggerChildren: stagger } },
@@ -99,8 +98,13 @@ export function StaggerItem({ children, className }: { children: ReactNode; clas
     <motion.div
       className={className}
       variants={{
-        hidden: { opacity: 0, y: 12 },
-        show: { opacity: 1, y: 0, transition: { duration: 0.45, ease } },
+        hidden: { opacity: 0, y: 10, scale: 0.98 },
+        show: {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          transition: { duration: 0.5, ease },
+        },
       }}
     >
       {children}
@@ -118,8 +122,8 @@ export function HoverLift({ children, className }: { children: ReactNode; classN
   return (
     <motion.div
       className={className}
-      whileHover={{ y: -4 }}
-      transition={{ type: "spring", stiffness: 380, damping: 28 }}
+      whileHover={{ y: -3, transition: { duration: 0.25, ease } }}
+      transition={{ type: "spring", stiffness: 420, damping: 32 }}
     >
       {children}
     </motion.div>

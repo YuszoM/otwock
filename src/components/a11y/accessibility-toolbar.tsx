@@ -109,7 +109,7 @@ export function AccessibilityToolbar() {
           onClick={() => setOpen((v) => !v)}
           className="min-h-11 rounded-lg border border-forest-border bg-forest px-3 py-2 text-sm font-semibold text-on-forest shadow-md outline-none hover:opacity-95 focus-visible:ring-2 focus-visible:ring-[var(--color-honey)]"
         >
-          {open ? A11Y_COPY.toggleClose : "A11Y"}
+          {open ? A11Y_COPY.toggleClose : A11Y_COPY.toggleOpen}
         </button>
 
         {open ? (

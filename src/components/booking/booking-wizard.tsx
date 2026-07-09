@@ -23,12 +23,23 @@ export function BookingWizard() {
   const router = useRouter();
   const reduceMotion = useReducedMotion();
   const initialSpecialist = searchParams.get("specjalista") ?? "";
+  const initialService = searchParams.get("usluga") ?? "";
 
-  const [step, setStep] = useState(initialSpecialist ? 1 : 0);
-  const [specialistSlug, setSpecialistSlug] = useState(
-    initialSpecialist || specialists[0]?.slug || "",
+  const specialistForService = initialService
+    ? specialists.find((s) => s.serviceSlugs.includes(initialService))
+    : undefined;
+
+  const [step, setStep] = useState(
+    initialSpecialist ? 1 : initialService && specialistForService ? 1 : 0,
   );
-  const [serviceSlug, setServiceSlug] = useState("");
+  const [specialistSlug, setSpecialistSlug] = useState(
+    initialSpecialist || specialistForService?.slug || specialists[0]?.slug || "",
+  );
+  const [serviceSlug, setServiceSlug] = useState(
+    initialService && specialistForService?.serviceSlugs.includes(initialService)
+      ? initialService
+      : "",
+  );
   const [selectedDate, setSelectedDate] = useState("");
   const [selectedSlot, setSelectedSlot] = useState<TimeSlot | null>(null);
   const [patientName, setPatientName] = useState("");
