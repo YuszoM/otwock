@@ -1,11 +1,73 @@
 # ASSETS-NANO-BANANA-2 — production-grade prompty OOWiT
 
-> **Wersja:** 2.0 (lipiec 2026)  
+> **Wersja:** 2.2 (lipiec 2026)  
 > **Generator:** Nano Banana 2  
 > **Paleta:** pine-900 `#1E3A2B`, pine-700 `#2C5240`, sand-50 `#F5F0E6`, sand-200 `#E3D8C4`, wood-700 `#6B4A2E`, clay-400 `#C4A98A`  
 > **Region:** Mazowieckie Otwock — sosnowy mikroklimat uzdrowiska, architektura świdermajerska. **NIE** Tatry, Zakopane, Alpy.
 
-**Mapowanie na kod (bez zmian w repo):** pliki docelowe w `public/images/`. Nazwy poniżej są kanoniczne dla v2; starsze aliasy (`hero-otwock-forest-16x9.webp` itd.) — patrz tabela na końcu.
+---
+
+## Audyt Pobrane/otwock (2026-07-09)
+
+Źródło: `/home/itmaster/Pobrane/otwock/` · integracja: `node scripts/integrate-pobrane-assets.mjs`
+
+| Plik (najnowsze →) | Werdykt | Asset docelowy / akcja |
+|--------------------|---------|------------------------|
+| `referencyjne.jpg` | **PASS** (kotwica stylu) | Nie deploy — tylko reference do Nano Banana |
+| `Generated Image … 4_20PM.jpg` | **FAIL** | Tatry/Zakopane — góry, chaty podhalańskie — odrzucone |
+| `Generated Image … 4_16PM.jpg` | **FAIL** | Wnętrze z ludźmi — nie pasuje do `interior-si-room` (pusty pokój) |
+| `Generated Image … 4_10PM.jpg` | **PARTIAL** | Ikony procesu — OK paleta, ale gorsze niż 3_40PM; nie użyte |
+| `Generated Image … 4_06PM.jpg` | **FAIL** | Styl tatrzański + tilt-shift blur — odrzucone |
+| `Generated Image … 4_03PM.jpg` | **FAIL** | AI twarz — nie na produkcję (team = klient dostarcza) |
+| `Generated Image … 4_00PM.jpg` | **FAIL** | Ikona checkerboard w pikselach — odrzucone |
+| `Generated Image … 3_58PM.jpg` | **FAIL** | Ikona VR + checkerboard — odrzucone |
+| `Generated Image … 3_55PM.jpg` | **FAIL** | Ikona 3 osoby + checkerboard — odrzucone |
+| `Generated Image … 3_53PM (1).jpg` | **FAIL** | Duplikat ikony + checkerboard — odrzucone |
+| `Generated Image … 3_53PM.jpg` | **FAIL** | Ikona VR + checkerboard — odrzucone |
+| `Generated Image … 3_48PM.jpg` | **FAIL** | Ikona SI + checkerboard — odrzucone |
+| `Generated Image … 3_42PM.jpg` | **FAIL** | Ikona osoba + dymek + checkerboard — odrzucone |
+| `Generated Image … 3_40PM.jpg` | **PASS** | ✅ `process-care-3steps.webp` |
+| `Generated Image … 3_38PM.jpg` | **FAIL** | Tylko tekstura drewna — brak mapowania w briefie |
+| `Generated Image … 3_37PM.jpg` | **PASS** | ✅ `hero-otwock-fullscreen-desktop.webp`, `og-home.webp` |
+| `Generated Image … 3_36PM.jpg` | **PASS** | ✅ `hero-otwock-fullscreen-mobile.webp`, `local-otwock-trust.webp` |
+
+**Status assetów:**
+
+| # | Asset | Status |
+|---|-------|--------|
+| 1 | hero desktop | ✅ USED — `3_37PM.jpg` |
+| 1b | hero mobile | ✅ USED — `3_36PM.jpg` |
+| 2 | ornament lace PNG | ⏳ STILL NEEDED |
+| 3 | team ×5 | ⏸ KLIENT DOSTARCZA |
+| 4 | og-home | ✅ USED — kompozyt z `3_37PM.jpg` |
+| 5 | local-otwock-trust | ✅ USED — `3_36PM.jpg` |
+| 6 | interior-si-room | ⏳ STILL NEEDED |
+| 7 | process-care-3steps | ✅ USED — `3_40PM.jpg` |
+| 8 | hero-ornament-overlay | ⏳ STILL NEEDED |
+
+---
+
+## ⚠️ ZDJĘCIE REFERENCYJNE (OBOWIĄZKOWE)
+
+**Plik:** `/home/itmaster/Pobrane/otwock/referencyjne.jpg`
+
+W Nano Banana 2 **zawsze dołącz `referencyjne.jpg` jako Image Reference / Style Reference** (image-to-image lub „match style of reference”). To najlepszy dotychczasowy kadr: sosny, golden hour, mgła, subtelny dach świdermajerski, paleta pine/sand — **wszystkie assety fotograficzne muszą wyglądać jak z tej samej sesji**.
+
+**Co skopiować z referencji:**
+- Oświetlenie: early golden hour, ciepły key z prawej-góry, miękki fill
+- Paleta: `#F5F0E6` światło, `#1E3A2B` cienie sosnowe, `#6B4A2E` drewno
+- Atmosfera: spokojna, terapeutyczna, „uzdrowisko w lesie”
+- Tekstura: igły sosny, mgła 1–2 m, matowe drewno
+- **NIE kopiować:** dokładnego kadru — każdy asset ma własną kompozycję z promptu
+
+**Ustawienia Nano Banana 2 (sugerowane):**
+- Reference strength / style influence: **60–75%** (hero desktop: 70%; OG/trust: 65%; wnętrze: 50%)
+- Quality: **high** · Style: **raw / natural**
+
+**Linia do wklejenia na początku każdego promptu fotograficznego:**
+```
+Use the uploaded reference image referencyjne.jpg as strict style anchor — match its golden hour lighting, warm sand-beige and deep pine green color grading, soft forest mist atmosphere, and calm OOWiT therapeutic mood. Same visual series as reference.
+```
 
 ---
 
@@ -29,21 +91,13 @@
 
 | Pole | Wartość |
 |------|---------|
+| **Status** | ✅ **USED** — źródło: `Generated Image July 09, 2026 - 3_37PM.jpg` (= `referencyjne.jpg`) |
 | **Filename** | `hero-otwock-fullscreen-desktop.webp` |
-| **Exact pixels** | **2560×1440** (16:9) |
-| **Format** | WebP, quality 82–85, max **~220 KB** po `cwebp` / Squoosh |
-| **Nano Banana 2** | Quality: **high** · Style: **raw / natural** · Aspect: **16:9** · Seed: zapisz przy pierwszym udanym renderze |
+| **Alias w kodzie** | `hero-otwock-forest-16x9.webp` |
+| **Exact pixels** | **2560×1440** (16:9) · ~449 KB WebP q72 |
+| **Integracja** | `public/images/` · `scripts/integrate-pobrane-assets.mjs` |
 
-**PL:** Pełnoekranowe tło hero — willa świdermajerska w sosnowym lesie Otwocka. Lewa 40–45% i dolne 30% — ciemniejsza strefa bezpieczna pod biały/kremowy tekst.
-
-**EN prompt:**
-```
-Production editorial photograph, exact output 2560x1440 pixels, 16:9 landscape. Otwock spa town, Mazovian Voivodeship, Poland — NOT Tatra mountains, NOT Zakopane highland architecture. Świdermajer wooden villa with ornate lace gable (ażur) woodwork, deep roof overhang, corbel brackets, nestled among tall mature Scots pine (Pinus sylvestris) forest. Camera simulation: 35mm prime lens, f/2.8, ISO 200, 1/250s, slight natural vignette. Lighting setup: early morning golden hour (07:30), low sun from frame right-rear at 25° elevation, soft rim light on pine needles, gentle fill from open sky left, subtle ground mist between trunks at 1–2m height. Color grading LUT "OOWiT Warm Pine": warm sand-beige highlights #F5F0E6, deep pine shadow greens #1E3A2B and #2C5240, wood brown accents #6B4A2E, lifted shadows, desaturated cyans. Composition: rule of thirds — villa roofline on upper-right third intersection; LEFT 42% of frame intentionally darker, softer, fewer details (safe zone for white headline text overlay); BOTTOM 32% calmer forest floor gradient; main visual interest center-right. Material textures: weathered pine wood grain on villa, matte painted wood lace ornament, dry pine needle carpet, sandy forest soil. Flat Mazovian terrain horizon. Photorealistic, editorial healthcare/wellness quality, shallow depth of field on foreground pines. Part of OOWiT visual system series, match lighting with asset #1. No people, no text, no logos, no vehicles.
-
-Negative prompt: Tatry mountains, Zakopane, alpine chalet, Swiss chalet label, snow, ski resort, steep mountain slope, urban Warsaw skyline, glass skyscrapers, generic hospital, clinical blue-white corridor, fluorescent lighting, watermark, text overlay, logo, blurry, oversaturated, HDR halos, cartoon, 3D render, CGI, plastic trees, tropical vegetation, palm trees, desert, beach, ocean, people, cars, road signs, drones, lens flare streaks, chromatic aberration, noise grain, AI artifacts, duplicate elements, fisheye distortion, dutch angle, night scene, harsh midday sun, storm clouds, autumn orange overload, winter bare trees.
-```
-
-**Consistency anchor:** Asset #1 — master lighting reference for entire series.
+**PL:** Pełnoekranowe tło hero — sosnowy las, golden hour, willa w tle. Zatwierdzone w audycie wizualnej.
 
 ---
 
@@ -51,21 +105,11 @@ Negative prompt: Tatry mountains, Zakopane, alpine chalet, Swiss chalet label, s
 
 | Pole | Wartość |
 |------|---------|
+| **Status** | ✅ **USED** — źródło: `Generated Image July 09, 2026 - 3_36PM.jpg` |
 | **Filename** | `hero-otwock-fullscreen-mobile.webp` |
-| **Exact pixels** | **1080×1920** (9:16) |
-| **Format** | WebP, quality 82–85, max **~180 KB** |
-| **Nano Banana 2** | Quality: **high** · Style: **raw / natural** · Aspect: **9:16** · Seed: ten sam co desktop (jeśli model wspiera) lub regeneracja z tym samym promptem klimatu |
-
-**PL:** Pionowy crop tego samego świata wizualnego — sosny, światło z góry-prawej, ciemniejsza lewa i dolna strefa pod tekst.
-
-**EN prompt:**
-```
-Production editorial photograph, exact output 1080x1920 pixels, 9:16 vertical portrait orientation. Same scene and color science as OOWiT hero desktop asset #1: Otwock Mazovian spa pine forest, Świdermajer wooden villa lace gable glimpsed upper-right, tall Scots pine trunks rising through soft morning mist. Camera simulation: 35mm equivalent, f/2.8, vertical crop optimized for mobile viewport 100svh. Lighting: identical golden hour 07:30, warm key from upper-right, soft atmospheric haze between trunks. Color grading LUT "OOWiT Warm Pine": #F5F0E6 highlights, #1E3A2B/#2C5240 shadows, #6B4A2E wood. Composition: rule of thirds — brightest interest upper-center-right; LEFT 38% darker calmer zone for headline text; BOTTOM 35% soft dark forest floor safe zone; vertical leading lines of pine trunks. Material textures: pine bark furrows, needle clusters, weathered wood ornament. Flat Mazovian terrain. Photorealistic. Part of OOWiT visual system series, match lighting with asset #1. No people, no text, no logos.
-
-Negative prompt: Tatry, Zakopane, mountains, alpine, snow, horizontal landscape crop, Warsaw city, hospital, clinical, watermark, text, logo, blurry, oversaturated, cartoon, 3D render, people, cars, tropical, palm trees, night, harsh noon sun, storm, HDR, AI artifacts, wide 16:9 composition squeezed into vertical, duplicated trunks, fisheye, neon colors, autumn oversaturation, bare winter trees.
-```
-
-**Consistency anchor:** Match lighting with asset #1 (hero desktop).
+| **Alias w kodzie** | `hero-otwock-forest-alt.webp` |
+| **Exact pixels** | **1080×1920** (9:16) · ~250 KB |
+| **Integracja** | crop `position: right` z 16:9 źródła |
 
 ---
 
@@ -73,6 +117,7 @@ Negative prompt: Tatry, Zakopane, mountains, alpine, snow, horizontal landscape 
 
 | Pole | Wartość |
 |------|---------|
+| **Status** | ⏳ **STILL NEEDED** |
 | **Filename** | `ornament-swidermajer-lace-reference.png` |
 | **Exact pixels** | **2048×1024** (2:1) |
 | **Format** | PNG-24, lossless, max **~400 KB** (ostre linie, bez WebP dla trace) |
@@ -95,23 +140,14 @@ Negative prompt: photograph, photorealistic, 3D render, gradient, shadow, drop s
 
 | Pole | Wartość |
 |------|---------|
+| **Status** | ⏸ **KLIENT DOSTARCZA** |
 | **Filename** | `team-{slug}.webp` × 5 (np. `team-anna-kowalska.webp`) |
 | **Exact pixels** | **800×1000** każde (4:5) |
 | **Format** | WebP, quality 85, max **~90 KB** / zdjęcie |
-| **Nano Banana 2** | **NIE GENEROWAĆ TWARZY** — prompt poniżej tylko jako brief stylu retuszu |
 
-> ⚠️ **CLIENT REAL PHOTOS PREFERRED** — klient musi dostarczyć autentyczne zdjęcia 5 specjalistów. Poniższy prompt służy wyłącznie jako **style guide** do jednolitego kadrowania i color gradingu po dostarczeniu materiałów. Do czasu dostarczenia — inicjały + badge „Demo dane” (zaimplementowane w kodzie). **Nie używać AI-generated faces na produkcji.**
+⏸ **KLIENT DOSTARCZA** — wrzuć `team-{slug}.webp` do `Pobrane/otwock`, potem integracja.
 
-**PL:** Spójna seria portretów — okolica pasa, ciepłe światło okna, tło sand-beige.
-
-**EN prompt (style reference / retouch brief only — NOT for synthetic faces):**
-```
-Professional healthcare headshot style guide reference, exact output 800x1000 pixels per image, 4:5 vertical portrait. Five separate individual portraits (generate one at a time with different seeds) — CONSISTENT studio setup across all five. Waist-up crop, neutral warm approachable expression, direct eye contact. Camera simulation: 50mm prime, f/2.0, ISO 100, eye-level. Lighting: large soft window key from frame left 45°, white reflector fill right, subtle hair light from rear. Background: smooth sand-beige wall #F5F0E6, shallow depth of field, subtle pine green houseplant bokeh accent. Wardrobe: pine-700 #2C5240 or sand-toned professional attire, no loud patterns, no white coats. Color grading LUT "OOWiT Warm Pine": consistent skin tones, warm shadows, no orange cast. Composition: rule of thirds — eyes on upper horizontal third; 8% headroom; subject centered with slight left bias. Material textures: natural fabric weave, soft skin, matte wall. Central European Polish professional appearance, ages 28–55, diverse natural looks. Part of OOWiT visual system series, match lighting with asset #1 warm sand key light quality. No text, no logo, no stethoscope.
-
-Negative prompt: AI face artifacts, uncanny valley, plastic skin, duplicate faces, identical person repeated, stock photo watermark, Shutterstock, Getty, American corporate cliché, stiff pose, crossed arms defensive, stethoscope, white coat doctor, hospital corridor background, cold flash, harsh shadows, group photo, collage, text, logo, cartoon, glamour over-retouching, porcelain skin, sunglasses, heavy makeup, neon lipstick, busy background, bookshelf mess, VR headset, clip art, low resolution, blurry eyes, asymmetrical face distortion, extra fingers, malformed hands, Tatry vacation background, mountain landscape.
-```
-
-**Consistency anchor:** Match warm key light quality with asset #1.
+> Odrzucono `4_03PM.jpg` (AI-generated face) — **nie używać syntetycznych twarzy na produkcji.** Do czasu dostarczenia — inicjały + badge „Demo dane” w kodzie.
 
 ---
 
@@ -119,21 +155,10 @@ Negative prompt: AI face artifacts, uncanny valley, plastic skin, duplicate face
 
 | Pole | Wartość |
 |------|---------|
+| **Status** | ✅ **USED** — kompozyt: gradient sand (55%) + crop z `3_37PM.jpg` (45%) |
 | **Filename** | `og-home.webp` |
-| **Exact pixels** | **1200×630** (1.91:1 Open Graph standard) |
-| **Format** | WebP, quality 85, max **~120 KB** |
-| **Nano Banana 2** | Quality: **high** · Style: **raw / natural** + graphic left panel · Aspect: **1200×630** (custom) |
-
-**PL:** Podgląd social — lewa część gradient sand, prawa — kadr lasu/willi; bez wbudowanego tekstu (dodawany w HTML/meta).
-
-**EN prompt:**
-```
-Open Graph social preview image, exact output 1200x630 pixels, 1.91:1. Split composition: LEFT 55% smooth sand gradient #F5F0E6 to #E3D8C4 with subtle Świdermajer lace line art frieze in wood brown #6B4A2E at 8% opacity; RIGHT 45% cropped cinematic photograph of Otwock Mazovian pine forest edge and Świdermajer villa wooden lace gable, same golden hour lighting as OOWiT hero asset #1. Camera simulation: 35mm f/4 for photo portion. Color grading LUT "OOWiT Warm Pine". Composition: rule of thirds — photo focal point on right third intersection; bottom-left 40%×30% area kept calm for optional text overlay in code (NO baked text); small pine cone and lace corner detail bottom-right at 5% size. Flat Mazovian terrain, NOT mountains. Part of OOWiT visual system series, match lighting with asset #1. No embedded text, no logo, no watermark.
-
-Negative prompt: Tatry, mountains, Zakopane, og-services duplicate layout, clinical blue, crowded icons, busy infographic, watermark, English text, Polish text, logo mockup, low resolution below 1200x630, pixelated, hospital, Warsaw skyline, people faces, QR code, social media UI chrome, Facebook template, Instagram frame, neon colors, cartoon, 3D render, split line too harsh, misaligned panels, JPEG artifacts.
-```
-
-**Consistency anchor:** Match lighting with asset #1.
+| **Exact pixels** | **1200×630** (1.91:1) · ~83 KB |
+| **Kod** | `src/app/(public)/layout.tsx` → `ogImage: "/images/og-home.webp"` |
 
 ---
 
@@ -141,21 +166,10 @@ Negative prompt: Tatry, mountains, Zakopane, og-services duplicate layout, clini
 
 | Pole | Wartość |
 |------|---------|
+| **Status** | ✅ **USED** — źródło: `Generated Image July 09, 2026 - 3_36PM.jpg` |
 | **Filename** | `local-otwock-trust.webp` |
-| **Exact pixels** | **1600×1000** (16:10) |
-| **Format** | WebP, quality 82–85, max **~150 KB** |
-| **Nano Banana 2** | Quality: **high** · Style: **raw / natural** · Aspect: **16:10** |
-
-**PL:** Autentyczny kadr budujący zaufanie — leśna ścieżka, Otwock jako uzdrowisko, bez stockowego „safe space”.
-
-**EN prompt:**
-```
-Documentary editorial photograph, exact output 1600x1000 pixels, 16:10 landscape. Otwock spa resort town, Mazovian Voivodeship, Poland — authentic local trust imagery, NOT generic wellness stock. Quiet sandy forest path through mature Scots pine stand, dappled early morning light, distant glimpse of Świdermajer wooden villa roofline with lace gable through tree trunks. Camera simulation: 35mm f/2.8, ISO 400, walking-eye perspective 1.6m height. Lighting: golden hour soft key through canopy gaps, gentle fill from sandy path reflectance. Color grading LUT "OOWiT Warm Pine": #F5F0E6 path highlights, #1E3A2B pine shadows, #6B4A2E weathered wood accents. Composition: rule of thirds — path leading line from lower-left to center-right third; top 15% calm sky glimpses through canopy. Material textures: compacted sand path, pine bark, dry needles, moss patches. Flat Mazovian terrain, peaceful therapeutic atmosphere. Part of OOWiT visual system series, match lighting with asset #1. No people, no text, no logos.
-
-Negative prompt: Tatry, mountains, Zakopane, ski resort, tropical beach, yoga studio, meditation cushions, generic safe space cliché, American suburb, snow, winter, heavy fog whiteout, tourists crowd, map labels, street signs, Warsaw skyline, urban sprawl, watermark, text, logo, hospital, clinical, cartoon, 3D render, oversaturated, HDR, AI artifacts, drone aerial directly overhead, satellite view, Google Maps style.
-```
-
-**Consistency anchor:** Match lighting with asset #1.
+| **Exact pixels** | **1600×1000** (16:10) · ~290 KB |
+| **Uwaga** | Gotowy asset — jeszcze niepodpięty w kodzie (na przyszłą sekcję trust) |
 
 ---
 
@@ -163,6 +177,7 @@ Negative prompt: Tatry, mountains, Zakopane, ski resort, tropical beach, yoga st
 
 | Pole | Wartość |
 |------|---------|
+| **Status** | ⏳ **STILL NEEDED** — odrzucono `4_16PM.jpg` (ludzie w kadrze, nie pusty pokój SI) |
 | **Filename** | `interior-si-room.webp` |
 | **Exact pixels** | **1920×1080** (16:9) |
 | **Format** | WebP, quality 82–85, max **~160 KB** |
@@ -172,6 +187,8 @@ Negative prompt: Tatry, mountains, Zakopane, ski resort, tropical beach, yoga st
 
 **EN prompt:**
 ```
+Use the uploaded reference image referencyjne.jpg as style anchor for warm daylight color grading and calm therapeutic mood — match sand-beige #F5F0E6 and pine #2C5240 palette from reference. Interior scene, not forest copy.
+
 Interior architectural photograph, exact output 1920x1080 pixels, 16:9. Sensory integration therapy room in Polish family mental health support center, Otwock Mazovian spa town context. Warm sand-beige plaster walls #F5F0E6, pine green accent wall #2C5240, natural oak wood floor and open shelving. Camera simulation: 24mm wide-angle, f/4, ISO 320, corner standing position. Lighting: soft north-east daylight from large window with Scots pine forest view outside, sheer linen curtains diffusing, no fluorescent. Color grading LUT "OOWiT Warm Pine". Composition: rule of thirds — window light on right third; therapy swings, floor mats, balance board subtly visible but organized, professional not toy-store chaotic; Świdermajer-inspired wood corbel detail on ceiling beam. Material textures: matte plaster, oiled oak grain, woven cotton mats, natural rope swing. Child-friendly but dignified clinical space. Empty room, no people. Part of OOWiT visual system series, match lighting with asset #1 warm daylight quality. No text signage, no logos.
 
 Negative prompt: hospital clinical white, fluorescent tubes, chaotic primary-color plastic toys explosion, gym equipment, VR headset, computer monitors, TV screens, institutional corridor, basement, dark moody, cage-like, rubber padded cell, watermark, text, logo, cartoon, 3D render, Tatry mountain view through window, city skyline, snow outside, night interior, harsh flash, wide-angle barrel distortion extreme, AI artifacts, messy clutter, dirty floor, stained walls.
@@ -181,26 +198,14 @@ Negative prompt: hospital clinical white, fluorescent tubes, chaotic primary-col
 
 ---
 
-## Asset #7 — Proces opieki 3 kroki (opcjonalny)
+## Asset #7 — Proces opieki 3 kroki
 
 | Pole | Wartość |
 |------|---------|
+| **Status** | ✅ **USED** — źródło: `Generated Image July 09, 2026 - 3_40PM.jpg` |
 | **Filename** | `process-care-3steps.webp` |
-| **Exact pixels** | **1600×1200** (4:3 — zgodne z `aspect-[4/3]` w `care-process.tsx`) |
-| **Format** | WebP, quality 85, max **~100 KB** |
-| **Nano Banana 2** | Quality: **high** · Style: **illustration / editorial flat** (nie raw photo) |
-| **Status** | **Nadal używany** w kodzie (`/images/process-care-3steps.webp`) — wygenerować jeśli brak pliku |
-
-**PL:** Pozioma ilustracja 3 kroków bez tekstu — diagnoza, terapia, wsparcie; paleta pine/sand.
-
-**EN prompt:**
-```
-Editorial healthcare illustration, exact output 1600x1200 pixels, 4:3 landscape. Minimal three-step horizontal visual narrative WITHOUT any text or numbers: (1) left — seedling/sprout in warm soil symbolizing diagnosis and understanding, (2) center — two abstract human figures in gentle supportive conversation symbolizing therapy, (3) right — open sandy path through soft pine trees toward warm light symbolizing ongoing support. Flat design with subtle paper-grain texture, thin 2px line icons, generous whitespace. Color palette strict: pine-900 #1E3A2B, pine-700 #2C5240, sand-50 #F5F0E6, sand-200 #E3D8C4, wood-700 #6B4A2E accents. Composition: rule of thirds — three elements evenly spaced on horizontal third; 10% margin padding. Świdermajer lace motif as subtle 5% opacity border top edge only. Part of OOWiT visual system series, match lighting with asset #1 warm sand-beige tonal range. No text, no letters, no numbers, no logos.
-
-Negative prompt: text, letters, numbers, words, labels, clipart, busy details, medical syringes, brain organ cliché, pill bottles, stethoscope, hospital cross, photorealistic, 3D render, dark moody, neon colors, Tatry mountains in background, snow, cartoon mascot, childish primary colors, watermark, logo, infographic arrows with text, PowerPoint style, low resolution, blurry, gradient banding, AI artifacts, crowded composition.
-```
-
-**Consistency anchor:** Match sand-beige tonal range with asset #1.
+| **Exact pixels** | **1600×1200** (4:3) · ~42 KB |
+| **Kod** | `src/components/content/care-process.tsx` |
 
 ---
 
@@ -208,6 +213,7 @@ Negative prompt: text, letters, numbers, words, labels, clipart, busy details, m
 
 | Pole | Wartość |
 |------|---------|
+| **Status** | ⏳ **STILL NEEDED** |
 | **Filename** | `hero-ornament-overlay.png` |
 | **Exact pixels** | **800×560** (10:7 — 2× retina względem SVG 160×112) |
 | **Format** | PNG-32 z **przezroczystym tłem** (alpha), max **~40 KB** |
@@ -252,4 +258,16 @@ Negative prompt: photograph, 3D render, gradient fill, drop shadow, cast shadow,
 
 Po wygenerowaniu: wrzucić do `public/images/`, zoptymalizować WebP, zweryfikować rozmiary pikselowe przed deployem.
 
-*Ostatnia aktualizacja: 2026-07-09 · v2 production-grade*
+## Odrzucone pliki (nie promptować ponownie bez poprawki briefu)
+
+| Plik | Powód |
+|------|-------|
+| `4_20PM.jpg` | Tatry/Zakopane — góry, chaty podhalańskie |
+| `4_06PM.jpg` | Architektura tatrzańska + tilt-shift blur |
+| `4_16PM.jpg` | Grupa ludzi — nie `interior-si-room` (wymaga pustego pokoju) |
+| `4_03PM.jpg` | AI twarz — team tylko od klienta |
+| `4_10PM.jpg` | Zastąpione lepszym `3_40PM.jpg` |
+| `3_38PM.jpg` | Samotna tekstura drewna — brak use case |
+| `3_42PM`–`4_00PM.jpg` | Ikony z checkerboard w pikselach — wymaga PNG alpha, nie JPG |
+
+*Ostatnia aktualizacja: 2026-07-09 · v2.2 — audyt Pobrane + integracja*
