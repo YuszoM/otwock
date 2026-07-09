@@ -1,0 +1,73 @@
+/**
+ * Pakiet dostępności — importuj w globals.css projektu (np. @import "../styles/accessibility.css";).
+ * Klasy / data-* ustawiane przez lib/a11y/prefs + AccessibilityToolbar.
+ */
+
+/* --- Skala tekstu (bazowy rem na <html>) --- */
+html[data-a11y-font-step="0"] {
+  font-size: 80%;
+}
+html[data-a11y-font-step="1"] {
+  font-size: 90%;
+}
+html[data-a11y-font-step="2"] {
+  font-size: 100%;
+}
+html[data-a11y-font-step="3"] {
+  font-size: 110%;
+}
+html[data-a11y-font-step="4"] {
+  font-size: 120%;
+}
+
+/* --- Wysoki kontrast (warstwa pomocnicza — może wymagać dopasowania pod layout) --- */
+html.a11y-high-contrast body {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+html.a11y-high-contrast main,
+html.a11y-high-contrast article,
+html.a11y-high-contrast section,
+html.a11y-high-contrast aside,
+html.a11y-high-contrast nav,
+html.a11y-high-contrast footer,
+html.a11y-high-contrast header {
+  background-color: #000 !important;
+  color: #fff !important;
+  border-color: #fff !important;
+}
+
+html.a11y-high-contrast a {
+  color: #ffff00 !important;
+  text-decoration: underline !important;
+}
+
+html.a11y-high-contrast a:visited {
+  color: #00ffff !important;
+}
+
+html.a11y-high-contrast button,
+html.a11y-high-contrast input,
+html.a11y-high-contrast select,
+html.a11y-high-contrast textarea {
+  background-color: #000 !important;
+  color: #fff !important;
+  border: 2px solid #fff !important;
+}
+
+html.a11y-high-contrast img {
+  opacity: 1;
+}
+
+/* --- Podkreślenie linków (bez trybu HC) --- */
+html.a11y-underline-links a {
+  text-decoration: underline !important;
+  text-underline-offset: 0.2em;
+}
+
+/* Focus widoczny — uzupełnia projekty bez własnego focus ring */
+html.a11y-high-contrast *:focus-visible {
+  outline: 3px solid #ffff00 !important;
+  outline-offset: 2px !important;
+}
