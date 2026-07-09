@@ -29,31 +29,33 @@ export function ServicesShowcase() {
       className="relative mx-auto max-w-[var(--container-max)] overflow-hidden px-4 py-12 lg:px-6 lg:py-16"
     >
       <SectionPineAccent position="top-right" />
-      <FadeIn>
-        <div className="relative z-[1] flex flex-wrap items-end justify-between gap-4">
-          <div className="max-w-2xl">
-            <SectionEyebrow>Usługi</SectionEyebrow>
-            <h2 id="services-showcase-heading" className="mt-2 text-[var(--text-heading)] font-semibold">
-              Poznaj naszą ofertę
-            </h2>
-            <p className="mt-3 text-[var(--ink-soft)]">
-              Każda z naszych usług powstała po to, by realnie odciążyć rodziców, wesprzeć dzieci i dać
-              rodzinom przestrzeń, w której można poczuć się spokojniej:
-            </p>
-            <ReadMoreText className="mt-3 text-[var(--ink-soft)]">
-              <p>
-                Pomagamy rodzicom, którzy potrzebują wsparcia w codziennych wyzwaniach, dzieci, które mierzą
-                się z lękiem, trudnościami społecznymi lub wymagają większej uważności, pary, które chcą
-                odbudować dialog i bliskość, osoby dorosłe, które chcą żyć spokojniej, bardziej świadomie, z
-                większym zrozumieniem siebie.
+      <StaggerChildren className="relative z-[1]">
+        <StaggerItem>
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <div className="max-w-2xl">
+              <SectionEyebrow>Usługi</SectionEyebrow>
+              <h2 id="services-showcase-heading" className="mt-2 text-[var(--text-heading)] font-semibold">
+                Poznaj naszą ofertę
+              </h2>
+              <p className="mt-3 text-[var(--ink-soft)]">
+                Każda z naszych usług powstała po to, by realnie odciążyć rodziców, wesprzeć dzieci i dać
+                rodzinom przestrzeń, w której można poczuć się spokojniej:
               </p>
-            </ReadMoreText>
+              <ReadMoreText className="mt-3 text-[var(--ink-soft)]">
+                <p>
+                  Pomagamy rodzicom, którzy potrzebują wsparcia w codziennych wyzwaniach, dzieci, które mierzą
+                  się z lękiem, trudnościami społecznymi lub wymagają większej uważności, pary, które chcą
+                  odbudować dialog i bliskość, osoby dorosłe, które chcą żyć spokojniej, bardziej świadomie, z
+                  większym zrozumieniem siebie.
+                </p>
+              </ReadMoreText>
+            </div>
+            <Link href="/uslugi" className="text-sm font-semibold text-[var(--pine-700)] underline-offset-4 hover:underline">
+              Wszystkie usługi →
+            </Link>
           </div>
-          <Link href="/uslugi" className="text-sm font-semibold text-[var(--pine-700)] underline-offset-4 hover:underline">
-            Wszystkie usługi →
-          </Link>
-        </div>
-      </FadeIn>
+        </StaggerItem>
+      </StaggerChildren>
 
       <StaggerChildren className="relative z-[1] mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
         {featured.map((service) => (
@@ -104,7 +106,7 @@ export function ServicesShowcase() {
         ))}
       </StaggerChildren>
 
-      <FadeIn delay={0.12}>
+      <FadeIn delay={0.2}>
         <div className="mt-10 rounded-[var(--radius-md)] border border-[var(--sand-200)] bg-[var(--pine-700)]/5 px-6 py-5 text-center sm:text-left">
           <p className="text-sm text-[var(--ink-soft)]">
             Każdy proces zaczyna się od rzetelnej diagnozy, która pozwala nie zgadywać, tylko precyzyjnie

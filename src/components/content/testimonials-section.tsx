@@ -1,7 +1,7 @@
 "use client";
 
 import { CardCorbelBorder } from "@/components/ornaments/card-corbel-border";
-import { SectionSeparator } from "@/components/ornaments/section-separator";
+import { AnimatedSectionSeparator } from "@/components/ornaments/animated-section-separator";
 import { SectionEyebrow } from "@/components/ui/section-eyebrow";
 import { FadeIn, StaggerChildren, StaggerItem } from "@/components/motion/fade-in";
 
@@ -42,9 +42,9 @@ export function TestimonialsSection() {
       aria-labelledby="testimonials-heading"
       className="relative bg-[color-mix(in_srgb,var(--lilac-300)_15%,var(--sand-50))]"
     >
-      <SectionSeparator />
+      <AnimatedSectionSeparator />
       <div className="mx-auto max-w-[var(--container-max)] px-4 py-12 lg:px-6 lg:py-16">
-        <FadeIn immediate>
+        <FadeIn>
           <SectionEyebrow>Opinie</SectionEyebrow>
           <h2 id="testimonials-heading" className="mt-2 text-[var(--text-heading)] font-semibold">
             Opinie

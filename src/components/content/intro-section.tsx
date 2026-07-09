@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { FadeIn } from "@/components/motion/fade-in";
+import { FadeIn, StaggerChildren, StaggerItem } from "@/components/motion/fade-in";
 import { ReadMoreText } from "@/components/ui/read-more-text";
 import { SectionPineAccent } from "@/components/ornaments/section-pine-accent";
 import { AnimatedSectionSeparator } from "@/components/ornaments/animated-section-separator";
@@ -12,13 +12,13 @@ export function IntroSection() {
       <AnimatedSectionSeparator />
       <SectionPineAccent position="bottom-left" className="opacity-[0.1]" />
       <div className="relative z-[1] mx-auto max-w-[var(--container-max)] px-4 py-12 lg:px-6 lg:py-16">
-        <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-start lg:gap-14">
-          <FadeIn immediate>
+        <StaggerChildren className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-start lg:gap-14">
+          <StaggerItem>
             <h2 id="intro-heading" className="text-[clamp(1.5rem,4vw,2rem)] font-semibold leading-tight tracking-tight text-[var(--pine-900)]">
               To Twoja bezpieczna przestrzeń.
             </h2>
-          </FadeIn>
-          <FadeIn immediate delay={0.08}>
+          </StaggerItem>
+          <StaggerItem>
             <div className="space-y-4 text-base leading-relaxed text-[var(--ink-soft)]">
               <p>
                 Ośrodek powstał z bardzo głębokiej potrzeby: aby rodziny, pary i dzieci miały w Otwocku
@@ -41,8 +41,8 @@ export function IntroSection() {
                 Aktualne zapisy
               </Link>
             </div>
-          </FadeIn>
-        </div>
+          </StaggerItem>
+        </StaggerChildren>
       </div>
     </section>
   );

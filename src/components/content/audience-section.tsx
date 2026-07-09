@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Check } from "@phosphor-icons/react";
-import { FadeIn } from "@/components/motion/fade-in";
+import { StaggerChildren, StaggerItem } from "@/components/motion/fade-in";
 import { SectionPineAccent } from "@/components/ornaments/section-pine-accent";
 
 const audiences = [
@@ -21,21 +21,20 @@ export function AudienceSection() {
       className="relative mx-auto max-w-[var(--container-max)] overflow-hidden px-4 py-16 lg:px-6 lg:py-20"
     >
       <SectionPineAccent position="bottom-right" />
-      <FadeIn>
-        <h2 id="audience-heading" className="max-w-2xl text-[var(--text-heading)] font-semibold">
-          Dla kogo jest to miejsce?
-        </h2>
-        <p className="mt-4 max-w-2xl text-[var(--ink-soft)]">
-          Ze wsparcia poradni zdrowia psychicznego OOWiT korzystają najczęściej:
-        </p>
-      </FadeIn>
-      <FadeIn delay={0.1}>
-        <ul className="mt-8 grid gap-3 sm:grid-cols-2">
-          {audiences.map((item) => (
-            <li
-              key={item}
-              className="flex gap-3 rounded-[var(--radius-sm)] border border-forest-border/15 bg-white/80 px-4 py-3 text-sm leading-relaxed text-[var(--ink)]"
-            >
+      <StaggerChildren>
+        <StaggerItem>
+          <h2 id="audience-heading" className="max-w-2xl text-[var(--text-heading)] font-semibold">
+            Dla kogo jest to miejsce?
+          </h2>
+          <p className="mt-4 max-w-2xl text-[var(--ink-soft)]">
+            Ze wsparcia poradni zdrowia psychicznego OOWiT korzystają najczęściej:
+          </p>
+        </StaggerItem>
+      </StaggerChildren>
+      <StaggerChildren className="mt-8 grid gap-3 sm:grid-cols-2" stagger={0.1}>
+        {audiences.map((item) => (
+          <StaggerItem key={item}>
+            <div className="flex h-full gap-3 rounded-[var(--radius-sm)] border border-forest-border/15 bg-white/80 px-4 py-3 text-sm leading-relaxed text-[var(--ink)]">
               <Check
                 size={18}
                 weight="bold"
@@ -43,17 +42,17 @@ export function AudienceSection() {
                 aria-hidden
               />
               <span>{item}</span>
-            </li>
-          ))}
-        </ul>
-      </FadeIn>
-      <FadeIn delay={0.15}>
-        <div className="mt-8">
+            </div>
+          </StaggerItem>
+        ))}
+      </StaggerChildren>
+      <StaggerChildren className="mt-8">
+        <StaggerItem>
           <Link href="/rezerwacja" className="btn-honey">
             Umów konsultację
           </Link>
-        </div>
-      </FadeIn>
+        </StaggerItem>
+      </StaggerChildren>
     </section>
   );
 }

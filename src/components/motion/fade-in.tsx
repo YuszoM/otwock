@@ -1,16 +1,23 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { m, useReducedMotion } from "framer-motion";
 import type { ReactNode } from "react";
 
 const ease = [0.22, 1, 0.36, 1] as const;
+
+/** Start reveal while section is still below the fold — user sees the full motion while scrolling. */
+export const SCROLL_VIEWPORT = {
+  once: true,
+  amount: 0.12,
+  margin: "0px 0px 22% 0px",
+} as const;
 
 type FadeInProps = {
   children: ReactNode;
   className?: string;
   delay?: number;
   y?: number;
-  /** Use mount animation instead of scroll-reveal — for above-the-fold content. */
+  /** Use mount animation instead of scroll-reveal — hero / above-the-fold only. */
   immediate?: boolean;
 };
 
@@ -18,7 +25,7 @@ export function FadeIn({
   children,
   className,
   delay = 0,
-  y = 10,
+  y = 14,
   immediate = false,
 }: FadeInProps) {
   const reduceMotion = useReducedMotion();
@@ -29,26 +36,26 @@ export function FadeIn({
 
   const motionProps = {
     className,
-    initial: { opacity: 0, y, filter: "blur(3px)" },
-    transition: { duration: 0.55, ease, delay },
+    initial: { opacity: 0, y },
+    transition: { duration: 0.95, ease, delay },
   };
 
   if (immediate) {
     return (
-      <motion.div {...motionProps} animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}>
+      <m.div {...motionProps} animate={{ opacity: 1, y: 0 }}>
         {children}
-      </motion.div>
+      </m.div>
     );
   }
 
   return (
-    <motion.div
+    <m.div
       {...motionProps}
-      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-      viewport={{ once: true, margin: "-56px" }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={SCROLL_VIEWPORT}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }
 
@@ -56,13 +63,15 @@ type StaggerProps = {
   children: ReactNode;
   className?: string;
   stagger?: number;
+  delayChildren?: number;
   immediate?: boolean;
 };
 
 export function StaggerChildren({
   children,
   className,
-  stagger = 0.07,
+  stagger = 0.14,
+  delayChildren = 0.08,
   immediate = false,
 }: StaggerProps) {
   const reduceMotion = useReducedMotion();
@@ -72,18 +81,18 @@ export function StaggerChildren({
   }
 
   return (
-    <motion.div
+    <m.div
       className={className}
       initial="hidden"
       {...(immediate ? { animate: "show" } : { whileInView: "show" })}
-      viewport={immediate ? undefined : { once: true, margin: "-48px" }}
+      viewport={immediate ? undefined : SCROLL_VIEWPORT}
       variants={{
         hidden: {},
-        show: { transition: { staggerChildren: stagger } },
+        show: { transition: { staggerChildren: stagger, delayChildren } },
       }}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }
 
@@ -95,20 +104,19 @@ export function StaggerItem({ children, className }: { children: ReactNode; clas
   }
 
   return (
-    <motion.div
+    <m.div
       className={className}
       variants={{
-        hidden: { opacity: 0, y: 10, scale: 0.98 },
+        hidden: { opacity: 0, y: 14 },
         show: {
           opacity: 1,
           y: 0,
-          scale: 1,
-          transition: { duration: 0.5, ease },
+          transition: { duration: 0.9, ease },
         },
       }}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }
 
@@ -120,12 +128,12 @@ export function HoverLift({ children, className }: { children: ReactNode; classN
   }
 
   return (
-    <motion.div
+    <m.div
       className={className}
-      whileHover={{ y: -3, transition: { duration: 0.25, ease } }}
-      transition={{ type: "spring", stiffness: 420, damping: 32 }}
+      whileHover={{ y: -3, transition: { duration: 0.28, ease } }}
+      transition={{ type: "spring", stiffness: 380, damping: 30 }}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }

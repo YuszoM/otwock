@@ -20,7 +20,7 @@ export function TrustSection() {
       className="border-y border-[var(--sand-200)] bg-[var(--sand-200)]/35"
     >
       <div className="mx-auto max-w-[var(--container-max)] px-4 py-10 lg:px-6 lg:py-14">
-        <FadeIn immediate>
+        <FadeIn>
           <h2 id="trust-heading" className="max-w-2xl text-[var(--text-heading)] font-semibold">
             Co oferujemy w naszym ośrodku?
           </h2>

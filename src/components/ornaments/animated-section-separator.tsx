@@ -1,7 +1,8 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { m, useReducedMotion } from "framer-motion";
 import { SectionSeparator } from "@/components/ornaments/section-separator";
+import { SCROLL_VIEWPORT } from "@/components/motion/fade-in";
 
 type AnimatedSectionSeparatorProps = {
   className?: string;
@@ -20,13 +21,13 @@ export function AnimatedSectionSeparator({
   }
 
   return (
-    <motion.div
-      initial={{ opacity: 0, scaleX: 0.92 }}
+    <m.div
+      initial={{ opacity: 0, scaleX: 0.88 }}
       whileInView={{ opacity: 1, scaleX: 1 }}
-      viewport={{ once: true, margin: "-24px" }}
-      transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+      viewport={SCROLL_VIEWPORT}
+      transition={{ duration: 1.05, ease: [0.22, 1, 0.36, 1] }}
     >
       <SectionSeparator className={className} variant={variant} />
-    </motion.div>
+    </m.div>
   );
 }
